@@ -46,3 +46,8 @@ export function getJSON(url: string): Promise<any> { const res = await fetchJSON
 You'll see that there are some extra functions that you can use to get and set JSON data. But you should use them in a way that is convenient to the caller.
 
 You don't have to have this much
+
+// Appended by cron on 2025-05-01
+export function noop(): void {
+  console.log("No operation performed.");
+}
