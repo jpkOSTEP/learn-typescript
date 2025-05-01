@@ -34,3 +34,15 @@ Example:
 $ npm run fetchJSON
 
 And then try to execute it
+
+// Appended by cron on 2025-05-01
+export function getJSON(url: string): Promise<any> { const res = await fetchJSON(url); return res.json(); }
+
+- export async function fetchJSON(url: string): Promise<any> { const res = await fetchJSON(url); return res.json(); }
+
+
+export function getJSON(url: string): Promise<any> { const res = await fetchJSON(url); return res.json(); }
+
+You'll see that there are some extra functions that you can use to get and set JSON data. But you should use them in a way that is convenient to the caller.
+
+You don't have to have this much
