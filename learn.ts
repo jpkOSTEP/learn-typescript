@@ -101,3 +101,13 @@ class Rectangle {
 
 const rect = new Rectangle(5, 10);
 console.log(rect.calculateArea()); // Outputs: 50
+
+class TemperatureConverter {
+  static celsiusToFahrenheit(celsius: number): number {
+    return (celsius * 9/5) + 32;
+  }
+}
+
+// Example usage
+const fahrenheit = TemperatureConverter.celsiusToFahrenheit(25);
+console.log(fahrenheit); // Output: 77
