@@ -217,3 +217,8 @@ function getUniqueValues<T>(array: T[]): T[] {
   const uniqueSet = new Set(array);
   return Array.from(uniqueSet);
 }
+
+function findMaxInArray(arr: number[]): number | null {
+  if (arr.length === 0) return null;
+  return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
+}
