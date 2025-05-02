@@ -116,3 +116,9 @@ function findMax<T extends number | string>(list: T[]): T | null {
   if (list.length === 0) return null;
   return list.reduce((max, current) => (current > max ? current : max));
 }
+
+function getRandomElement<T>(arr: T[]): T | undefined {
+  if (arr.length === 0) return undefined;
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
