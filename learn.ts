@@ -90,3 +90,14 @@ class Stack<T> {
 function getUniqueElements<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
+
+class Rectangle {
+  constructor(private width: number, private height: number) {}
+
+  calculateArea(): number {
+    return this.width * this.height;
+  }
+}
+
+const rect = new Rectangle(5, 10);
+console.log(rect.calculateArea()); // Outputs: 50
