@@ -193,3 +193,8 @@ function dedupeArray<T>(arr: T[]): T[] {
     return true;
   });
 }
+
+function findMax<T extends number | string>(values: T[]): T | null {
+  if (values.length === 0) return null;
+  return values.reduce((max, current) => (current > max ? current : max));
+}
