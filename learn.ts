@@ -202,3 +202,9 @@ function findMax<T extends number | string>(values: T[]): T | null {
 function getUniqueValues<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
+
+function calculateAverage(numbers: number[]): number {
+  if (numbers.length === 0) return 0;
+  const total = numbers.reduce((sum, num) => sum + num, 0);
+  return total / numbers.length;
+}
