@@ -222,3 +222,14 @@ function findMaxInArray(arr: number[]): number | null {
   if (arr.length === 0) return null;
   return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
 }
+
+function removeDuplicates<T>(array: T[]): T[] {
+  const seen = new Set<T>();
+  return array.filter(item => {
+    if (seen.has(item)) {
+      return false;
+    }
+    seen.add(item);
+    return true;
+  });
+}
