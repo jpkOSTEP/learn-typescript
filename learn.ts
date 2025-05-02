@@ -182,3 +182,14 @@ function getAverage(numbers: number[]): number | null {
   const sum = numbers.reduce((acc, num) => acc + num, 0);
   return sum / numbers.length;
 }
+
+function dedupeArray<T>(arr: T[]): T[] {
+  const seen = new Set<T>();
+  return arr.filter(item => {
+    if (seen.has(item)) {
+      return false;
+    }
+    seen.add(item);
+    return true;
+  });
+}
