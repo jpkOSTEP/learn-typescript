@@ -137,3 +137,8 @@ function getUniqueElements<T>(array: T[]): T[] {
 function filterByProperty<T, K extends keyof T>(arr: T[], key: K, value: T[K]): T[] {
   return arr.filter(item => item[key] === value);
 }
+
+function getUniqueValues<T>(array: T[]): T[] {
+  const uniqueSet: Set<T> = new Set(array);
+  return Array.from(uniqueSet);
+}
