@@ -212,3 +212,8 @@ function calculateAverage(numbers: number[]): number {
 function filterEvenNumbers(numbers: number[]): number[] {
   return numbers.filter(number => number % 2 === 0);
 }
+
+function getUniqueValues<T>(array: T[]): T[] {
+  const uniqueSet = new Set(array);
+  return Array.from(uniqueSet);
+}
