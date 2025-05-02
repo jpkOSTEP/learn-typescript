@@ -53,3 +53,12 @@ function findMax(numbers: number[]): number | null {
   if (numbers.length === 0) return null;
   return numbers.reduce((max, current) => (current > max ? current : max), numbers[0]);
 }
+
+async function fetchData<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+  const data: T = await response.json();
+  return data;
+}
