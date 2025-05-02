@@ -208,3 +208,7 @@ function calculateAverage(numbers: number[]): number {
   const total = numbers.reduce((sum, num) => sum + num, 0);
   return total / numbers.length;
 }
+
+function filterEvenNumbers(numbers: number[]): number[] {
+  return numbers.filter(number => number % 2 === 0);
+}
