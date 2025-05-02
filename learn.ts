@@ -198,3 +198,7 @@ function findMax<T extends number | string>(values: T[]): T | null {
   if (values.length === 0) return null;
   return values.reduce((max, current) => (current > max ? current : max));
 }
+
+function getUniqueValues<T>(array: T[]): T[] {
+  return Array.from(new Set(array));
+}
