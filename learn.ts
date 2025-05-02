@@ -18,3 +18,9 @@ function findMax<T extends number | string>(items: T[]): T | null {
   if (items.length === 0) return null;
   return items.reduce((max, item) => (item > max ? item : max), items[0]);
 }
+
+class Calculator {
+  static add(a: number, b: number): number {
+    return a + b;
+  }
+}
