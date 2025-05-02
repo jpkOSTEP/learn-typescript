@@ -176,3 +176,9 @@ class Stack<T> {
     return this.items.length;
   }
 }
+
+function getAverage(numbers: number[]): number | null {
+  if (numbers.length === 0) return null;
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+  return sum / numbers.length;
+}
