@@ -148,3 +148,7 @@ function isPalindrome(input: string): boolean {
   const reversedInput = sanitizedInput.split('').reverse().join('');
   return sanitizedInput === reversedInput;
 }
+
+function filterArrayByType<T>(array: unknown[], type: string): T[] {
+  return array.filter(item => typeof item === type) as T[];
+}
