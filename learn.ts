@@ -48,3 +48,8 @@ class Queue<T> {
 export function noop(): void {
   console.log("No operation performed.");
 }
+
+function findMax(numbers: number[]): number | null {
+  if (numbers.length === 0) return null;
+  return numbers.reduce((max, current) => (current > max ? current : max), numbers[0]);
+}
