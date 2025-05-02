@@ -142,3 +142,9 @@ function getUniqueValues<T>(array: T[]): T[] {
   const uniqueSet: Set<T> = new Set(array);
   return Array.from(uniqueSet);
 }
+
+function isPalindrome(input: string): boolean {
+  const sanitizedInput = input.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reversedInput = sanitizedInput.split('').reverse().join('');
+  return sanitizedInput === reversedInput;
+}
