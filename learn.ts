@@ -111,3 +111,8 @@ class TemperatureConverter {
 // Example usage
 const fahrenheit = TemperatureConverter.celsiusToFahrenheit(25);
 console.log(fahrenheit); // Output: 77
+
+function findMax<T extends number | string>(list: T[]): T | null {
+  if (list.length === 0) return null;
+  return list.reduce((max, current) => (current > max ? current : max));
+}
