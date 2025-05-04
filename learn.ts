@@ -237,3 +237,7 @@ function removeDuplicates<T>(array: T[]): T[] {
 function deduplicateArray<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
+
+function dedupeArray<T>(array: T[]): T[] {
+  return Array.from(new Set(array));
+}
