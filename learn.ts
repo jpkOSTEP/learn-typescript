@@ -249,3 +249,7 @@ function dedupeArray<T>(array: T[]): T[] {
 function dedupeArray<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
 }
+
+function sumArray(numbers: number[]): number {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
