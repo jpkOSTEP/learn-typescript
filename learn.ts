@@ -245,3 +245,7 @@ function dedupeArray<T>(array: T[]): T[] {
 function dedupeArray<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
+
+function dedupeArray<T>(arr: T[]): T[] {
+  return Array.from(new Set(arr));
+}
