@@ -180,3 +180,22 @@ function sumArray(numbers: number[]): number {
 // Skipped fallback on 2025-05-08
 // Skipped fallback on 2025-05-08
 // Skipped fallback on 2025-05-08
+
+async function getWeatherForecast(city: string): Promise<string> {
+  const apiKey = 'your_api_key_here'; // Replace with your actual weather API key
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error fetching weather data: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+    return `The current temperature in ${city} is ${temperature}°C with ${description}.`;
+  } catch (error) {
+    return `Failed to get weather data: ${error.message}`;
+  }
+}
