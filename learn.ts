@@ -199,3 +199,21 @@ async function getWeatherForecast(city: string): Promise<string> {
     return `Failed to get weather data: ${error.message}`;
   }
 }
+
+async function retrieveWeatherData(city: string): Promise<{ temperature: number; description: string } | null> {
+  try {
+    const apiKey = 'your_api_key'; // Replace with your actual API key
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch weather data');
+    }
+    const data = await response.json();
+    return {
+      temperature: data.main.temp,
+      description: data.weather[0].description
+    };
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    return null;
+  }
+}
