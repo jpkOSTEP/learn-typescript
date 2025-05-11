@@ -217,3 +217,24 @@ async function retrieveWeatherData(city: string): Promise<{ temperature: number;
     return null;
   }
 }
+
+function analyzeWeatherData(city: string): Promise<string> {
+    const apiKey = 'your_openweather_api_key';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    return fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch weather data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const temperature = data.main.temp;
+            const description = data.weather[0].description;
+            return `Current temperature in ${city} is ${temperature}°C with ${description}.`;
+        })
+        .catch(error => {
+            return `Error: ${error.message}`;
+        });
+}
