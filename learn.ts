@@ -238,3 +238,12 @@ function analyzeWeatherData(city: string): Promise<string> {
             return `Error: ${error.message}`;
         });
 }
+
+async function retrievePublicAPIs(): Promise<any[]> {
+  const response = await fetch('https://api.publicapis.org/entries');
+  if (!response.ok) {
+    throw new Error('Failed to fetch public APIs');
+  }
+  const data = await response.json();
+  return data.entries;
+}
