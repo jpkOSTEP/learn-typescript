@@ -247,3 +247,12 @@ async function retrievePublicAPIs(): Promise<any[]> {
   const data = await response.json();
   return data.entries;
 }
+
+async function fetchRandomUser(): Promise<any> {
+  const response = await fetch('https://randomuser.me/api/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random user data');
+  }
+  const data = await response.json();
+  return data.results[0];
+}
