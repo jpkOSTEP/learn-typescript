@@ -256,3 +256,22 @@ async function fetchRandomUser(): Promise<any> {
   const data = await response.json();
   return data.results[0];
 }
+
+async function retrieveCountryInfo(countryName: string): Promise<{ name: string, population: number, capital: string } | null> {
+  try {
+    const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+    if (!response.ok) {
+      throw new Error('Country not found');
+    }
+    const data = await response.json();
+    const country = data[0];
+    return {
+      name: country.name.common,
+      population: country.population,
+      capital: country.capital[0]
+    };
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
