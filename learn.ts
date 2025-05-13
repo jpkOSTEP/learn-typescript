@@ -233,3 +233,12 @@ async function retrieveCityWeather(city: string): Promise<{ temperature: number;
     return null;
   }
 }
+
+async function fetchCatFacts(limit: number): Promise<string[]> {
+    const response = await fetch(`https://catfact.ninja/facts?limit=${limit}`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch cat facts');
+    }
+    const data = await response.json();
+    return data.data.map((fact: { fact: string }) => fact.fact);
+}
