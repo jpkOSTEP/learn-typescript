@@ -22,4 +22,5 @@ getUniqueValues
 isPalindrome
 noop
 removeDuplicates
+retrieveJokeAndFact
 sumArray
