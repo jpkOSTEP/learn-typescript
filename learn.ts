@@ -251,3 +251,15 @@ async function fetchSpaceXLaunches(): Promise<any[]> {
     const launches: any[] = await response.json();
     return launches;
 }
+
+async function retrieveJokeAndFact(): Promise<{ joke: string; fact: string }> {
+  const jokeResponse = await fetch('https://official-joke-api.appspot.com/random_joke');
+  const jokeData = await jokeResponse.json();
+  const joke = `${jokeData.setup} - ${jokeData.punchline}`;
+
+  const factResponse = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
+  const factData = await factResponse.json();
+  const fact = factData.text;
+
+  return { joke, fact };
+}
