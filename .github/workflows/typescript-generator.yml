@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 8 * * *"  # Run daily at 4:00 AM UTC
   workflow_dispatch:  # Allows manual triggering
+    inputs:
+      skip_delay:
+        description: 'Skip the random delay'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write  # Required for pushing changes
@@ -31,6 +37,7 @@ jobs:
           pip install openai
 
       - name: Add random delay
+        if: ${{ !inputs.skip_delay }}
         run: |
           MIN=$((RANDOM % 60))
           echo "Sleeping for $MIN minutes..."
