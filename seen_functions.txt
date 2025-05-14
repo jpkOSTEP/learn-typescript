@@ -23,4 +23,5 @@ isPalindrome
 noop
 removeDuplicates
 retrieveJokeAndFact
+retrieveRandomDogImage
 sumArray
