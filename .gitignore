@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# VSCode + PyCharm
+.vscode/
+.idea/
+
+# macOS & system files
+.DS_Store
+Thumbs.db
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Logs and output
+*.log
+*.out
+
+# OS or cron temp
+/tmp/*
+*.swp
+
+# Python packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# GitHub Actions runtime files (optional)
+.github/workflows/__pycache__/
+
+# Lockfiles (optional)
+poetry.lock
+Pipfile.lock
+
+# Cache
+.cache/
+__pypackages__/
+
+# Node / npm (if you use ts or npm for testing)
+node_modules/
+package-lock.json
