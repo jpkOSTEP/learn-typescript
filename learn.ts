@@ -263,3 +263,17 @@ async function retrieveJokeAndFact(): Promise<{ joke: string; fact: string }> {
 
   return { joke, fact };
 }
+
+async function retrieveRandomDogImage(): Promise<string> {
+  try {
+    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch dog image');
+    }
+    const data: { message: string; status: string } = await response.json();
+    return data.message;
+  } catch (error) {
+    console.error('Error fetching dog image:', error);
+    throw error;
+  }
+}
