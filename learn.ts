@@ -242,3 +242,12 @@ async function fetchCatFacts(limit: number): Promise<string[]> {
     const data = await response.json();
     return data.data.map((fact: { fact: string }) => fact.fact);
 }
+
+async function fetchSpaceXLaunches(): Promise<any[]> {
+    const response = await fetch('https://api.spacexdata.com/v4/launches');
+    if (!response.ok) {
+        throw new Error('Failed to fetch SpaceX launches');
+    }
+    const launches: any[] = await response.json();
+    return launches;
+}
