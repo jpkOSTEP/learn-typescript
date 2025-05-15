@@ -24,4 +24,5 @@ noop
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomDogImage
+retrieveRandomProgrammingJoke
 sumArray
