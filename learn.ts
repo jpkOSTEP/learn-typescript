@@ -277,3 +277,16 @@ async function retrieveRandomDogImage(): Promise<string> {
     throw error;
   }
 }
+
+async function retrieveRandomProgrammingJoke(): Promise<string> {
+    try {
+        const response = await fetch('https://official-joke-api.appspot.com/jokes/programming/random');
+        const jokes = await response.json();
+        if (jokes.length > 0) {
+            return jokes[0].setup + ' ' + jokes[0].punchline;
+        }
+        throw new Error('No jokes found');
+    } catch (error) {
+        throw new Error('Failed to fetch joke: ' + error.message);
+    }
+}
