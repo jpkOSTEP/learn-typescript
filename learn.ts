@@ -304,3 +304,23 @@ async function fetchCryptoPrice(cryptoSymbol: string): Promise<number | null> {
     return null;
   }
 }
+
+async function fetchRandomAdvice(): Promise<string> {
+  const response = await fetch('https://api.adviceslip.com/advice');
+  const data = await response.json();
+  return data.slip.advice;
+}
+
+class AdviceGiver {
+  static async getAdvice(): Promise<string> {
+    try {
+      const advice = await fetchRandomAdvice();
+      return advice;
+    } catch (error) {
+      return 'Unable to fetch advice at the moment.';
+    }
+  }
+}
+
+// Example usage:
+// AdviceGiver.getAdvice().then(console.log);
