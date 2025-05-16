@@ -290,3 +290,17 @@ async function retrieveRandomProgrammingJoke(): Promise<string> {
         throw new Error('Failed to fetch joke: ' + error.message);
     }
 }
+
+async function fetchCryptoPrice(cryptoSymbol: string): Promise<number | null> {
+  try {
+    const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cryptoSymbol}&vs_currencies=usd`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    return data[cryptoSymbol]?.usd || null;
+  } catch (error) {
+    console.error('Error fetching cryptocurrency price:', error);
+    return null;
+  }
+}
