@@ -8,6 +8,7 @@ calculateAverage
 dedupeArray
 deduplicateArray
 fetchCatFacts
+fetchCryptoPrice
 fetchData
 fetchSpaceXLaunches
 filterArrayByType
