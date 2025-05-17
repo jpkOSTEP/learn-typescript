@@ -324,3 +324,21 @@ class AdviceGiver {
 
 // Example usage:
 // AdviceGiver.getAdvice().then(console.log);
+
+async function fetchRandomTrivia(): Promise<string> {
+  try {
+    const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
+    if (!response.ok) {
+      throw new Error('Failed to fetch trivia');
+    }
+    const data = await response.json();
+    if (data.results && data.results.length > 0) {
+      return data.results[0].question;
+    } else {
+      throw new Error('No trivia found');
+    }
+  } catch (error) {
+    console.error('Error fetching trivia:', error);
+    return 'Unable to fetch trivia at this time.';
+  }
+}
