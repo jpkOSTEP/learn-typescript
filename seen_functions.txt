@@ -12,6 +12,7 @@ fetchCatFacts
 fetchCryptoPrice
 fetchData
 fetchRandomAdvice
+fetchRandomTrivia
 fetchSpaceXLaunches
 filterArrayByType
 filterByProperty
