@@ -21,6 +21,7 @@ findMax
 findMaxInArray
 getAverage
 getRandomElement
+getRandomQuote
 getUniqueElements
 getUniqueValues
 isPalindrome
