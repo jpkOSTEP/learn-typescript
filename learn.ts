@@ -342,3 +342,12 @@ async function fetchRandomTrivia(): Promise<string> {
     return 'Unable to fetch trivia at this time.';
   }
 }
+
+async function getRandomQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random quote');
+  }
+  const data = await response.json();
+  return `"${data.content}" - ${data.author}`;
+}
