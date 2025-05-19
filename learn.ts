@@ -351,3 +351,12 @@ async function getRandomQuote(): Promise<string> {
   const data = await response.json();
   return `"${data.content}" - ${data.author}`;
 }
+
+async function fetchRandomDogFact(): Promise<string> {
+    const response = await fetch('https://dog-api.kinduff.com/api/facts');
+    if (!response.ok) {
+        throw new Error('Failed to fetch dog fact');
+    }
+    const data: { facts: string[] } = await response.json();
+    return data.facts[0];
+}
