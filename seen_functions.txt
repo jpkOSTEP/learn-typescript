@@ -14,6 +14,7 @@ fetchData
 fetchRandomAdvice
 fetchRandomDogFact
 fetchRandomTrivia
+fetchRandomUser
 fetchSpaceXLaunches
 filterArrayByType
 filterByProperty
