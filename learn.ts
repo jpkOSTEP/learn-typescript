@@ -380,3 +380,17 @@ fetchRandomUser().then(user => {
 }).catch(error => {
   console.error('Error fetching random user:', error);
 });
+
+async function fetchRandomAdviceSlip(): Promise<string> {
+  try {
+    const response = await fetch('https://api.adviceslip.com/advice');
+    if (!response.ok) {
+      throw new Error(`Error fetching advice: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data.slip.advice;
+  } catch (error) {
+    console.error(error);
+    return 'Failed to fetch advice.';
+  }
+}
