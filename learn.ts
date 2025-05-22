@@ -394,3 +394,18 @@ async function fetchRandomAdviceSlip(): Promise<string> {
     return 'Failed to fetch advice.';
   }
 }
+
+async function fetchRandomDadJoke(): Promise<string> {
+  const response = await fetch('https://icanhazdadjoke.com/', {
+    headers: {
+      Accept: 'application/json'
+    }
+  });
+  
+  if (!response.ok) {
+    throw new Error('Failed to fetch dad joke');
+  }
+  
+  const data: { joke: string } = await response.json();
+  return data.joke;
+}
