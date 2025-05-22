@@ -13,6 +13,7 @@ fetchCryptoPrice
 fetchData
 fetchRandomAdvice
 fetchRandomAdviceSlip
+fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomTrivia
 fetchRandomUser
