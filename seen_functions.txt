@@ -11,6 +11,7 @@ deduplicateArray
 fetchCatFacts
 fetchCryptoPrice
 fetchData
+fetchInspirationalQuote
 fetchRandomAdvice
 fetchRandomAdviceSlip
 fetchRandomDadJoke
