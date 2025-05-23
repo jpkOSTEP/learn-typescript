@@ -409,3 +409,14 @@ async function fetchRandomDadJoke(): Promise<string> {
   const data: { joke: string } = await response.json();
   return data.joke;
 }
+
+async function fetchInspirationalQuote(): Promise<string> {
+  const response = await fetch('https://type.fit/api/quotes');
+  if (!response.ok) {
+    throw new Error('Failed to fetch quotes');
+  }
+  const quotes: { text: string; author: string | null }[] = await response.json();
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[randomIndex];
+  return quote.text + (quote.author ? ` - ${quote.author}` : '');
+}
