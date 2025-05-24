@@ -420,3 +420,24 @@ async function fetchInspirationalQuote(): Promise<string> {
   const quote = quotes[randomIndex];
   return quote.text + (quote.author ? ` - ${quote.author}` : '');
 }
+
+import fetch from 'node-fetch';
+
+async function getLatestNewsHeadlines(apiKey: string, country: string = 'us'): Promise<string[]> {
+  const url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.articles.map((article: { title: string }) => article.title);
+  } catch (error) {
+    console.error('Failed to fetch news:', error);
+    return [];
+  }
+}
+
+// Example usage:
+// const apiKey = 'your_news_api_key';
+// getLatestNewsHeadlines(apiKey).then(headlines => console.log(headlines));
