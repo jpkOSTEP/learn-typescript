@@ -25,6 +25,7 @@ filterEvenNumbers
 findMax
 findMaxInArray
 getAverage
+getLatestNewsHeadlines
 getRandomElement
 getRandomQuote
 getUniqueElements
