@@ -441,3 +441,15 @@ async function getLatestNewsHeadlines(apiKey: string, country: string = 'us'): P
 // Example usage:
 // const apiKey = 'your_news_api_key';
 // getLatestNewsHeadlines(apiKey).then(headlines => console.log(headlines));
+
+async function fetchRandomChuckNorrisJoke(): Promise<string> {
+  const response = await fetch('https://api.chucknorris.io/jokes/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch joke');
+  }
+  const data: { value: string } = await response.json();
+  return data.value;
+}
+
+// Example usage:
+fetchRandomChuckNorrisJoke().then(joke => console.log(joke)).catch(error => console.error(error));
