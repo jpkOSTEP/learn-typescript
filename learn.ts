@@ -453,3 +453,12 @@ async function fetchRandomChuckNorrisJoke(): Promise<string> {
 
 // Example usage:
 fetchRandomChuckNorrisJoke().then(joke => console.log(joke)).catch(error => console.error(error));
+
+async function fetchRandomActivity(): Promise<string> {
+  const response = await fetch('https://www.boredapi.com/api/activity/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random activity');
+  }
+  const data = await response.json();
+  return data.activity;
+}
