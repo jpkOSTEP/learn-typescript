@@ -12,6 +12,7 @@ fetchCatFacts
 fetchCryptoPrice
 fetchData
 fetchInspirationalQuote
+fetchRandomActivity
 fetchRandomAdvice
 fetchRandomAdviceSlip
 fetchRandomChuckNorrisJoke
