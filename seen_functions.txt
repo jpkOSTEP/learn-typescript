@@ -28,6 +28,7 @@ findMax
 findMaxInArray
 getAverage
 getLatestNewsHeadlines
+getRandomAstronomyPicture
 getRandomElement
 getRandomQuote
 getUniqueElements
