@@ -462,3 +462,18 @@ async function fetchRandomActivity(): Promise<string> {
   const data = await response.json();
   return data.activity;
 }
+
+async function getRandomAstronomyPicture(): Promise<string> {
+  const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Failed to fetch astronomy picture');
+    }
+    const data = await response.json();
+    return data.url;
+  } catch (error) {
+    console.error('Error fetching astronomy picture:', error);
+    throw error;
+  }
+}
