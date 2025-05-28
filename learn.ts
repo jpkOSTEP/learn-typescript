@@ -477,3 +477,17 @@ async function getRandomAstronomyPicture(): Promise<string> {
     throw error;
   }
 }
+
+import axios from 'axios';
+
+async function fetchRandomRecipe(): Promise<{ title: string; ingredients: string[]; instructions: string }> {
+  const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
+  const meal = response.data.meals[0];
+  return {
+    title: meal.strMeal,
+    ingredients: Object.keys(meal)
+      .filter(key => key.startsWith('strIngredient') && meal[key])
+      .map(key => meal[key]),
+    instructions: meal.strInstructions
+  };
+}
