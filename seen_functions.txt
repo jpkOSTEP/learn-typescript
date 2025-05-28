@@ -18,6 +18,7 @@ fetchRandomAdviceSlip
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
+fetchRandomRecipe
 fetchRandomTrivia
 fetchRandomUser
 fetchSpaceXLaunches
