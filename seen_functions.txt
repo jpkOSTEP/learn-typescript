@@ -40,5 +40,6 @@ noop
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomDogImage
+retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
 sumArray
