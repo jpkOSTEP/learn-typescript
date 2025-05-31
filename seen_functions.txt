@@ -29,6 +29,7 @@ filterEvenNumbers
 findMax
 findMaxInArray
 getAverage
+getCountryInfo
 getLatestNewsHeadlines
 getRandomAstronomyPicture
 getRandomElement
