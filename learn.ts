@@ -510,3 +510,19 @@ async function retrieveRandomMealSuggestion(): Promise<string> {
   const meal = data.meals[0];
   return `Try cooking: ${meal.strMeal}, a delicious ${meal.strArea} dish. You can find the recipe here: ${meal.strSource}`;
 }
+
+async function getCountryInfo(countryName: string): Promise<{ name: string; capital: string; population: number; region: string; }> {
+  const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}`);
+  const data = await response.json();
+  if (data && data.length > 0) {
+    const country = data[0];
+    return {
+      name: country.name.common,
+      capital: country.capital ? country.capital[0] : 'N/A',
+      population: country.population,
+      region: country.region
+    };
+  } else {
+    throw new Error('Country not found');
+  }
+}
