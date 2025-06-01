@@ -526,3 +526,17 @@ async function getCountryInfo(countryName: string): Promise<{ name: string; capi
     throw new Error('Country not found');
   }
 }
+
+async function fetchRandomBeer(): Promise<{ name: string; description: string; abv: number }> {
+  const response = await fetch('https://api.punkapi.com/v2/beers/random');
+  const data = await response.json();
+  if (Array.isArray(data) && data.length > 0) {
+    const beer = data[0];
+    return {
+      name: beer.name,
+      description: beer.description,
+      abv: beer.abv
+    };
+  }
+  throw new Error('Failed to fetch random beer');
+}
