@@ -16,6 +16,7 @@ fetchRandomActivity
 fetchRandomAdvice
 fetchRandomAdviceSlip
 fetchRandomAdviceTip
+fetchRandomBeer
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
