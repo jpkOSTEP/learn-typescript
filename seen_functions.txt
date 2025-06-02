@@ -31,6 +31,7 @@ findMax
 findMaxInArray
 getAverage
 getCountryInfo
+getExchangeRate
 getLatestNewsHeadlines
 getRandomAstronomyPicture
 getRandomElement
