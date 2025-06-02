@@ -540,3 +540,16 @@ async function fetchRandomBeer(): Promise<{ name: string; description: string; a
   }
   throw new Error('Failed to fetch random beer');
 }
+
+async function getExchangeRate(baseCurrency: string, targetCurrency: string): Promise<number> {
+    const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${baseCurrency}`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch exchange rate data');
+    }
+    const data = await response.json();
+    const rate = data.rates[targetCurrency];
+    if (!rate) {
+        throw new Error(`Exchange rate not available for ${targetCurrency}`);
+    }
+    return rate;
+}
