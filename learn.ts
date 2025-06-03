@@ -553,3 +553,18 @@ async function getExchangeRate(baseCurrency: string, targetCurrency: string): Pr
     }
     return rate;
 }
+
+async function getRandomDadJoke(): Promise<string> {
+  try {
+    const response = await fetch('https://icanhazdadjoke.com/', {
+      headers: { Accept: 'application/json' }
+    });
+    if (!response.ok) {
+      throw new Error('Failed to fetch dad joke');
+    }
+    const data: { joke: string } = await response.json();
+    return data.joke;
+  } catch (error) {
+    return 'Could not fetch a dad joke at this time.';
+  }
+}
