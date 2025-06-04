@@ -15,6 +15,7 @@ fetchInspirationalQuote
 fetchRandomActivity
 fetchRandomAdvice
 fetchRandomAdviceSlip
+fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomBeer
 fetchRandomChuckNorrisJoke
