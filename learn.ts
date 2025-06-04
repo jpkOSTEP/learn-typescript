@@ -568,3 +568,16 @@ async function getRandomDadJoke(): Promise<string> {
     return 'Could not fetch a dad joke at this time.';
   }
 }
+
+import axios from 'axios';
+
+async function fetchRandomAdviceSnippets(): Promise<string[]> {
+  try {
+    const response = await axios.get('https://api.adviceslip.com/advice');
+    const advice = response.data.slip.advice;
+    return advice.split('. ').map(snippet => snippet.trim()).filter(snippet => snippet.length > 0);
+  } catch (error) {
+    console.error('Error fetching advice:', error);
+    throw new Error('Could not fetch advice.');
+  }
+}
