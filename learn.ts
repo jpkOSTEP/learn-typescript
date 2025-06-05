@@ -581,3 +581,34 @@ async function fetchRandomAdviceSnippets(): Promise<string[]> {
     throw new Error('Could not fetch advice.');
   }
 }
+
+class CryptoInfoFetcher {
+  async fetchCryptoInfo(cryptoSymbol: string): Promise<{ name: string; price: number; marketCap: number }> {
+    const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      params: {
+        vs_currency: 'usd',
+        ids: cryptoSymbol
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch crypto information');
+    }
+
+    const data = await response.json();
+    if (data.length === 0) {
+      throw new Error('Crypto symbol not found');
+    }
+
+    const crypto = data[0];
+    return {
+      name: crypto.name,
+      price: crypto.current_price,
+      marketCap: crypto.market_cap
+    };
+  }
+}
