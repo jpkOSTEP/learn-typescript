@@ -1,5 +1,6 @@
 AdviceGiver
 Calculator
+CryptoInfoFetcher
 Queue
 Rectangle
 Stack
