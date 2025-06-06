@@ -39,6 +39,7 @@ getRandomAstronomyPicture
 getRandomDadJoke
 getRandomElement
 getRandomQuote
+getRandomSpaceFact
 getUniqueElements
 getUniqueValues
 isPalindrome
