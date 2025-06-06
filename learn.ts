@@ -612,3 +612,18 @@ class CryptoInfoFetcher {
     };
   }
 }
+
+async function getRandomSpaceFact(): Promise<string> {
+  try {
+    const response = await fetch("https://api.spacexdata.com/v4/launches/latest");
+    if (!response.ok) {
+      throw new Error("Failed to fetch space data");
+    }
+    const data = await response.json();
+    const fact = `The latest SpaceX launch was: ${data.name}, which happened on ${new Date(data.date_utc).toLocaleDateString()}.`;
+    return fact;
+  } catch (error) {
+    console.error(error);
+    return "Could not retrieve space fact at this time.";
+  }
+}
