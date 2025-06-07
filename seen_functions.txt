@@ -23,6 +23,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomRecipe
+fetchRandomStarWarsCharacter
 fetchRandomTrivia
 fetchRandomUser
 fetchSpaceXLaunches
