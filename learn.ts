@@ -627,3 +627,14 @@ async function getRandomSpaceFact(): Promise<string> {
     return "Could not retrieve space fact at this time.";
   }
 }
+
+async function fetchRandomStarWarsCharacter(): Promise<string> {
+    const response = await fetch('https://swapi.dev/api/people/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch Star Wars characters.');
+    }
+    const data = await response.json();
+    const characters = data.results.map((character: { name: string }) => character.name);
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    return characters[randomIndex];
+}
