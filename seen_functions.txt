@@ -22,6 +22,7 @@ fetchRandomBeer
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
+fetchRandomJokeAndFact
 fetchRandomRecipe
 fetchRandomStarWarsCharacter
 fetchRandomTrivia
