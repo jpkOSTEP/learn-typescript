@@ -659,3 +659,18 @@ async function getRandomNasaImage(): Promise<string> {
     const data: { url: string } = await response.json();
     return data.url;
 }
+
+async function fetchRandomArtPiece(): Promise<{ title: string; artist: string; imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1&fields=id,title,artist_title,image_id');
+  const data = await response.json();
+  if (data.data && data.data.length > 0) {
+    const art = data.data[0];
+    return {
+      title: art.title,
+      artist: art.artist_title,
+      imageUrl: `https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`
+    };
+  } else {
+    throw new Error('No art pieces found');
+  }
+}
