@@ -18,6 +18,7 @@ fetchRandomAdvice
 fetchRandomAdviceSlip
 fetchRandomAdviceSnippets
 fetchRandomAdviceTip
+fetchRandomArtPiece
 fetchRandomBeer
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
