@@ -674,3 +674,17 @@ async function fetchRandomArtPiece(): Promise<{ title: string; artist: string; i
     throw new Error('No art pieces found');
   }
 }
+
+async function retrieveRandomScienceFact(): Promise<string> {
+    try {
+        const response = await fetch('https://random-science-facts-api.herokuapp.com/facts/random');
+        if (!response.ok) {
+            throw new Error('Failed to fetch a science fact');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error('Error fetching science fact:', error);
+        return 'Science fact could not be retrieved at this time.';
+    }
+}
