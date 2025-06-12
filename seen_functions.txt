@@ -51,6 +51,7 @@ noop
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomDogImage
+retrieveRandomHistoricalEvent
 retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
 retrieveRandomScienceFact
