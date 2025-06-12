@@ -688,3 +688,21 @@ async function retrieveRandomScienceFact(): Promise<string> {
         return 'Science fact could not be retrieved at this time.';
     }
 }
+
+async function retrieveRandomHistoricalEvent(): Promise<string> {
+    const response = await fetch('https://api.api-ninjas.com/v1/facts?limit=1', {
+        headers: {
+            'X-Api-Key': 'YOUR_API_KEY'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical event');
+    }
+    const data: { fact: string }[] = await response.json();
+    return data[0].fact;
+}
+
+// Example of usage
+retrieveRandomHistoricalEvent()
+    .then(event => console.log(event))
+    .catch(error => console.error(error));
