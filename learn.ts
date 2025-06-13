@@ -706,3 +706,25 @@ async function retrieveRandomHistoricalEvent(): Promise<string> {
 retrieveRandomHistoricalEvent()
     .then(event => console.log(event))
     .catch(error => console.error(error));
+
+class BookFinder {
+  private apiKey: string;
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+  }
+
+  async searchBookByTitle(title: string): Promise<any> {
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}&key=${this.apiKey}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch books');
+    }
+    const data = await response.json();
+    return data.items || [];
+  }
+}
+
+const bookFinder = new BookFinder('your-google-books-api-key');
+bookFinder.searchBookByTitle('TypeScript Basics')
+  .then(books => console.log(books))
+  .catch(error => console.error(error));
