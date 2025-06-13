@@ -1,4 +1,5 @@
 AdviceGiver
+BookFinder
 Calculator
 CryptoInfoFetcher
 Queue
