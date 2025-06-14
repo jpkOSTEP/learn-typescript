@@ -51,6 +51,7 @@ isPalindrome
 noop
 removeDuplicates
 retrieveJokeAndFact
+retrieveRandomCocktail
 retrieveRandomDogImage
 retrieveRandomHistoricalEvent
 retrieveRandomMealSuggestion
