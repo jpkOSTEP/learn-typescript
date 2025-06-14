@@ -728,3 +728,13 @@ const bookFinder = new BookFinder('your-google-books-api-key');
 bookFinder.searchBookByTitle('TypeScript Basics')
   .then(books => console.log(books))
   .catch(error => console.error(error));
+
+async function retrieveRandomCocktail(): Promise<string> {
+  const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random cocktail');
+  }
+  const data = await response.json();
+  const cocktail = data.drinks[0];
+  return `Cocktail Name: ${cocktail.strDrink}\nIngredients: ${cocktail.strIngredient1}, ${cocktail.strIngredient2}, ${cocktail.strIngredient3}\nInstructions: ${cocktail.strInstructions}`;
+}
