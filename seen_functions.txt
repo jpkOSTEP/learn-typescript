@@ -45,6 +45,7 @@ getRandomElement
 getRandomNasaImage
 getRandomQuote
 getRandomSpaceFact
+getRandomTriviaFact
 getUniqueElements
 getUniqueValues
 isPalindrome
