@@ -738,3 +738,12 @@ async function retrieveRandomCocktail(): Promise<string> {
   const cocktail = data.drinks[0];
   return `Cocktail Name: ${cocktail.strDrink}\nIngredients: ${cocktail.strIngredient1}, ${cocktail.strIngredient2}, ${cocktail.strIngredient3}\nInstructions: ${cocktail.strInstructions}`;
 }
+
+async function getRandomTriviaFact(): Promise<string> {
+  const response = await fetch('https://opentdb.com/api.php?amount=1&type=boolean');
+  const data = await response.json();
+  if (data.results && data.results.length > 0) {
+    return data.results[0].question;
+  }
+  throw new Error('Failed to fetch trivia fact');
+}
