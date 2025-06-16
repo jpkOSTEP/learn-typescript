@@ -747,3 +747,17 @@ async function getRandomTriviaFact(): Promise<string> {
   }
   throw new Error('Failed to fetch trivia fact');
 }
+
+async function fetchRandomQuoteFromAPI(): Promise<string> {
+  try {
+    const response = await fetch('https://api.quotable.io/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch quote');
+    }
+    const data: { content: string } = await response.json();
+    return data.content;
+  } catch (error) {
+    console.error('Error fetching quote:', error);
+    throw error;
+  }
+}
