@@ -25,6 +25,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomJokeAndFact
+fetchRandomQuoteFromAPI
 fetchRandomRecipe
 fetchRandomStarWarsCharacter
 fetchRandomTrivia
