@@ -30,6 +30,7 @@ fetchRandomRecipe
 fetchRandomStarWarsCharacter
 fetchRandomTrivia
 fetchRandomUser
+fetchRandomWord
 fetchSpaceXLaunches
 filterArrayByType
 filterByProperty
