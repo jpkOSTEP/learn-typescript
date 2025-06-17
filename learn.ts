@@ -761,3 +761,12 @@ async function fetchRandomQuoteFromAPI(): Promise<string> {
     throw error;
   }
 }
+
+async function fetchRandomWord(): Promise<string> {
+  const response = await fetch('https://random-word-api.herokuapp.com/word');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random word');
+  }
+  const data: string[] = await response.json();
+  return data[0];
+}
