@@ -770,3 +770,16 @@ async function fetchRandomWord(): Promise<string> {
   const data: string[] = await response.json();
   return data[0];
 }
+
+async function fetchRandomMusicAlbum(): Promise<{ artist: string, album: string, year: number }> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/albums');
+    const albums = await response.json();
+    const randomIndex = Math.floor(Math.random() * albums.length);
+    const randomAlbum = albums[randomIndex];
+
+    return {
+        artist: randomAlbum.userId.toString(),
+        album: randomAlbum.title,
+        year: new Date().getFullYear() // Placeholder year since the API doesn't provide release years
+    };
+}
