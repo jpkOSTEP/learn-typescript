@@ -20,6 +20,7 @@ fetchRandomAdviceSlip
 fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomArtPiece
+fetchRandomAstroFact
 fetchRandomBeer
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
