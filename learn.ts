@@ -783,3 +783,18 @@ async function fetchRandomMusicAlbum(): Promise<{ artist: string, album: string,
         year: new Date().getFullYear() // Placeholder year since the API doesn't provide release years
     };
 }
+
+async function fetchRandomAstroFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.bodies.length);
+    const randomBody = data.bodies[randomIndex];
+    return `Did you know? ${randomBody.englishName} has a gravity of ${randomBody.gravity} m/s².`;
+  } catch (error) {
+    throw new Error(`Failed to fetch astro fact: ${error.message}`);
+  }
+}
