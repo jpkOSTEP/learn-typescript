@@ -798,3 +798,12 @@ async function fetchRandomAstroFact(): Promise<string> {
     throw new Error(`Failed to fetch astro fact: ${error.message}`);
   }
 }
+
+async function retrieveRandomBookQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random?tags=books');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a book quote');
+  }
+  const data: { content: string; author: string } = await response.json();
+  return `${data.content} — ${data.author}`;
+}
