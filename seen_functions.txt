@@ -46,6 +46,7 @@ getLatestNewsHeadlines
 getRandomAstronomyPicture
 getRandomDadJoke
 getRandomElement
+getRandomFamousQuote
 getRandomNasaImage
 getRandomQuote
 getRandomSpaceFact
