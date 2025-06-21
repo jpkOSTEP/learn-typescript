@@ -807,3 +807,12 @@ async function retrieveRandomBookQuote(): Promise<string> {
   const data: { content: string; author: string } = await response.json();
   return `${data.content} — ${data.author}`;
 }
+
+async function getRandomFamousQuote(): Promise<string> {
+    const response = await fetch('https://api.quotable.io/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a quote');
+    }
+    const data = await response.json();
+    return `${data.content} — ${data.author}`;
+}
