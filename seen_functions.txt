@@ -48,6 +48,7 @@ getRandomDadJoke
 getRandomElement
 getRandomFamousQuote
 getRandomNasaImage
+getRandomPlantFact
 getRandomQuote
 getRandomSpaceFact
 getRandomTriviaFact
