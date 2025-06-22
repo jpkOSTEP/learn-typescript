@@ -816,3 +816,12 @@ async function getRandomFamousQuote(): Promise<string> {
     const data = await response.json();
     return `${data.content} — ${data.author}`;
 }
+
+async function getRandomPlantFact(): Promise<string> {
+    const response = await fetch('https://plant-facts-api.herokuapp.com/api/v1/plants/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch plant fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
