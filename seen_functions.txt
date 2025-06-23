@@ -26,6 +26,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomJokeAndFact
+fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
