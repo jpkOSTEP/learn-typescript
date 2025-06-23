@@ -825,3 +825,17 @@ async function getRandomPlantFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomMovieTitle(): Promise<string> {
+  const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=YOUR_API_KEY');
+  if (!response.ok) {
+    throw new Error('Failed to fetch movie data');
+  }
+  const data = await response.json();
+  const movies = data.results;
+  if (movies.length === 0) {
+    throw new Error('No movies found');
+  }
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  return movies[randomIndex].title;
+}
