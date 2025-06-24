@@ -839,3 +839,18 @@ async function fetchRandomMovieTitle(): Promise<string> {
   const randomIndex = Math.floor(Math.random() * movies.length);
   return movies[randomIndex].title;
 }
+
+async function fetchRandomArtGallery(): Promise<{ title: string; artist: string; year: string; imageUrl: string }> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1');
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+        const artwork = data.data[0];
+        return {
+            title: artwork.title,
+            artist: artwork.artist_display,
+            year: artwork.date_display,
+            imageUrl: artwork.image_url
+        };
+    }
+    throw new Error('No artwork found');
+}
