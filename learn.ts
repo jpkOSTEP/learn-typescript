@@ -854,3 +854,12 @@ async function fetchRandomArtGallery(): Promise<{ title: string; artist: string;
     }
     throw new Error('No artwork found');
 }
+
+async function fetchRandomNatureImage(): Promise<string> {
+    const response = await fetch('https://api.unsplash.com/photos/random?query=nature&client_id=YOUR_ACCESS_KEY');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random nature image');
+    }
+    const data = await response.json();
+    return data.urls.regular;
+}
