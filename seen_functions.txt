@@ -29,6 +29,7 @@ fetchRandomDogFact
 fetchRandomJokeAndFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
+fetchRandomNatureImage
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
 fetchRandomStarWarsCharacter
