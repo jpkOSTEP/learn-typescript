@@ -50,6 +50,7 @@ getRandomAstronomyPicture
 getRandomDadJoke
 getRandomElement
 getRandomFamousQuote
+getRandomInspirationImage
 getRandomNasaImage
 getRandomPlantFact
 getRandomQuote
