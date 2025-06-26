@@ -863,3 +863,11 @@ async function fetchRandomNatureImage(): Promise<string> {
     const data = await response.json();
     return data.urls.regular;
 }
+
+async function getRandomInspirationImage(): Promise<string> {
+  const response = await fetch('https://inspirobot.me/api?generate=true');
+  if (!response.ok) {
+    throw new Error('Failed to fetch an inspirational image');
+  }
+  return await response.text();
+}
