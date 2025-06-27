@@ -30,6 +30,7 @@ fetchRandomJokeAndFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomNatureImage
+fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
 fetchRandomStarWarsCharacter
