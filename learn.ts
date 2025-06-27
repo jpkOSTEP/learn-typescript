@@ -871,3 +871,12 @@ async function getRandomInspirationImage(): Promise<string> {
   }
   return await response.text();
 }
+
+async function fetchRandomPuzzle(): Promise<string> {
+  const response = await fetch('https://api.puzzle.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random puzzle');
+  }
+  const data = await response.json();
+  return data.puzzle;
+}
