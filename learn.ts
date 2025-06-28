@@ -880,3 +880,27 @@ async function fetchRandomPuzzle(): Promise<string> {
   const data = await response.json();
   return data.puzzle;
 }
+
+import fetch from 'node-fetch';
+
+async function fetchRandomArtMovement(): Promise<string> {
+  try {
+    const response = await fetch('https://www.artic.edu/api/v1/artworks?limit=1&fields=art_movement_title');
+    if (!response.ok) {
+      throw new Error('Failed to fetch art movement');
+    }
+    const data = await response.json();
+    const artMovement = data.data[0]?.art_movement_title;
+    if (artMovement) {
+      return artMovement;
+    } else {
+      throw new Error('No art movement found');
+    }
+  } catch (error) {
+    console.error('Error fetching art movement:', error);
+    throw error;
+  }
+}
+
+// Usage
+fetchRandomArtMovement().then(console.log).catch(console.error);
