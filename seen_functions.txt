@@ -70,5 +70,6 @@ retrieveRandomDogImage
 retrieveRandomHistoricalEvent
 retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
+retrieveRandomQuoteFromTVShow
 retrieveRandomScienceFact
 sumArray
