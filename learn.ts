@@ -904,3 +904,12 @@ async function fetchRandomArtMovement(): Promise<string> {
 
 // Usage
 fetchRandomArtMovement().then(console.log).catch(console.error);
+
+async function retrieveRandomQuoteFromTVShow(): Promise<string> {
+    const response = await fetch('https://api.tvmaze.com/quotes/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random TV show quote');
+    }
+    const data: { quote: string } = await response.json();
+    return data.quote;
+}
