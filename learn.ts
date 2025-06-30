@@ -913,3 +913,18 @@ async function retrieveRandomQuoteFromTVShow(): Promise<string> {
     const data: { quote: string } = await response.json();
     return data.quote;
 }
+
+async function fetchRandomFilmTrivia(): Promise<string> {
+  const response = await fetch('https://api.themoviedb.org/3/movie/random?api_key=YOUR_API_KEY');
+  if (!response.ok) {
+    throw new Error('Failed to fetch film trivia');
+  }
+  const data = await response.json();
+  const trivia = data.overview;
+  return trivia || 'No trivia available for this film.';
+}
+
+// Example usage
+fetchRandomFilmTrivia()
+  .then(trivia => console.log(trivia))
+  .catch(error => console.error(error));
