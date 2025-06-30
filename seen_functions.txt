@@ -27,6 +27,7 @@ fetchRandomBeer
 fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
+fetchRandomFilmTrivia
 fetchRandomJokeAndFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
