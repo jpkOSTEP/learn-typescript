@@ -928,3 +928,16 @@ async function fetchRandomFilmTrivia(): Promise<string> {
 fetchRandomFilmTrivia()
   .then(trivia => console.log(trivia))
   .catch(error => console.error(error));
+
+async function fetchRandomArtMuseum(): Promise<string> {
+  const response = await fetch('https://api.artic.edu/api/v1/museums');
+  if (!response.ok) {
+    throw new Error('Failed to fetch art museum data');
+  }
+  const data = await response.json();
+  if (data.data.length === 0) {
+    throw new Error('No museums found');
+  }
+  const randomIndex = Math.floor(Math.random() * data.data.length);
+  return data.data[randomIndex].name;
+}
