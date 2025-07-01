@@ -21,6 +21,7 @@ fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomArtGallery
 fetchRandomArtMovement
+fetchRandomArtMuseum
 fetchRandomArtPiece
 fetchRandomAstroFact
 fetchRandomBeer
