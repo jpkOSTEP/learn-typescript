@@ -941,3 +941,20 @@ async function fetchRandomArtMuseum(): Promise<string> {
   const randomIndex = Math.floor(Math.random() * data.data.length);
   return data.data[randomIndex].name;
 }
+
+async function fetchMarsRoverPhotos(roverName: string, sol: number): Promise<string[]> {
+    const apiKey = 'DEMO_KEY'; // Replace with your NASA API key
+    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&api_key=${apiKey}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Failed to fetch data from the NASA API');
+        }
+        const data = await response.json();
+        return data.photos.map((photo: { img_src: string }) => photo.img_src);
+    } catch (error) {
+        console.error('Error fetching Mars Rover photos:', error);
+        return [];
+    }
+}
