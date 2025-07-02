@@ -14,6 +14,7 @@ fetchCatFacts
 fetchCryptoPrice
 fetchData
 fetchInspirationalQuote
+fetchMarsRoverPhotos
 fetchRandomActivity
 fetchRandomAdvice
 fetchRandomAdviceSlip
