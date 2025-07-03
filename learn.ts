@@ -958,3 +958,10 @@ async function fetchMarsRoverPhotos(roverName: string, sol: number): Promise<str
         return [];
     }
 }
+
+async function fetchRandomArtQuote(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit=1');
+    const data = await response.json();
+    const artwork = data.data[0];
+    return artwork ? artwork.thumbnail.alt_text : 'No quote available at this time.';
+}
