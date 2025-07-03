@@ -24,6 +24,7 @@ fetchRandomArtGallery
 fetchRandomArtMovement
 fetchRandomArtMuseum
 fetchRandomArtPiece
+fetchRandomArtQuote
 fetchRandomAstroFact
 fetchRandomBeer
 fetchRandomChuckNorrisJoke
