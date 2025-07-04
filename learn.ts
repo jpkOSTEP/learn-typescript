@@ -965,3 +965,17 @@ async function fetchRandomArtQuote(): Promise<string> {
     const artwork = data.data[0];
     return artwork ? artwork.thumbnail.alt_text : 'No quote available at this time.';
 }
+
+async function fetchRandomAnimalFact(): Promise<string> {
+    try {
+        const response = await fetch('https://some-random-api.ml/facts/animal');
+        if (!response.ok) {
+            throw new Error('Failed to fetch animal fact');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error(error);
+        return 'An error occurred while fetching an animal fact.';
+    }
+}
