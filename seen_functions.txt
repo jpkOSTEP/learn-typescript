@@ -36,6 +36,7 @@ fetchRandomJokeAndFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomNatureImage
+fetchRandomPokemonDetails
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
