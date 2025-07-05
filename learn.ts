@@ -979,3 +979,15 @@ async function fetchRandomAnimalFact(): Promise<string> {
         return 'An error occurred while fetching an animal fact.';
     }
 }
+
+async function fetchRandomPokemonDetails(): Promise<{ name: string; abilities: string[]; }> {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 100) + 1);
+    if (!response.ok) {
+        throw new Error('Failed to fetch Pokémon details');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        abilities: data.abilities.map((ability: { ability: { name: string; }; }) => ability.ability.name)
+    };
+}
