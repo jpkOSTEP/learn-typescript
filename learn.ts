@@ -991,3 +991,16 @@ async function fetchRandomPokemonDetails(): Promise<{ name: string; abilities: s
         abilities: data.abilities.map((ability: { ability: { name: string; }; }) => ability.ability.name)
     };
 }
+
+async function fetchRandomArtGalleryInfo(): Promise<{ title: string; location: string; established: number }> {
+    const response = await fetch('https://api.example.com/randomArtGallery');
+    if (!response.ok) {
+        throw new Error('Failed to fetch art gallery information');
+    }
+    const data = await response.json();
+    return {
+        title: data.title,
+        location: data.location,
+        established: data.established,
+    };
+}
