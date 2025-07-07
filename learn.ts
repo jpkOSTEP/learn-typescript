@@ -1004,3 +1004,12 @@ async function fetchRandomArtGalleryInfo(): Promise<{ title: string; location: s
         established: data.established,
     };
 }
+
+async function fetchRandomSpaceImage(): Promise<string> {
+  const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+  if (!response.ok) {
+    throw new Error('Failed to fetch space image');
+  }
+  const data = await response.json();
+  return data.url;
+}
