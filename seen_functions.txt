@@ -41,6 +41,7 @@ fetchRandomPokemonDetails
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
+fetchRandomSpaceImage
 fetchRandomStarWarsCharacter
 fetchRandomTrivia
 fetchRandomUser
