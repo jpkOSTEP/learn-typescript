@@ -1013,3 +1013,22 @@ async function fetchRandomSpaceImage(): Promise<string> {
   const data = await response.json();
   return data.url;
 }
+
+import fetch from 'node-fetch';
+
+async function getRandomComic(): Promise<{ title: string; img: string; alt: string }> {
+    const response = await fetch('https://xkcd.com/info.0.json');
+    if (!response.ok) {
+        throw new Error('Failed to fetch comic');
+    }
+    const data: { title: string; img: string; alt: string } = await response.json();
+    return data;
+}
+
+getRandomComic().then(comic => {
+    console.log(`Title: ${comic.title}`);
+    console.log(`Image URL: ${comic.img}`);
+    console.log(`Alt Text: ${comic.alt}`);
+}).catch(error => {
+    console.error(error);
+});
