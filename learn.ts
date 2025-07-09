@@ -1032,3 +1032,19 @@ getRandomComic().then(comic => {
 }).catch(error => {
     console.error(error);
 });
+
+async function fetchRandomMythicalCreature(): Promise<string> {
+    try {
+        const response = await fetch('https://randomuser.me/api/');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const creatures = ["Dragon", "Unicorn", "Phoenix", "Griffin", "Mermaid", "Minotaur", "Cyclops", "Pegasus"];
+        const randomIndex = Math.floor(Math.random() * creatures.length);
+        return `Random Mythical Creature: ${creatures[randomIndex]}`;
+    } catch (error) {
+        console.error('Error fetching mythical creature:', error);
+        throw error;
+    }
+}
