@@ -1048,3 +1048,18 @@ async function fetchRandomMythicalCreature(): Promise<string> {
         throw error;
     }
 }
+
+async function getRandomArtMovementInfo(): Promise<{ name: string; description: string; }> {
+    const response = await fetch('https://api.artic.edu/api/v1/art-movements?limit=1&fields=id,title,description');
+    const data = await response.json();
+    if (data.data.length > 0) {
+        const movement = data.data[0];
+        return {
+            name: movement.title,
+            description: movement.description || 'No description available.'
+        };
+    }
+    throw new Error('No art movement data available.');
+}
+
+getRandomArtMovementInfo().then(info => console.log(info)).catch(error => console.error(error));
