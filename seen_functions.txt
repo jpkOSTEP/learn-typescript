@@ -57,6 +57,7 @@ getAverage
 getCountryInfo
 getExchangeRate
 getLatestNewsHeadlines
+getRandomArtMovementInfo
 getRandomAstronomyPicture
 getRandomComic
 getRandomDadJoke
