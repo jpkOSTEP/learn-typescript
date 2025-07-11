@@ -1063,3 +1063,17 @@ async function getRandomArtMovementInfo(): Promise<{ name: string; description: 
 }
 
 getRandomArtMovementInfo().then(info => console.log(info)).catch(error => console.error(error));
+
+async function fetchRandomLiteraryQuote(): Promise<string> {
+  try {
+    const response = await fetch('https://api.quotable.io/random?tags=literature');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return `${data.content} — ${data.author}`;
+  } catch (error) {
+    console.error('Error fetching random literary quote:', error);
+    return 'An error occurred while fetching a quote.';
+  }
+}
