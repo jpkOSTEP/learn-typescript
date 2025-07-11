@@ -34,6 +34,7 @@ fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomFilmTrivia
 fetchRandomJokeAndFact
+fetchRandomLiteraryQuote
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomMythicalCreature
