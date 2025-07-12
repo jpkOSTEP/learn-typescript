@@ -33,6 +33,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomFilmTrivia
+fetchRandomFuturisticGadget
 fetchRandomJokeAndFact
 fetchRandomLiteraryQuote
 fetchRandomMovieTitle
