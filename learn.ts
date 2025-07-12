@@ -1077,3 +1077,12 @@ async function fetchRandomLiteraryQuote(): Promise<string> {
     return 'An error occurred while fetching a quote.';
   }
 }
+
+async function fetchRandomFuturisticGadget(): Promise<string> {
+  const response = await fetch('https://futuristic-gadgets-api.example.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch futuristic gadget');
+  }
+  const gadgetData = await response.json();
+  return gadgetData.name;
+}
