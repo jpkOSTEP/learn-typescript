@@ -1086,3 +1086,15 @@ async function fetchRandomFuturisticGadget(): Promise<string> {
   const gadgetData = await response.json();
   return gadgetData.name;
 }
+
+import fetch from 'node-fetch';
+
+async function fetchRandomHistoricalFigure(): Promise<string> {
+    const response = await fetch('https://randomuser.me/api/');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    const name = `${data.results[0].name.first} ${data.results[0].name.last}`;
+    return name;
+}
