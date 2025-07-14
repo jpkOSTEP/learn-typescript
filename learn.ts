@@ -1098,3 +1098,10 @@ async function fetchRandomHistoricalFigure(): Promise<string> {
     const name = `${data.results[0].name.first} ${data.results[0].name.last}`;
     return name;
 }
+
+async function fetchRandomCountryFact(): Promise<string> {
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    const countries = await response.json();
+    const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+    return `Did you know? The country ${randomCountry.name.common} has a population of approximately ${randomCountry.population.toLocaleString()} people and its capital is ${randomCountry.capital ? randomCountry.capital[0] : 'unknown'}.`;
+}
