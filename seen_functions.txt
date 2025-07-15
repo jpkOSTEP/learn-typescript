@@ -48,6 +48,7 @@ fetchRandomQuoteFromAPI
 fetchRandomRecipe
 fetchRandomSpaceImage
 fetchRandomStarWarsCharacter
+fetchRandomSuperhero
 fetchRandomTrivia
 fetchRandomUser
 fetchRandomWord
