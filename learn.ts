@@ -1105,3 +1105,13 @@ async function fetchRandomCountryFact(): Promise<string> {
     const randomCountry = countries[Math.floor(Math.random() * countries.length)];
     return `Did you know? The country ${randomCountry.name.common} has a population of approximately ${randomCountry.population.toLocaleString()} people and its capital is ${randomCountry.capital ? randomCountry.capital[0] : 'unknown'}.`;
 }
+
+async function fetchRandomSuperhero(): Promise<{ name: string; power: string; universe: string }> {
+    const response = await fetch('https://superheroapi.com/api/1234567890/random');
+    const data = await response.json();
+    return {
+        name: data.name,
+        power: data.powerstats.power,
+        universe: data.biography.publisher
+    };
+}
