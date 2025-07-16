@@ -30,6 +30,7 @@ fetchRandomArtQuote
 fetchRandomAstroFact
 fetchRandomBeer
 fetchRandomChuckNorrisJoke
+fetchRandomCocktailDetails
 fetchRandomCountryFact
 fetchRandomDadJoke
 fetchRandomDogFact
