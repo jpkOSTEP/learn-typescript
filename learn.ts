@@ -1115,3 +1115,25 @@ async function fetchRandomSuperhero(): Promise<{ name: string; power: string; un
         universe: data.biography.publisher
     };
 }
+
+async function fetchRandomCocktailDetails(): Promise<{ name: string; instructions: string; ingredients: string[] } | null> {
+  try {
+    const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+    if (!response.ok) {
+      throw new Error('Failed to fetch cocktail details');
+    }
+    const data = await response.json();
+    if (!data.drinks || data.drinks.length === 0) {
+      return null;
+    }
+
+    const drink = data.drinks[0];
+    const ingredients: string[] = [];
+
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = drink[`strIngredient${i}` as keyof typeof drink];
+      const measure = drink[`strMeasure${i}` as keyof typeof drink];
+      if (ingredient) {
+        ingredients.push(`${measure ? measure : ''} ${ingredient}`.trim());
+      }
+    }
