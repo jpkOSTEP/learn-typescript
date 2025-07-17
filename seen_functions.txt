@@ -29,6 +29,7 @@ fetchRandomArtPiece
 fetchRandomArtQuote
 fetchRandomAstroFact
 fetchRandomBeer
+fetchRandomBirdFact
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
