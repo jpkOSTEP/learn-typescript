@@ -1137,3 +1137,15 @@ async function fetchRandomCocktailDetails(): Promise<{ name: string; instruction
         ingredients.push(`${measure ? measure : ''} ${ingredient}`.trim());
       }
     }
+
+async function fetchRandomBirdFact(): Promise<string> {
+    const response = await fetch('https://some-random-api.ml/facts/bird');
+    if (!response.ok) {
+        throw new Error('Failed to fetch bird fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
+
+// Usage example
+fetchRandomBirdFact().then(fact => console.log(fact)).catch(error => console.error(error));
