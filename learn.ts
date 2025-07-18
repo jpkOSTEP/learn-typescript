@@ -1149,3 +1149,11 @@ async function fetchRandomBirdFact(): Promise<string> {
 
 // Usage example
 fetchRandomBirdFact().then(fact => console.log(fact)).catch(error => console.error(error));
+
+async function fetchRandomPlanetInfo(): Promise<{ name: string; climate: string; terrain: string }> {
+  const response = await fetch('https://swapi.dev/api/planets/');
+  const data = await response.json();
+  const randomIndex = Math.floor(Math.random() * data.results.length);
+  const planet = data.results[randomIndex];
+  return { name: planet.name, climate: planet.climate, terrain: planet.terrain };
+}
