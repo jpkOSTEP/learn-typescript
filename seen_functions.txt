@@ -44,6 +44,7 @@ fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomMythicalCreature
 fetchRandomNatureImage
+fetchRandomPlanetInfo
 fetchRandomPokemonDetails
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
