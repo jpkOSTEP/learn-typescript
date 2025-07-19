@@ -1157,3 +1157,13 @@ async function fetchRandomPlanetInfo(): Promise<{ name: string; climate: string;
   const planet = data.results[randomIndex];
   return { name: planet.name, climate: planet.climate, terrain: planet.terrain };
 }
+
+async function fetchRandomArtGalleryExhibit(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1&fields=id,title');
+    if (!response.ok) {
+        throw new Error('Failed to fetch art gallery exhibit');
+    }
+    const data = await response.json();
+    const exhibit = data.data[0];
+    return `Exhibit Title: ${exhibit.title}`;
+}
