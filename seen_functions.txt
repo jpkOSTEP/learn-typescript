@@ -50,6 +50,7 @@ fetchRandomPokemonDetails
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomRecipe
+fetchRandomScienceArticle
 fetchRandomSpaceImage
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
