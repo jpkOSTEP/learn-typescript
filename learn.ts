@@ -1167,3 +1167,16 @@ async function fetchRandomArtGalleryExhibit(): Promise<string> {
     const exhibit = data.data[0];
     return `Exhibit Title: ${exhibit.title}`;
 }
+
+async function fetchRandomScienceArticle(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/random-science-article');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { title: string, url: string } = await response.json();
+    return `Title: ${data.title}, URL: ${data.url}`;
+  } catch (error) {
+    return `Error fetching article: ${error.message}`;
+  }
+}
