@@ -1180,3 +1180,12 @@ async function fetchRandomScienceArticle(): Promise<string> {
     return `Error fetching article: ${error.message}`;
   }
 }
+
+async function fetchRandomAnimalImage(): Promise<string> {
+  const response = await fetch('https://some-random-api.ml/img/dog');
+  if (!response.ok) {
+    throw new Error('Failed to fetch animal image');
+  }
+  const data: { link: string } = await response.json();
+  return data.link;
+}
