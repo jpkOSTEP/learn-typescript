@@ -21,6 +21,7 @@ fetchRandomAdviceSlip
 fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomAnimalFact
+fetchRandomAnimalImage
 fetchRandomArtGallery
 fetchRandomArtGalleryExhibit
 fetchRandomArtGalleryInfo
