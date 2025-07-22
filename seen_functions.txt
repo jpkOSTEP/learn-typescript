@@ -41,6 +41,7 @@ fetchRandomFilmTrivia
 fetchRandomFuturisticGadget
 fetchRandomHistoricalFigure
 fetchRandomJokeAndFact
+fetchRandomLandmarkInfo
 fetchRandomLiteraryQuote
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
