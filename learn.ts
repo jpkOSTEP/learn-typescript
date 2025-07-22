@@ -1189,3 +1189,15 @@ async function fetchRandomAnimalImage(): Promise<string> {
   const data: { link: string } = await response.json();
   return data.link;
 }
+
+import axios from 'axios';
+
+async function fetchRandomLandmarkInfo(): Promise<string> {
+  const response = await axios.get('https://api.example.com/random-landmark');
+  if (response.data && response.data.name && response.data.location) {
+    return `Landmark: ${response.data.name}, Location: ${response.data.location}`;
+  }
+  throw new Error('Failed to fetch landmark information');
+}
+
+fetchRandomLandmarkInfo().then(console.log).catch(console.error);
