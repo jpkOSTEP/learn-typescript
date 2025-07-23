@@ -1201,3 +1201,17 @@ async function fetchRandomLandmarkInfo(): Promise<string> {
 }
 
 fetchRandomLandmarkInfo().then(console.log).catch(console.error);
+
+async function fetchRandomInsectFact(): Promise<string> {
+  try {
+    const response = await fetch('https://random-insect-facts-api.com/fact');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching insect fact:', error);
+    return 'Could not fetch an insect fact at this time.';
+  }
+}
