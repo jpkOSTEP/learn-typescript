@@ -32,6 +32,7 @@ fetchRandomArtQuote
 fetchRandomAstroFact
 fetchRandomBeer
 fetchRandomBirdFact
+fetchRandomBotanicalGarden
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
