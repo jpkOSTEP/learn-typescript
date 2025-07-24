@@ -1215,3 +1215,17 @@ async function fetchRandomInsectFact(): Promise<string> {
     return 'Could not fetch an insect fact at this time.';
   }
 }
+
+async function fetchRandomBotanicalGarden(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/random-botanical-garden');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data: { name: string; location: string; description: string } = await response.json();
+        return `Visit the ${data.name} located in ${data.location}. Here's a brief description: ${data.description}`;
+    } catch (error) {
+        console.error('Failed to fetch botanical garden:', error);
+        return 'Failed to retrieve information about a random botanical garden.';
+    }
+}
