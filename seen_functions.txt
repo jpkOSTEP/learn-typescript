@@ -59,6 +59,7 @@ fetchRandomSpaceImage
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
 fetchRandomTrivia
+fetchRandomUnderwaterCreatureFact
 fetchRandomUser
 fetchRandomWord
 fetchSpaceXLaunches
