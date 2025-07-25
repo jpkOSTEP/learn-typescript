@@ -1229,3 +1229,12 @@ async function fetchRandomBotanicalGarden(): Promise<string> {
         return 'Failed to retrieve information about a random botanical garden.';
     }
 }
+
+async function fetchRandomUnderwaterCreatureFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/randomUnderwaterCreatureFact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch underwater creature fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
