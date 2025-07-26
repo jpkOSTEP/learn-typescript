@@ -1238,3 +1238,13 @@ async function fetchRandomUnderwaterCreatureFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomParkInfo(): Promise<string> {
+    const response = await fetch('https://developer.nps.gov/api/v1/parks?limit=1&api_key=YOUR_API_KEY');
+    if (!response.ok) {
+        throw new Error('Failed to fetch park information');
+    }
+    const data = await response.json();
+    const park = data.data[0];
+    return `Park Name: ${park.fullName}\nDescription: ${park.description}\nLocation: ${park.states}`;
+}
