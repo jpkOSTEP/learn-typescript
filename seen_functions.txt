@@ -49,6 +49,7 @@ fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomMythicalCreature
 fetchRandomNatureImage
+fetchRandomParkInfo
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
 fetchRandomPuzzle
