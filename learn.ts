@@ -1248,3 +1248,24 @@ async function fetchRandomParkInfo(): Promise<string> {
     const park = data.data[0];
     return `Park Name: ${park.fullName}\nDescription: ${park.description}\nLocation: ${park.states}`;
 }
+
+async function fetchRandomArtisticMedium(): Promise<string> {
+    try {
+        const response = await fetch('https://api.artic.edu/api/v1/artworks?fields=artwork_type_title');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const artworks = data.data;
+        const uniqueMediums = new Set<string>();
+        artworks.forEach((artwork: { artwork_type_title: string }) => {
+            uniqueMediums.add(artwork.artwork_type_title);
+        });
+        const mediumsArray = Array.from(uniqueMediums);
+        const randomIndex = Math.floor(Math.random() * mediumsArray.length);
+        return mediumsArray[randomIndex];
+    } catch (error) {
+        console.error(error);
+        return 'Unknown Medium';
+    }
+}
