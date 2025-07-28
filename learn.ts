@@ -1269,3 +1269,18 @@ async function fetchRandomArtisticMedium(): Promise<string> {
         return 'Unknown Medium';
     }
 }
+
+function fetchRandomMathFact(): Promise<string> {
+  return fetch('http://numbersapi.com/random/math')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(data => data)
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      return 'Error fetching math fact.';
+    });
+}
