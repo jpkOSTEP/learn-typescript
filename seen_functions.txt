@@ -29,6 +29,7 @@ fetchRandomArtMovement
 fetchRandomArtMuseum
 fetchRandomArtPiece
 fetchRandomArtQuote
+fetchRandomArtTool
 fetchRandomArtisticMedium
 fetchRandomAstroFact
 fetchRandomBeer
