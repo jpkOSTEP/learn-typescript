@@ -1284,3 +1284,17 @@ function fetchRandomMathFact(): Promise<string> {
       return 'Error fetching math fact.';
     });
 }
+
+async function fetchRandomArtTool(): Promise<string> {
+  const response = await fetch('https://www.artic.edu/api/v1/tools');
+  if (!response.ok) {
+    throw new Error('Failed to fetch art tool data');
+  }
+  const data = await response.json();
+  const tools = data.data;
+  if (!tools || tools.length === 0) {
+    throw new Error('No art tools found');
+  }
+  const randomTool = tools[Math.floor(Math.random() * tools.length)];
+  return randomTool.title;
+}
