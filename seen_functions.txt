@@ -57,6 +57,7 @@ fetchRandomPlanetInfo
 fetchRandomPokemonDetails
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
+fetchRandomQuoteOfTheDay
 fetchRandomRecipe
 fetchRandomScienceArticle
 fetchRandomSpaceImage
