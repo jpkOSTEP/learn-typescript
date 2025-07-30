@@ -1298,3 +1298,17 @@ async function fetchRandomArtTool(): Promise<string> {
   const randomTool = tools[Math.floor(Math.random() * tools.length)];
   return randomTool.title;
 }
+
+async function fetchRandomQuoteOfTheDay(): Promise<string> {
+  try {
+    const response = await fetch('https://quotes.rest/qod');
+    if (!response.ok) {
+      throw new Error('Failed to fetch quote');
+    }
+    const data: { contents: { quotes: { quote: string }[] } } = await response.json();
+    return data.contents.quotes[0].quote;
+  } catch (error) {
+    console.error('Error fetching the quote of the day:', error);
+    return 'An error occurred while fetching the quote.';
+  }
+}
