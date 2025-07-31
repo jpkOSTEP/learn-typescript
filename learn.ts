@@ -1312,3 +1312,13 @@ async function fetchRandomQuoteOfTheDay(): Promise<string> {
     return 'An error occurred while fetching the quote.';
   }
 }
+
+async function fetchRandomArtGalleryCollection(): Promise<string[]> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks');
+  if (!response.ok) {
+    throw new Error('Failed to fetch art gallery collection');
+  }
+  
+  const data = await response.json();
+  return data.data.map((artwork: { title: string }) => artwork.title);
+}
