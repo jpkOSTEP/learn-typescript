@@ -23,6 +23,7 @@ fetchRandomAdviceTip
 fetchRandomAnimalFact
 fetchRandomAnimalImage
 fetchRandomArtGallery
+fetchRandomArtGalleryCollection
 fetchRandomArtGalleryExhibit
 fetchRandomArtGalleryInfo
 fetchRandomArtMovement
