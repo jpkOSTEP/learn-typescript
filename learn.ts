@@ -1322,3 +1322,21 @@ async function fetchRandomArtGalleryCollection(): Promise<string[]> {
   const data = await response.json();
   return data.data.map((artwork: { title: string }) => artwork.title);
 }
+
+async function fetchRandomAstronautFact(): Promise<string> {
+    try {
+        const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const astronauts = data.bodies.filter((body: any) => body.isPlanet === false && body.englishName.includes('Astronaut'));
+        if (astronauts.length === 0) {
+            return 'No astronaut facts available.';
+        }
+        const randomIndex = Math.floor(Math.random() * astronauts.length);
+        return `Did you know? ${astronauts[randomIndex].englishName}: ${astronauts[randomIndex].moons ? `has ${astronauts[randomIndex].moons.length} moons.` : 'has no moons.'}`;
+    } catch (error) {
+        return `Error: ${error.message}`;
+    }
+}
