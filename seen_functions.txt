@@ -33,6 +33,7 @@ fetchRandomArtQuote
 fetchRandomArtTool
 fetchRandomArtisticMedium
 fetchRandomAstroFact
+fetchRandomAstronautFact
 fetchRandomBeer
 fetchRandomBirdFact
 fetchRandomBotanicalGarden
