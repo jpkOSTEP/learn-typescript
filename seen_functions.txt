@@ -95,6 +95,7 @@ getUniqueElements
 getUniqueValues
 isPalindrome
 noop
+obtainRandomHaiku
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomBookQuote
