@@ -1340,3 +1340,12 @@ async function fetchRandomAstronautFact(): Promise<string> {
         return `Error: ${error.message}`;
     }
 }
+
+async function obtainRandomHaiku(): Promise<string> {
+    const response = await fetch('https://api.goprogram.ai/inspiration');
+    if (!response.ok) {
+        throw new Error('Failed to fetch haiku');
+    }
+    const data = await response.json();
+    return data.quote;
+}
