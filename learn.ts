@@ -1349,3 +1349,16 @@ async function obtainRandomHaiku(): Promise<string> {
     const data = await response.json();
     return data.quote;
 }
+
+async function obtainAstronomyPictureOfTheDay(): Promise<{ title: string; explanation: string; url: string }> {
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+    if (!response.ok) {
+        throw new Error('Failed to fetch the Astronomy Picture of the Day');
+    }
+    const data = await response.json();
+    return {
+        title: data.title,
+        explanation: data.explanation,
+        url: data.url
+    };
+}
