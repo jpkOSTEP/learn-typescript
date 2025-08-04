@@ -96,6 +96,7 @@ getUniqueValues
 isPalindrome
 noop
 obtainAstronomyPictureOfTheDay
+obtainRandomFungiFact
 obtainRandomHaiku
 removeDuplicates
 retrieveJokeAndFact
