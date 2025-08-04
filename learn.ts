@@ -1362,3 +1362,12 @@ async function obtainAstronomyPictureOfTheDay(): Promise<{ title: string; explan
         url: data.url
     };
 }
+
+async function obtainRandomFungiFact(): Promise<string> {
+    const response = await fetch('https://fungi-facts-api.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch fungi fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
