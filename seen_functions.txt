@@ -43,6 +43,7 @@ fetchRandomCountryFact
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomFilmTrivia
+fetchRandomFolkTale
 fetchRandomFuturisticGadget
 fetchRandomHistoricalFigure
 fetchRandomInsectFact
