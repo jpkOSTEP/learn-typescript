@@ -1371,3 +1371,12 @@ async function obtainRandomFungiFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomFolkTale(): Promise<string> {
+  const response = await fetch('https://api.folktaleapi.com/v1/folktale/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random folktale');
+  }
+  const data = await response.json();
+  return data.title;
+}
