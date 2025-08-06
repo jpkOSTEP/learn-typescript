@@ -1380,3 +1380,19 @@ async function fetchRandomFolkTale(): Promise<string> {
   const data = await response.json();
   return data.title;
 }
+
+async function obtainRandomBoardGameDetails(): Promise<{ name: string, description: string, yearPublished: number, minPlayers: number, maxPlayers: number }> {
+    const response = await fetch('https://api.boardgameatlas.com/api/search?order_by=popularity&limit=1&client_id=YOUR_CLIENT_ID');
+    const data = await response.json();
+    if (data.games && data.games.length > 0) {
+        const game = data.games[0];
+        return {
+            name: game.name,
+            description: game.description_preview,
+            yearPublished: game.year_published,
+            minPlayers: game.min_players,
+            maxPlayers: game.max_players
+        };
+    }
+    throw new Error('No board games found');
+}
