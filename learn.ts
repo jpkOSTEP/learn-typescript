@@ -1396,3 +1396,18 @@ async function obtainRandomBoardGameDetails(): Promise<{ name: string, descripti
     }
     throw new Error('No board games found');
 }
+
+async function obtainEpicGamesFreeGames(): Promise<any> {
+    const response = await fetch('https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions');
+    if (!response.ok) {
+        throw new Error('Failed to fetch free games from Epic Games');
+    }
+    const data = await response.json();
+    return data.data.Catalog.searchStore.elements.map((game: any) => ({
+        title: game.title,
+        description: game.description,
+        currentPrice: game.price.totalPrice.fmtPrice.originalPrice,
+        promotionalOffers: game.promotions.promotionalOffers.length > 0 ? game.promotions.promotionalOffers : 'None',
+        url: `https://www.epicgames.com/store/en-US/p/${game.productSlug}`
+    }));
+}
