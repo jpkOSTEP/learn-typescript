@@ -99,6 +99,7 @@ noop
 obtainAstronomyPictureOfTheDay
 obtainEpicGamesFreeGames
 obtainRandomBoardGameDetails
+obtainRandomCityInfo
 obtainRandomFungiFact
 obtainRandomHaiku
 removeDuplicates
