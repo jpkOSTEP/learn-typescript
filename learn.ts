@@ -1411,3 +1411,17 @@ async function obtainEpicGamesFreeGames(): Promise<any> {
         url: `https://www.epicgames.com/store/en-US/p/${game.productSlug}`
     }));
 }
+
+async function obtainRandomCityInfo(): Promise<{ name: string; country: string; population: number; timeZone: string }> {
+    const response = await fetch('https://api.teleport.org/api/urban_areas/');
+    const urbanAreasData = await response.json();
+    const urbanAreas = urbanAreasData._links['ua:item'];
+
+    const randomIndex = Math.floor(Math.random() * urbanAreas.length);
+    const randomCityUrl = urbanAreas[randomIndex].href;
+    const cityResponse = await fetch(`${randomCityUrl}details/`);
+    const cityData = await cityResponse.json();
+
+    const cityName = urbanAreas[randomIndex].name;
+    const country = cityData.categories.find((cat: any) => cat.id === 'LOCATION').data.find((item: any) => item.id === 'country').string_value;
+    const population = cityData.categories.find((cat: any) => cat.id === 'POPULATION').data.find((item
