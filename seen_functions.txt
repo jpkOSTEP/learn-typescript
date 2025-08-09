@@ -102,6 +102,7 @@ obtainRandomBoardGameDetails
 obtainRandomCityInfo
 obtainRandomFungiFact
 obtainRandomHaiku
+obtainRandomMarineSpeciesFact
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomBookQuote
