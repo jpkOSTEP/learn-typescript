@@ -1425,3 +1425,17 @@ async function obtainRandomCityInfo(): Promise<{ name: string; country: string; 
     const cityName = urbanAreas[randomIndex].name;
     const country = cityData.categories.find((cat: any) => cat.id === 'LOCATION').data.find((item: any) => item.id === 'country').string_value;
     const population = cityData.categories.find((cat: any) => cat.id === 'POPULATION').data.find((item
+
+import axios from 'axios';
+
+async function obtainRandomMarineSpeciesFact(): Promise<string> {
+    try {
+        const response = await axios.get('https://some-marine-api.com/random/species/fact');
+        return response.data.fact;
+    } catch (error) {
+        throw new Error('Failed to fetch marine species fact');
+    }
+}
+
+// Usage example
+obtainRandomMarineSpeciesFact().then(fact => console.log(fact)).catch(console.error);
