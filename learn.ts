@@ -1439,3 +1439,17 @@ async function obtainRandomMarineSpeciesFact(): Promise<string> {
 
 // Usage example
 obtainRandomMarineSpeciesFact().then(fact => console.log(fact)).catch(console.error);
+
+async function acquireRandomSpaceTrivia(): Promise<string> {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch space trivia');
+    }
+
+    const data = await response.json();
+    const bodies = data.bodies;
+    const randomIndex = Math.floor(Math.random() * bodies.length);
+    const randomBody = bodies[randomIndex];
+
+    return `Did you know? ${randomBody.englishName} is a celestial body with a mean radius of ${randomBody.meanRadius} km.`;
+}
