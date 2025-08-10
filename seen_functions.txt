@@ -6,6 +6,7 @@ Queue
 Rectangle
 Stack
 TemperatureConverter
+acquireRandomSpaceTrivia
 analyzeWeatherData
 calculateAverage
 dedupeArray
