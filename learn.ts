@@ -1453,3 +1453,12 @@ async function acquireRandomSpaceTrivia(): Promise<string> {
 
     return `Did you know? ${randomBody.englishName} is a celestial body with a mean radius of ${randomBody.meanRadius} km.`;
 }
+
+async function fetchRandomOceanFact(): Promise<string> {
+  const response = await fetch('https://some-ocean-fact-api.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch ocean fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
