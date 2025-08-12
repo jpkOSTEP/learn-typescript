@@ -55,6 +55,7 @@ fetchRandomMathFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
 fetchRandomMythicalCreature
+fetchRandomMythologyStory
 fetchRandomNatureImage
 fetchRandomOceanFact
 fetchRandomParkInfo
