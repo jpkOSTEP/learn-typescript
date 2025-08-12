@@ -1462,3 +1462,12 @@ async function fetchRandomOceanFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function fetchRandomMythologyStory(): Promise<string> {
+  const response = await fetch('https://api.mythologyapi.com/v1/stories/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random mythology story');
+  }
+  const data = await response.json();
+  return data.story || 'No story found';
+}
