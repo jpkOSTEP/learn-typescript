@@ -54,6 +54,7 @@ fetchRandomLiteraryQuote
 fetchRandomMathFact
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
+fetchRandomMysteryNovel
 fetchRandomMythicalCreature
 fetchRandomMythologyStory
 fetchRandomNatureImage
