@@ -1471,3 +1471,12 @@ async function fetchRandomMythologyStory(): Promise<string> {
   const data = await response.json();
   return data.story || 'No story found';
 }
+
+async function fetchRandomMysteryNovel(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-mystery-novel');
+  if (!response.ok) {
+    throw new Error('Failed to fetch mystery novel');
+  }
+  const data = await response.json();
+  return data.title;
+}
