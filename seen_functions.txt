@@ -107,6 +107,7 @@ obtainRandomCityInfo
 obtainRandomFungiFact
 obtainRandomHaiku
 obtainRandomMarineSpeciesFact
+obtainRandomPhilosophicalConcept
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomBookQuote
