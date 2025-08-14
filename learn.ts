@@ -1480,3 +1480,12 @@ async function fetchRandomMysteryNovel(): Promise<string> {
   const data = await response.json();
   return data.title;
 }
+
+async function obtainRandomPhilosophicalConcept(): Promise<string> {
+    const response = await fetch('https://api.example.com/philosophical-concepts/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a philosophical concept');
+    }
+    const data: { concept: string } = await response.json();
+    return data.concept;
+}
