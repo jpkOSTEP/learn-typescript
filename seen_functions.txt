@@ -41,6 +41,7 @@ fetchRandomBotanicalGarden
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
+fetchRandomCryptocurrencyInfo
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomFilmTrivia
