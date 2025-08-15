@@ -1489,3 +1489,22 @@ async function obtainRandomPhilosophicalConcept(): Promise<string> {
     const data: { concept: string } = await response.json();
     return data.concept;
 }
+
+async function fetchRandomCryptocurrencyInfo(): Promise<{ name: string; price: number; symbol: string }> {
+    try {
+        const response = await fetch('https://api.coinlore.net/api/tickers/?start=0&limit=1');
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+            const crypto = data.data[0];
+            return {
+                name: crypto.name,
+                price: parseFloat(crypto.price_usd),
+                symbol: crypto.symbol
+            };
+        } else {
+            throw new Error('No cryptocurrency data available');
+        }
+    } catch (error) {
+        throw new Error(`Failed to fetch cryptocurrency info: ${error.message}`);
+    }
+}
