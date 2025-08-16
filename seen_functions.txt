@@ -109,6 +109,7 @@ obtainRandomFungiFact
 obtainRandomHaiku
 obtainRandomMarineSpeciesFact
 obtainRandomPhilosophicalConcept
+obtainRandomSpaceMissionDetail
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomBookQuote
