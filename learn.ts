@@ -1508,3 +1508,16 @@ async function fetchRandomCryptocurrencyInfo(): Promise<{ name: string; price: n
         throw new Error(`Failed to fetch cryptocurrency info: ${error.message}`);
     }
 }
+
+async function obtainRandomSpaceMissionDetail(): Promise<{ missionName: string; launchDate: string; details: string; }> {
+    const response = await fetch('https://api.spacexdata.com/v4/launches/latest');
+    if (!response.ok) {
+        throw new Error('Failed to fetch the latest SpaceX mission details');
+    }
+    const data = await response.json();
+    return {
+        missionName: data.name,
+        launchDate: data.date_utc,
+        details: data.details || 'No details available'
+    };
+}
