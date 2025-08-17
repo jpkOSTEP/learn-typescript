@@ -38,6 +38,7 @@ fetchRandomAstronautFact
 fetchRandomBeer
 fetchRandomBirdFact
 fetchRandomBotanicalGarden
+fetchRandomCatBreedInfo
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
