@@ -1521,3 +1521,18 @@ async function obtainRandomSpaceMissionDetail(): Promise<{ missionName: string; 
         details: data.details || 'No details available'
     };
 }
+
+async function fetchRandomCatBreedInfo(): Promise<{ name: string; description: string; temperament: string; origin: string }> {
+  const response = await fetch('https://api.thecatapi.com/v1/breeds');
+  if (!response.ok) {
+    throw new Error('Failed to fetch cat breed information');
+  }
+  const breeds = await response.json();
+  const randomBreed = breeds[Math.floor(Math.random() * breeds.length)];
+  return {
+    name: randomBreed.name,
+    description: randomBreed.description,
+    temperament: randomBreed.temperament,
+    origin: randomBreed.origin
+  };
+}
