@@ -88,6 +88,7 @@ getExchangeRate
 getLatestNewsHeadlines
 getRandomArtMovementInfo
 getRandomAstronomyPicture
+getRandomBotanicalFact
 getRandomComic
 getRandomDadJoke
 getRandomElement
