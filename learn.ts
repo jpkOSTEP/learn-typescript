@@ -1536,3 +1536,12 @@ async function fetchRandomCatBreedInfo(): Promise<{ name: string; description: s
     origin: randomBreed.origin
   };
 }
+
+async function getRandomBotanicalFact(): Promise<string> {
+  const response = await fetch('https://random-botanical-fact-api.com/fact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random botanical fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
