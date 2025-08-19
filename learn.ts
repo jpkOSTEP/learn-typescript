@@ -1545,3 +1545,13 @@ async function getRandomBotanicalFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function fetchRandomArtTechnique(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/techniques?page=1&limit=10');
+    if (!response.ok) {
+        throw new Error('Failed to fetch art techniques');
+    }
+    const data = await response.json();
+    const techniques = data.data.map((technique: { title: string }) => technique.title);
+    return techniques[Math.floor(Math.random() * techniques.length)];
+}
