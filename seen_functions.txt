@@ -31,6 +31,7 @@ fetchRandomArtMovement
 fetchRandomArtMuseum
 fetchRandomArtPiece
 fetchRandomArtQuote
+fetchRandomArtTechnique
 fetchRandomArtTool
 fetchRandomArtisticMedium
 fetchRandomAstroFact
