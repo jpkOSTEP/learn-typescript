@@ -1555,3 +1555,15 @@ async function fetchRandomArtTechnique(): Promise<string> {
     const techniques = data.data.map((technique: { title: string }) => technique.title);
     return techniques[Math.floor(Math.random() * techniques.length)];
 }
+
+async function obtainRandomChessOpening(): Promise<{ name: string; moves: string }> {
+    const response = await fetch("https://api.chessdb.net/query?op=random");
+    if (!response.ok) {
+        throw new Error("Failed to fetch random chess opening");
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        moves: data.moves
+    };
+}
