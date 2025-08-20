@@ -107,6 +107,7 @@ noop
 obtainAstronomyPictureOfTheDay
 obtainEpicGamesFreeGames
 obtainRandomBoardGameDetails
+obtainRandomChessOpening
 obtainRandomCityInfo
 obtainRandomFungiFact
 obtainRandomHaiku
