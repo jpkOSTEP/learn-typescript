@@ -1567,3 +1567,12 @@ async function obtainRandomChessOpening(): Promise<{ name: string; moves: string
         moves: data.moves
     };
 }
+
+async function fetchRandomBoardGameInfo(): Promise<any> {
+    const response = await fetch('https://api.boardgameatlas.com/api/search?random=true&client_id=YOUR_CLIENT_ID');
+    if (!response.ok) {
+        throw new Error('Failed to fetch board game information');
+    }
+    const data = await response.json();
+    return data.games[0];
+}
