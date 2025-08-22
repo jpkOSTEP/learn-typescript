@@ -1576,3 +1576,12 @@ async function fetchRandomBoardGameInfo(): Promise<any> {
     const data = await response.json();
     return data.games[0];
 }
+
+async function retrieveRandomAnimalFact(): Promise<string> {
+    const response = await fetch('https://some-random-api.ml/facts/animal');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random animal fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
