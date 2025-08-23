@@ -1585,3 +1585,16 @@ async function retrieveRandomAnimalFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomCarBrandInfo(): Promise<{ brand: string; country: string; founded: number }> {
+    const response = await fetch('https://api.example.com/randomCarBrandInfo');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random car brand info');
+    }
+    const data = await response.json();
+    return {
+        brand: data.brand,
+        country: data.country,
+        founded: data.founded
+    };
+}
