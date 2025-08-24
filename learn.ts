@@ -1598,3 +1598,17 @@ async function fetchRandomCarBrandInfo(): Promise<{ brand: string; country: stri
         founded: data.founded
     };
 }
+
+async function fetchRandomArchitecturalWonder(): Promise<string> {
+  try {
+    const response = await fetch('https://api.architectureapi.com/v1/wonders/random');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.name;
+  } catch (error) {
+    console.error('Failed to fetch random architectural wonder:', error);
+    return 'Could not fetch architectural wonder';
+  }
+}
