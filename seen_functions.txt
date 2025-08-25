@@ -49,6 +49,7 @@ fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
 fetchRandomDadJoke
 fetchRandomDogFact
+fetchRandomFestivalInfo
 fetchRandomFilmTrivia
 fetchRandomFolkTale
 fetchRandomFuturisticGadget
