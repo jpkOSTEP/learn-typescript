@@ -1612,3 +1612,16 @@ async function fetchRandomArchitecturalWonder(): Promise<string> {
     return 'Could not fetch architectural wonder';
   }
 }
+
+async function fetchRandomFestivalInfo(): Promise<{ name: string, location: string, description: string }> {
+  const response = await fetch('https://api.example.com/random-festival');
+  if (!response.ok) {
+    throw new Error('Failed to fetch festival information');
+  }
+  const data = await response.json();
+  return {
+    name: data.name,
+    location: data.location,
+    description: data.description
+  };
+}
