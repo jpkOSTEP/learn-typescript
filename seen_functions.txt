@@ -50,6 +50,7 @@ fetchRandomCryptocurrencyInfo
 fetchRandomDadJoke
 fetchRandomDogFact
 fetchRandomFestivalInfo
+fetchRandomFictionalCharacter
 fetchRandomFilmTrivia
 fetchRandomFolkTale
 fetchRandomFuturisticGadget
