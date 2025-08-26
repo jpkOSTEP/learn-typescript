@@ -1625,3 +1625,18 @@ async function fetchRandomFestivalInfo(): Promise<{ name: string, location: stri
     description: data.description
   };
 }
+
+async function fetchRandomFictionalCharacter(): Promise<{ name: string; description: string; origin: string }> {
+  const response = await fetch('https://api.sampleapis.com/futurama/characters');
+  if (!response.ok) {
+    throw new Error('Failed to fetch character');
+  }
+  const characters = await response.json();
+  const randomIndex = Math.floor(Math.random() * characters.length);
+  const character = characters[randomIndex];
+  return {
+    name: character.Name,
+    description: character.Age,
+    origin: character.Species
+  };
+}
