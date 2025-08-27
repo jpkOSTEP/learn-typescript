@@ -1640,3 +1640,15 @@ async function fetchRandomFictionalCharacter(): Promise<{ name: string; descript
     origin: character.Species
   };
 }
+
+async function fetchRandomPaintingInfo(): Promise<{ title: string; artist: string; year: number; description: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1');
+  const data = await response.json();
+  const artwork = data.data[0];
+  return {
+    title: artwork.title,
+    artist: artwork.artist_display,
+    year: artwork.date_start,
+    description: artwork.thumbnail ? artwork.thumbnail.alt_text : 'No description available'
+  };
+}
