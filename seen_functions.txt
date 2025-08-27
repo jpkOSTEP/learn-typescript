@@ -67,6 +67,7 @@ fetchRandomMythicalCreature
 fetchRandomMythologyStory
 fetchRandomNatureImage
 fetchRandomOceanFact
+fetchRandomPaintingInfo
 fetchRandomParkInfo
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
