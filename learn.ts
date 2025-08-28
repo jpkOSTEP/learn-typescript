@@ -1652,3 +1652,12 @@ async function fetchRandomPaintingInfo(): Promise<{ title: string; artist: strin
     description: artwork.thumbnail ? artwork.thumbnail.alt_text : 'No description available'
   };
 }
+
+async function fetchRandomFungiSpecies(): Promise<string> {
+  const response = await fetch('https://fungi-api.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random fungi species');
+  }
+  const data = await response.json();
+  return data.name;
+}
