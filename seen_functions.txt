@@ -53,6 +53,7 @@ fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
 fetchRandomFilmTrivia
 fetchRandomFolkTale
+fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
 fetchRandomHistoricalFigure
 fetchRandomInsectFact
