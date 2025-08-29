@@ -48,6 +48,7 @@ fetchRandomCocktailDetails
 fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
 fetchRandomDadJoke
+fetchRandomDinosaurFact
 fetchRandomDogFact
 fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
