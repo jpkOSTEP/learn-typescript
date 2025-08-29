@@ -1661,3 +1661,17 @@ async function fetchRandomFungiSpecies(): Promise<string> {
   const data = await response.json();
   return data.name;
 }
+
+async function fetchRandomDinosaurFact(): Promise<string> {
+    try {
+        const response = await fetch('https://dinosaur-facts-api.shultzlab.com/api/v1/dino/random');
+        if (!response.ok) {
+            throw new Error('Failed to fetch dinosaur fact');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error(error);
+        throw new Error('Error retrieving dinosaur fact');
+    }
+}
