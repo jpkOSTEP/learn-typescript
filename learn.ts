@@ -1675,3 +1675,16 @@ async function fetchRandomDinosaurFact(): Promise<string> {
         throw new Error('Error retrieving dinosaur fact');
     }
 }
+
+async function fetchRandomMountainInfo(): Promise<{ name: string; height: number; location: string }> {
+    const response = await fetch('https://api.example.com/randomMountain');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mountain information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        height: data.height,
+        location: data.location
+    };
+}
