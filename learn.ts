@@ -1688,3 +1688,16 @@ async function fetchRandomMountainInfo(): Promise<{ name: string; height: number
         location: data.location
     };
 }
+
+async function fetchRandomElementSymbol(): Promise<string> {
+  const response = await fetch('https://neelpatel05.pythonanywhere.com');
+  if (!response.ok) {
+    throw new Error('Failed to fetch element symbol');
+  }
+  const elements = await response.json();
+  if (elements.length === 0) {
+    throw new Error('No elements found');
+  }
+  const randomIndex = Math.floor(Math.random() * elements.length);
+  return elements[randomIndex].symbol;
+}
