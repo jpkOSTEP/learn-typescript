@@ -1701,3 +1701,12 @@ async function fetchRandomElementSymbol(): Promise<string> {
   const randomIndex = Math.floor(Math.random() * elements.length);
   return elements[randomIndex].symbol;
 }
+
+async function fetchRandomChessPuzzle(): Promise<string> {
+    const response = await fetch('https://api.chess.com/pub/puzzle/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch chess puzzle');
+    }
+    const data: { title: string, url: string } = await response.json();
+    return `Title: ${data.title}\nURL: ${data.url}`;
+}
