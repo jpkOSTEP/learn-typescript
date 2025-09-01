@@ -43,6 +43,7 @@ fetchRandomBoardGameInfo
 fetchRandomBotanicalGarden
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
+fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
