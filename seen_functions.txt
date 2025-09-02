@@ -71,6 +71,7 @@ fetchRandomMysteryNovel
 fetchRandomMythicalCreature
 fetchRandomMythologyStory
 fetchRandomNatureImage
+fetchRandomNoblePrizeLaureate
 fetchRandomOceanFact
 fetchRandomPaintingInfo
 fetchRandomParkInfo
