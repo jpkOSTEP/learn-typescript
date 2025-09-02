@@ -1710,3 +1710,17 @@ async function fetchRandomChessPuzzle(): Promise<string> {
     const data: { title: string, url: string } = await response.json();
     return `Title: ${data.title}\nURL: ${data.url}`;
 }
+
+async function fetchRandomNoblePrizeLaureate(): Promise<{ name: string; category: string; year: number }> {
+  const response = await fetch('https://api.nobelprize.org/v1/laureate.json');
+  const data = await response.json();
+  const laureates = data.laureates;
+  const randomIndex = Math.floor(Math.random() * laureates.length);
+  const laureate = laureates[randomIndex];
+  
+  return {
+    name: laureate.firstname + ' ' + laureate.surname,
+    category: laureate.prizes[0].category,
+    year: parseInt(laureate.prizes[0].year)
+  };
+}
