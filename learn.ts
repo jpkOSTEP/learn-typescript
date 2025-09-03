@@ -1724,3 +1724,16 @@ async function fetchRandomNoblePrizeLaureate(): Promise<{ name: string; category
     year: parseInt(laureate.prizes[0].year)
   };
 }
+
+async function fetchRandomArtExhibition(): Promise<string> {
+  const response = await fetch('https://api.artic.edu/api/v1/exhibitions?limit=1&page=' + Math.floor(Math.random() * 100));
+  if (!response.ok) {
+    throw new Error('Failed to fetch art exhibition');
+  }
+  const data = await response.json();
+  if (data.data && data.data.length > 0) {
+    return `Exhibition: ${data.data[0].title}, Dates: ${data.data[0].aic_start_at} to ${data.data[0].aic_end_at}`;
+  } else {
+    return 'No exhibition found';
+  }
+}
