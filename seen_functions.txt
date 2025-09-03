@@ -24,6 +24,7 @@ fetchRandomAdviceTip
 fetchRandomAnimalFact
 fetchRandomAnimalImage
 fetchRandomArchitecturalWonder
+fetchRandomArtExhibition
 fetchRandomArtGallery
 fetchRandomArtGalleryCollection
 fetchRandomArtGalleryExhibit
