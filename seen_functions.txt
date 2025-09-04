@@ -83,6 +83,7 @@ fetchRandomQuoteFromAPI
 fetchRandomQuoteOfTheDay
 fetchRandomRecipe
 fetchRandomScienceArticle
+fetchRandomScientificBreakthrough
 fetchRandomSpaceImage
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
