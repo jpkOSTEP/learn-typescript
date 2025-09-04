@@ -1737,3 +1737,12 @@ async function fetchRandomArtExhibition(): Promise<string> {
     return 'No exhibition found';
   }
 }
+
+async function fetchRandomScientificBreakthrough(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-scientific-breakthrough');
+    if (!response.ok) {
+        throw new Error('Failed to fetch scientific breakthrough');
+    }
+    const data: { breakthrough: string } = await response.json();
+    return data.breakthrough;
+}
