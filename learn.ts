@@ -1746,3 +1746,24 @@ async function fetchRandomScientificBreakthrough(): Promise<string> {
     const data: { breakthrough: string } = await response.json();
     return data.breakthrough;
 }
+
+function obtainRandomVideoGameTrivia(): Promise<string> {
+  return fetch('https://opentdb.com/api.php?amount=1&category=15&type=multiple')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.results && data.results.length > 0) {
+        return `Question: ${data.results[0].question}\nCorrect Answer: ${data.results[0].correct_answer}\nOptions: ${data.results[0].incorrect_answers.join(', ')}`;
+      } else {
+        throw new Error('No trivia found');
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      return 'Could not fetch trivia at this time.';
+    });
+}
