@@ -76,6 +76,7 @@ fetchRandomNoblePrizeLaureate
 fetchRandomOceanFact
 fetchRandomPaintingInfo
 fetchRandomParkInfo
+fetchRandomPhotographyTip
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
 fetchRandomPuzzle
