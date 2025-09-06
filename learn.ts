@@ -1767,3 +1767,12 @@ function obtainRandomVideoGameTrivia(): Promise<string> {
       return 'Could not fetch trivia at this time.';
     });
 }
+
+async function fetchRandomPhotographyTip(): Promise<string> {
+    const response = await fetch('https://api.example.com/randomPhotographyTip');
+    if (!response.ok) {
+        throw new Error('Failed to fetch photography tip');
+    }
+    const data = await response.json();
+    return data.tip;
+}
