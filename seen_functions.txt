@@ -40,6 +40,7 @@ fetchRandomAstroFact
 fetchRandomAstronautFact
 fetchRandomBeer
 fetchRandomBirdFact
+fetchRandomBirdSpeciesInfo
 fetchRandomBoardGameInfo
 fetchRandomBotanicalGarden
 fetchRandomCarBrandInfo
