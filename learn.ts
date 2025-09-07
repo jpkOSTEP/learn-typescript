@@ -1776,3 +1776,20 @@ async function fetchRandomPhotographyTip(): Promise<string> {
     const data = await response.json();
     return data.tip;
 }
+
+async function fetchRandomBirdSpeciesInfo(): Promise<string> {
+    const response = await fetch('https://api.ebird.org/v2/data/obs/geo/recent?lat=40.73061&lng=-73.935242', {
+        headers: {
+            'X-eBirdApiToken': 'your-ebird-api-token'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Failed to fetch bird species info');
+    }
+    const data = await response.json();
+    if (data.length === 0) {
+        return 'No bird species found';
+    }
+    const randomBird = data[Math.floor(Math.random() * data.length)];
+    return `Species: ${randomBird.comName}, Scientific Name: ${randomBird.sciName}`;
+}
