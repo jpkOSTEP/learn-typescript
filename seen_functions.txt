@@ -75,6 +75,7 @@ fetchRandomMythologyStory
 fetchRandomNatureImage
 fetchRandomNoblePrizeLaureate
 fetchRandomOceanFact
+fetchRandomOperaSynopsis
 fetchRandomPaintingInfo
 fetchRandomParkInfo
 fetchRandomPhotographyTip
