@@ -1793,3 +1793,12 @@ async function fetchRandomBirdSpeciesInfo(): Promise<string> {
     const randomBird = data[Math.floor(Math.random() * data.length)];
     return `Species: ${randomBird.comName}, Scientific Name: ${randomBird.sciName}`;
 }
+
+async function fetchRandomOperaSynopsis(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-opera-synopsis');
+    if (!response.ok) {
+        throw new Error('Failed to fetch opera synopsis');
+    }
+    const data: { synopsis: string } = await response.json();
+    return data.synopsis;
+}
