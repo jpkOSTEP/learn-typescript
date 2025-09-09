@@ -32,6 +32,7 @@ fetchRandomArtGalleryInfo
 fetchRandomArtMovement
 fetchRandomArtMuseum
 fetchRandomArtPiece
+fetchRandomArtPieceDetails
 fetchRandomArtQuote
 fetchRandomArtTechnique
 fetchRandomArtTool
