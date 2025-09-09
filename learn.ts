@@ -1802,3 +1802,22 @@ async function fetchRandomOperaSynopsis(): Promise<string> {
     const data: { synopsis: string } = await response.json();
     return data.synopsis;
 }
+
+async function fetchRandomArtPieceDetails(): Promise<{ title: string; artist: string; year: number; imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=100');
+  const data = await response.json();
+  
+  if (!data || !data.data || data.data.length === 0) {
+    throw new Error('No art pieces found');
+  }
+
+  const randomIndex = Math.floor(Math.random() * data.data.length);
+  const randomArtPiece = data.data[randomIndex];
+
+  return {
+    title: randomArtPiece.title,
+    artist: randomArtPiece.artist_display,
+    year: randomArtPiece.date_start,
+    imageUrl: randomArtPiece.image_url || randomArtPiece.thumbnail?.lqip || ''
+  };
+}
