@@ -101,6 +101,7 @@ filterByProperty
 filterEvenNumbers
 findMax
 findMaxInArray
+generateRandomAstronomyFact
 getAverage
 getCountryInfo
 getExchangeRate
