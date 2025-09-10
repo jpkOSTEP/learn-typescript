@@ -1821,3 +1821,19 @@ async function fetchRandomArtPieceDetails(): Promise<{ title: string; artist: st
     imageUrl: randomArtPiece.image_url || randomArtPiece.thumbnail?.lqip || ''
   };
 }
+
+async function generateRandomAstronomyFact(): Promise<string> {
+    try {
+        const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const celestialBodies = data.bodies;
+        const randomIndex = Math.floor(Math.random() * celestialBodies.length);
+        const randomBody = celestialBodies[randomIndex];
+        return `Did you know? ${randomBody.englishName} is a ${randomBody.bodyType} with a gravity of ${randomBody.gravity} m/s².`;
+    } catch (error) {
+        return `Error: ${error.message}`;
+    }
+}
