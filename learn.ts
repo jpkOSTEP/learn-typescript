@@ -1837,3 +1837,12 @@ async function generateRandomAstronomyFact(): Promise<string> {
         return `Error: ${error.message}`;
     }
 }
+
+async function fetchRandomArtPieceTitle(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1&fields=id,title');
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+        return data.data[0].title;
+    }
+    throw new Error('Failed to fetch art piece title');
+}
