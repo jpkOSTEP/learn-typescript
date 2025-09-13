@@ -1846,3 +1846,12 @@ async function fetchRandomArtPieceTitle(): Promise<string> {
     }
     throw new Error('Failed to fetch art piece title');
 }
+
+async function fetchRandomPhilosopherQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random?tags=philosophy');
+  if (!response.ok) {
+    throw new Error('Failed to fetch the quote');
+  }
+  const data: { content: string } = await response.json();
+  return data.content;
+}
