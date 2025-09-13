@@ -80,6 +80,7 @@ fetchRandomOceanFact
 fetchRandomOperaSynopsis
 fetchRandomPaintingInfo
 fetchRandomParkInfo
+fetchRandomPhilosopherQuote
 fetchRandomPhotographyTip
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
