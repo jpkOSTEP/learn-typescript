@@ -1855,3 +1855,12 @@ async function fetchRandomPhilosopherQuote(): Promise<string> {
   const data: { content: string } = await response.json();
   return data.content;
 }
+
+async function fetchRandomMineralFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-mineral-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mineral fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
