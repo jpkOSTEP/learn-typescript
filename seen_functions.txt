@@ -68,6 +68,7 @@ fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
 fetchRandomLiteraryQuote
 fetchRandomMathFact
+fetchRandomMineralFact
 fetchRandomMountainInfo
 fetchRandomMovieTitle
 fetchRandomMusicAlbum
