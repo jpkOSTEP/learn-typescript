@@ -1864,3 +1864,12 @@ async function fetchRandomMineralFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function obtainRandomMythicalWeaponFact(): Promise<string> {
+    const response = await fetch('https://mythical-weapons-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mythical weapon fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
