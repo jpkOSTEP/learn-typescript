@@ -134,6 +134,7 @@ obtainRandomCityInfo
 obtainRandomFungiFact
 obtainRandomHaiku
 obtainRandomMarineSpeciesFact
+obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
 obtainRandomSpaceMissionDetail
 obtainRandomVideoGameTrivia
