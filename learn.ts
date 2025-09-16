@@ -1873,3 +1873,15 @@ async function obtainRandomMythicalWeaponFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomBoardGameReview(): Promise<{ title: string; review: string }> {
+    const response = await fetch('https://api.example.com/random-board-game-review');
+    if (!response.ok) {
+        throw new Error('Failed to fetch board game review');
+    }
+    const data = await response.json();
+    return {
+        title: data.title,
+        review: data.review,
+    };
+}
