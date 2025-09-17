@@ -42,6 +42,7 @@ fetchRandomAstroFact
 fetchRandomAstronautFact
 fetchRandomBeer
 fetchRandomBirdFact
+fetchRandomBirdSpecies
 fetchRandomBirdSpeciesInfo
 fetchRandomBoardGameInfo
 fetchRandomBoardGameReview
