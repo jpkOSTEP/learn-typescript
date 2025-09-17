@@ -1885,3 +1885,12 @@ async function fetchRandomBoardGameReview(): Promise<{ title: string; review: st
         review: data.review,
     };
 }
+
+async function fetchRandomBirdSpecies(): Promise<string> {
+    const response = await fetch('https://aves-api.herokuapp.com/api/birds/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch bird species');
+    }
+    const data: { name: string } = await response.json();
+    return data.name;
+}
