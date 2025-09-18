@@ -1894,3 +1894,16 @@ async function fetchRandomBirdSpecies(): Promise<string> {
     const data: { name: string } = await response.json();
     return data.name;
 }
+
+async function fetchRandomSpacecraftInfo(): Promise<{ name: string; launchDate: string; missionType: string; }> {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+    const data = await response.json();
+    const spacecrafts = data.bodies.filter((body: any) => body.isSpacecraft);
+    const randomIndex = Math.floor(Math.random() * spacecrafts.length);
+    const selectedSpacecraft = spacecrafts[randomIndex];
+    return {
+        name: selectedSpacecraft.englishName,
+        launchDate: selectedSpacecraft.discoveryDate || 'Unknown',
+        missionType: selectedSpacecraft.missionType || 'Unknown'
+    };
+}
