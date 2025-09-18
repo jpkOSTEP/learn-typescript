@@ -94,6 +94,7 @@ fetchRandomRecipe
 fetchRandomScienceArticle
 fetchRandomScientificBreakthrough
 fetchRandomSpaceImage
+fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
 fetchRandomTrivia
