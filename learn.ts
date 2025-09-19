@@ -1907,3 +1907,21 @@ async function fetchRandomSpacecraftInfo(): Promise<{ name: string; launchDate: 
         missionType: selectedSpacecraft.missionType || 'Unknown'
     };
 }
+
+async function fetchRandomBirdInfo(): Promise<{ name: string; description: string; habitat: string; }> {
+  const response = await fetch('https://some-random-api.ml/animal/birb');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random bird info');
+  }
+  const data = await response.json();
+  return {
+    name: data.name || 'Unknown Bird',
+    description: data.fact || 'No description available',
+    habitat: data.habitat || 'Unknown habitat'
+  };
+}
+
+// Usage
+fetchRandomBirdInfo()
+  .then(birdInfo => console.log(birdInfo))
+  .catch(err => console.error(err));
