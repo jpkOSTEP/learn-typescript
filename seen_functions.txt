@@ -108,6 +108,7 @@ filterByProperty
 filterEvenNumbers
 findMax
 findMaxInArray
+gatherRandomArtisticMovement
 generateRandomAstronomyFact
 getAverage
 getCountryInfo
