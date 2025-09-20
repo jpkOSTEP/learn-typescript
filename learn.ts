@@ -1925,3 +1925,14 @@ async function fetchRandomBirdInfo(): Promise<{ name: string; description: strin
 fetchRandomBirdInfo()
   .then(birdInfo => console.log(birdInfo))
   .catch(err => console.error(err));
+
+async function gatherRandomArtisticMovement(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks');
+    if (!response.ok) {
+        throw new Error('Failed to fetch artistic movements');
+    }
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.data.length);
+    const artwork = data.data[randomIndex];
+    return artwork.title || 'Unknown Artistic Movement';
+}
