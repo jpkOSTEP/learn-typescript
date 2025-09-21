@@ -1936,3 +1936,31 @@ async function gatherRandomArtisticMovement(): Promise<string> {
     const artwork = data.data[randomIndex];
     return artwork.title || 'Unknown Artistic Movement';
 }
+
+import fetch from 'node-fetch';
+
+type RandomMuseumExhibit = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  location: string;
+};
+
+async function fetchRandomMuseumExhibit(): Promise<RandomMuseumExhibit> {
+  const response = await fetch('https://api.examplemuseum.org/exhibits/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random museum exhibit');
+  }
+  const exhibit = await response.json();
+  return {
+    title: exhibit.title,
+    description: exhibit.description,
+    imageUrl: exhibit.image_url,
+    location: exhibit.location,
+  };
+}
+
+// Example usage
+fetchRandomMuseumExhibit()
+  .then(exhibit => console.log(exhibit))
+  .catch(error => console.error(error));
