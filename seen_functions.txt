@@ -74,6 +74,7 @@ fetchRandomMathFact
 fetchRandomMineralFact
 fetchRandomMountainInfo
 fetchRandomMovieTitle
+fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
 fetchRandomMysteryNovel
 fetchRandomMythicalCreature
