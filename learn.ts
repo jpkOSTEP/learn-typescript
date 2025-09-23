@@ -1964,3 +1964,20 @@ async function fetchRandomMuseumExhibit(): Promise<RandomMuseumExhibit> {
 fetchRandomMuseumExhibit()
   .then(exhibit => console.log(exhibit))
   .catch(error => console.error(error));
+
+async function obtainRandomStarFact(): Promise<string> {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch star data');
+    }
+    
+    const data = await response.json();
+    const stars = data.bodies.filter((body: any) => body.isStar);
+    
+    if (stars.length === 0) {
+        throw new Error('No stars found in the dataset');
+    }
+    
+    const randomStar = stars[Math.floor(Math.random() * stars.length)];
+    return `Did you know? ${randomStar.englishName} is a star with a mass of ${randomStar.mass.massValue} × 10^${randomStar.mass.massExponent} kg.`;
+}
