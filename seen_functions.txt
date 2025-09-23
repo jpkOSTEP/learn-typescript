@@ -143,6 +143,7 @@ obtainRandomMarineSpeciesFact
 obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
 obtainRandomSpaceMissionDetail
+obtainRandomStarFact
 obtainRandomVideoGameTrivia
 removeDuplicates
 retrieveJokeAndFact
