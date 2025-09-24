@@ -1981,3 +1981,18 @@ async function obtainRandomStarFact(): Promise<string> {
     const randomStar = stars[Math.floor(Math.random() * stars.length)];
     return `Did you know? ${randomStar.englishName} is a star with a mass of ${randomStar.mass.massValue} × 10^${randomStar.mass.massExponent} kg.`;
 }
+
+function fetchRandomArchaeologicalDiscovery(): Promise<string> {
+  return fetch('https://api.example.com/random-archaeological-discovery')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data: { discovery: string }) => data.discovery)
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      throw error;
+    });
+}
