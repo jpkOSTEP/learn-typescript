@@ -23,6 +23,7 @@ fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomAnimalFact
 fetchRandomAnimalImage
+fetchRandomArchaeologicalDiscovery
 fetchRandomArchitecturalWonder
 fetchRandomArtExhibition
 fetchRandomArtGallery
