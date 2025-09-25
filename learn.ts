@@ -1996,3 +1996,12 @@ function fetchRandomArchaeologicalDiscovery(): Promise<string> {
       throw error;
     });
 }
+
+async function obtainRandomArchitecturalWonder(): Promise<string> {
+  const response = await fetch('https://api.example.com/architectural-wonders/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random architectural wonder');
+  }
+  const data: { wonder: string } = await response.json();
+  return data.wonder;
+}
