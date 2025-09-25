@@ -135,6 +135,7 @@ isPalindrome
 noop
 obtainAstronomyPictureOfTheDay
 obtainEpicGamesFreeGames
+obtainRandomArchitecturalWonder
 obtainRandomBoardGameDetails
 obtainRandomChessOpening
 obtainRandomCityInfo
