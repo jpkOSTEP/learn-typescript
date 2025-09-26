@@ -2005,3 +2005,13 @@ async function obtainRandomArchitecturalWonder(): Promise<string> {
   const data: { wonder: string } = await response.json();
   return data.wonder;
 }
+
+async function fetchRandomArchitecturalStyle(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-architectural-style');
+    if (!response.ok) {
+        throw new Error('Failed to fetch architectural style');
+    }
+    
+    const data: { style: string } = await response.json();
+    return data.style;
+}
