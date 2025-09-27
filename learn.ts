@@ -2015,3 +2015,12 @@ async function fetchRandomArchitecturalStyle(): Promise<string> {
     const data: { style: string } = await response.json();
     return data.style;
 }
+
+async function fetchRandomBotanicGardenInfo(): Promise<string> {
+    const response = await fetch('https://random-botanic-garden-api.example.com/info');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random botanic garden information');
+    }
+    const data = await response.json();
+    return data.info;
+}
