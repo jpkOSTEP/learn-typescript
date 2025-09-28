@@ -2024,3 +2024,17 @@ async function fetchRandomBotanicGardenInfo(): Promise<string> {
     const data = await response.json();
     return data.info;
 }
+
+async function fetchRandomBoardGame(): Promise<{ name: string; yearPublished: number; description: string }> {
+  const response = await fetch('https://www.boardgameatlas.com/api/search?random=true&client_id=YOUR_CLIENT_ID');
+  if (!response.ok) {
+    throw new Error('Failed to fetch board game data');
+  }
+  const data = await response.json();
+  const game = data.games[0];
+  return {
+    name: game.name,
+    yearPublished: game.year_published,
+    description: game.description_preview
+  };
+}
