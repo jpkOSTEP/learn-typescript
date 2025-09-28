@@ -47,6 +47,7 @@ fetchRandomBirdFact
 fetchRandomBirdInfo
 fetchRandomBirdSpecies
 fetchRandomBirdSpeciesInfo
+fetchRandomBoardGame
 fetchRandomBoardGameInfo
 fetchRandomBoardGameReview
 fetchRandomBotanicGardenInfo
