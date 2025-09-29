@@ -59,6 +59,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
+fetchRandomCulinaryDelight
 fetchRandomDadJoke
 fetchRandomDinosaurFact
 fetchRandomDogFact
