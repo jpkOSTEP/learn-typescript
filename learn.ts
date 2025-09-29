@@ -2038,3 +2038,12 @@ async function fetchRandomBoardGame(): Promise<{ name: string; yearPublished: nu
     description: game.description_preview
   };
 }
+
+async function fetchRandomCulinaryDelight(): Promise<string> {
+    const response = await fetch('https://api.spoonacular.com/recipes/random?apiKey=YOUR_API_KEY');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random culinary delight');
+    }
+    const data = await response.json();
+    return data.recipes[0].title;
+}
