@@ -35,6 +35,7 @@ fetchRandomArtMovement
 fetchRandomArtMuseum
 fetchRandomArtPiece
 fetchRandomArtPieceDetails
+fetchRandomArtPieceInfo
 fetchRandomArtPieceTitle
 fetchRandomArtQuote
 fetchRandomArtTechnique
