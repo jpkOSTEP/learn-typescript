@@ -2063,3 +2063,12 @@ async function fetchRandomArtPieceInfo(): Promise<{ title: string; artist: strin
     throw new Error('No artwork found');
   }
 }
+
+async function fetchRandomZoologicalCuriosity(): Promise<string> {
+  const response = await fetch('https://zoo-animal-api.herokuapp.com/animals/rand');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random zoological curiosity');
+  }
+  const data = await response.json();
+  return `Did you know? The ${data.name} is a fascinating animal found in ${data.geo_range}. It typically lives in ${data.habitat} and feeds on ${data.diet}.`;
+}
