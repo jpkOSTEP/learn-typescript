@@ -109,6 +109,7 @@ fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
 fetchRandomUser
 fetchRandomWord
+fetchRandomZoologicalCuriosity
 fetchSpaceXLaunches
 filterArrayByType
 filterByProperty
