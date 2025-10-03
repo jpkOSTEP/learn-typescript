@@ -2072,3 +2072,17 @@ async function fetchRandomZoologicalCuriosity(): Promise<string> {
   const data = await response.json();
   return `Did you know? The ${data.name} is a fascinating animal found in ${data.geo_range}. It typically lives in ${data.habitat} and feeds on ${data.diet}.`;
 }
+
+async function fetchRandomBotanicalGardenInfo(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/randomBotanicalGarden');
+        if (!response.ok) {
+            throw new Error('Failed to fetch botanical garden information');
+        }
+        const data = await response.json();
+        return data.description || 'No description available';
+    } catch (error) {
+        console.error('Error fetching botanical garden info:', error);
+        return 'An error occurred while fetching data';
+    }
+}
