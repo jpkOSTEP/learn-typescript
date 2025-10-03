@@ -53,6 +53,7 @@ fetchRandomBoardGameInfo
 fetchRandomBoardGameReview
 fetchRandomBotanicGardenInfo
 fetchRandomBotanicalGarden
+fetchRandomBotanicalGardenInfo
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
 fetchRandomChessPuzzle
