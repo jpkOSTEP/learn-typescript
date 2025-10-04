@@ -2086,3 +2086,25 @@ async function fetchRandomBotanicalGardenInfo(): Promise<string> {
         return 'An error occurred while fetching data';
     }
 }
+
+async function fetchRandomCuisineRecipe(): Promise<{ title: string; ingredients: string[]; instructions: string; }> {
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random cuisine recipe');
+    }
+    const data = await response.json();
+    const meal = data.meals[0];
+    const ingredients = [];
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`];
+        if (ingredient && ingredient.trim()) {
+            ingredients.push(`${measure} ${ingredient}`.trim());
+        }
+    }
+    return {
+        title: meal.strMeal,
+        ingredients,
+        instructions: meal.strInstructions
+    };
+}
