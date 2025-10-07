@@ -2108,3 +2108,12 @@ async function fetchRandomCuisineRecipe(): Promise<{ title: string; ingredients:
         instructions: meal.strInstructions
     };
 }
+
+async function fetchRandomCulturalEvent(): Promise<any> {
+  const response = await fetch('https://www.boredapi.com/api/activity?type=cultural');
+  if (!response.ok) {
+    throw new Error('Failed to fetch cultural event');
+  }
+  const data = await response.json();
+  return data;
+}
