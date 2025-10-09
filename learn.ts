@@ -2117,3 +2117,18 @@ async function fetchRandomCulturalEvent(): Promise<any> {
   const data = await response.json();
   return data;
 }
+
+async function fetchRandomCulinaryTechnique(): Promise<string> {
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random culinary technique');
+    }
+    const data: { meals: { strTags: string }[] } = await response.json();
+    const meal = data.meals[0];
+    const techniques = meal.strTags ? meal.strTags.split(',') : [];
+    if (techniques.length === 0) {
+        return 'No specific culinary technique found';
+    }
+    const randomIndex = Math.floor(Math.random() * techniques.length);
+    return techniques[randomIndex];
+}
