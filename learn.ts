@@ -2132,3 +2132,16 @@ async function fetchRandomCulinaryTechnique(): Promise<string> {
     const randomIndex = Math.floor(Math.random() * techniques.length);
     return techniques[randomIndex];
 }
+
+async function fetchRandomArtInstallationInfo(): Promise<{ title: string; artist: string; location: string; year: number }> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks');
+    const data = await response.json();
+    const randomArtwork = data.data[Math.floor(Math.random() * data.data.length)];
+    
+    return {
+        title: randomArtwork.title,
+        artist: randomArtwork.artist_title || "Unknown",
+        location: randomArtwork.place_of_origin || "Unknown",
+        year: randomArtwork.date_start
+    };
+}
