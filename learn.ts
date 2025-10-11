@@ -2145,3 +2145,15 @@ async function fetchRandomArtInstallationInfo(): Promise<{ title: string; artist
         year: randomArtwork.date_start
     };
 }
+
+async function obtainRandomDinosaurFact(): Promise<string> {
+    const response = await fetch('https://dinosaur-facts-api.shultzlab.com/dinosaurs/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch dinosaur fact');
+    }
+    const data = await response.json();
+    return `Did you know? ${data.description}`;
+}
+
+// Example usage:
+obtainRandomDinosaurFact().then(fact => console.log(fact)).catch(error => console.error(error));
