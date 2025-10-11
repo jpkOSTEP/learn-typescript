@@ -150,6 +150,7 @@ obtainRandomArchitecturalWonder
 obtainRandomBoardGameDetails
 obtainRandomChessOpening
 obtainRandomCityInfo
+obtainRandomDinosaurFact
 obtainRandomFungiFact
 obtainRandomHaiku
 obtainRandomMarineSpeciesFact
