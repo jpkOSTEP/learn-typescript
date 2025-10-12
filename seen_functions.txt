@@ -106,6 +106,7 @@ fetchRandomQuoteOfTheDay
 fetchRandomRecipe
 fetchRandomScienceArticle
 fetchRandomScientificBreakthrough
+fetchRandomScientificExperiment
 fetchRandomSpaceImage
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
