@@ -2157,3 +2157,12 @@ async function obtainRandomDinosaurFact(): Promise<string> {
 
 // Example usage:
 obtainRandomDinosaurFact().then(fact => console.log(fact)).catch(error => console.error(error));
+
+async function fetchRandomScientificExperiment(): Promise<string> {
+    const response = await fetch('https://example-api.com/random-scientific-experiment');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random scientific experiment');
+    }
+    const data: { experiment: string } = await response.json();
+    return data.experiment;
+}
