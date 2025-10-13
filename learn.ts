@@ -2166,3 +2166,12 @@ async function fetchRandomScientificExperiment(): Promise<string> {
     const data: { experiment: string } = await response.json();
     return data.experiment;
 }
+
+async function fetchRandomArchaeologicalSite(): Promise<string> {
+    const response = await fetch("https://api.example.com/random-archaeological-site");
+    if (!response.ok) {
+        throw new Error("Failed to fetch archaeological site information");
+    }
+    const data: { siteName: string } = await response.json();
+    return data.siteName;
+}
