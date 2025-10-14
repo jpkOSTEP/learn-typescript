@@ -2175,3 +2175,26 @@ async function fetchRandomArchaeologicalSite(): Promise<string> {
     const data: { siteName: string } = await response.json();
     return data.siteName;
 }
+
+async function fetchRandomArtGalleryPiece(): Promise<{ title: string; artist: string; year: number; imageUrl: string }> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks');
+    const data = await response.json();
+    if (!data || !data.data || data.data.length === 0) {
+        throw new Error('No artwork data found');
+    }
+
+    const randomIndex = Math.floor(Math.random() * data.data.length);
+    const artwork = data.data[randomIndex];
+
+    return {
+        title: artwork.title || 'Unknown Title',
+        artist: artwork.artist_title || 'Unknown Artist',
+        year: artwork.date_start || 0,
+        imageUrl: artwork.image_url || ''
+    };
+}
+
+// Example usage:
+fetchRandomArtGalleryPiece()
+    .then(artwork => console.log(artwork))
+    .catch(error => console.error(error));
