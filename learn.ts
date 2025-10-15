@@ -2198,3 +2198,13 @@ async function fetchRandomArtGalleryPiece(): Promise<{ title: string; artist: st
 fetchRandomArtGalleryPiece()
     .then(artwork => console.log(artwork))
     .catch(error => console.error(error));
+
+async function fetchRandomElementFromPeriodicTable(): Promise<string> {
+    const response = await fetch('https://neelpatel05.pythonanywhere.com/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch data from the API');
+    }
+    const elements: Array<{ name: string }> = await response.json();
+    const randomIndex = Math.floor(Math.random() * elements.length);
+    return elements[randomIndex].name;
+}
