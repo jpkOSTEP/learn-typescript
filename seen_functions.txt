@@ -71,6 +71,7 @@ fetchRandomCulturalEvent
 fetchRandomDadJoke
 fetchRandomDinosaurFact
 fetchRandomDogFact
+fetchRandomElementFromPeriodicTable
 fetchRandomElementSymbol
 fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
