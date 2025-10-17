@@ -43,6 +43,7 @@ fetchRandomArtPieceTitle
 fetchRandomArtQuote
 fetchRandomArtTechnique
 fetchRandomArtTool
+fetchRandomArtisanalCheese
 fetchRandomArtisticMedium
 fetchRandomAstroFact
 fetchRandomAstronautFact
