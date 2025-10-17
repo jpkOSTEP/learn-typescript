@@ -2208,3 +2208,17 @@ async function fetchRandomElementFromPeriodicTable(): Promise<string> {
     const randomIndex = Math.floor(Math.random() * elements.length);
     return elements[randomIndex].name;
 }
+
+async function fetchRandomArtisanalCheese(): Promise<string> {
+    try {
+        const response = await fetch('https://cheesedatabase.example.com/api/random');
+        if (!response.ok) {
+            throw new Error('Failed to fetch cheese data');
+        }
+        const data: { name: string } = await response.json();
+        return data.name;
+    } catch (error) {
+        console.error('Error fetching artisanal cheese:', error);
+        throw error;
+    }
+}
