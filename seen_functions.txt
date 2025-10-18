@@ -63,6 +63,7 @@ fetchRandomCatBreedInfo
 fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
+fetchRandomCodingChallenge
 fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
 fetchRandomCuisineRecipe
