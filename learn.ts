@@ -2222,3 +2222,12 @@ async function fetchRandomArtisanalCheese(): Promise<string> {
         throw error;
     }
 }
+
+async function fetchRandomCodingChallenge(): Promise<string> {
+  const response = await fetch('https://www.codewars.com/api/v1/code-challenges/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random coding challenge');
+  }
+  const data: { name: string; description: string } = await response.json();
+  return `${data.name}: ${data.description}`;
+}
