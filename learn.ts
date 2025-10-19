@@ -2231,3 +2231,12 @@ async function fetchRandomCodingChallenge(): Promise<string> {
   const data: { name: string; description: string } = await response.json();
   return `${data.name}: ${data.description}`;
 }
+
+async function fetchRandomScientificInstrument(): Promise<string> {
+    const response = await fetch('https://random-data-api.com/api/scientific_instrument/random_scientific_instrument');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random scientific instrument');
+    }
+    const data = await response.json();
+    return data.name;
+}
