@@ -112,6 +112,7 @@ fetchRandomRecipe
 fetchRandomScienceArticle
 fetchRandomScientificBreakthrough
 fetchRandomScientificExperiment
+fetchRandomScientificInstrument
 fetchRandomSpaceImage
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
