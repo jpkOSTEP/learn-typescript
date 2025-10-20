@@ -27,6 +27,7 @@ fetchRandomArchaeologicalDiscovery
 fetchRandomArchaeologicalSite
 fetchRandomArchitecturalStyle
 fetchRandomArchitecturalWonder
+fetchRandomArtExhibit
 fetchRandomArtExhibition
 fetchRandomArtGallery
 fetchRandomArtGalleryCollection
