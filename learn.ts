@@ -2240,3 +2240,17 @@ async function fetchRandomScientificInstrument(): Promise<string> {
     const data = await response.json();
     return data.name;
 }
+
+async function fetchRandomArtExhibit(): Promise<{ title: string; artist: string; year: number; description: string }> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=100');
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.data.length);
+    const exhibit = data.data[randomIndex];
+
+    return {
+        title: exhibit.title,
+        artist: exhibit.artist_title || 'Unknown Artist',
+        year: exhibit.date_start || 0,
+        description: exhibit.thumbnail?.alt_text || 'No description available.'
+    };
+}
