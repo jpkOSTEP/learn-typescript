@@ -2254,3 +2254,18 @@ async function fetchRandomArtExhibit(): Promise<{ title: string; artist: string;
         description: exhibit.thumbnail?.alt_text || 'No description available.'
     };
 }
+
+async function fetchRandomArtInstallation(): Promise<string> {
+    const apiUrl = 'https://api.example.com/random-art-installation';
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.installationName;
+    } catch (error) {
+        console.error('Failed to fetch random art installation:', error);
+        return 'Error fetching art installation';
+    }
+}
