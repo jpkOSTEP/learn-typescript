@@ -21,6 +21,7 @@ fetchRandomAdvice
 fetchRandomAdviceSlip
 fetchRandomAdviceSnippets
 fetchRandomAdviceTip
+fetchRandomAlgorithmInfo
 fetchRandomAnimalFact
 fetchRandomAnimalImage
 fetchRandomArchaeologicalDiscovery
