@@ -2269,3 +2269,16 @@ async function fetchRandomArtInstallation(): Promise<string> {
         return 'Error fetching art installation';
     }
 }
+
+async function fetchRandomAlgorithmInfo(): Promise<{ name: string; description: string; complexity: string }> {
+    const response = await fetch('https://api.example.com/randomAlgorithm');
+    if (!response.ok) {
+        throw new Error('Failed to fetch algorithm information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        complexity: data.complexity
+    };
+}
