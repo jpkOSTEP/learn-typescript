@@ -2282,3 +2282,18 @@ async function fetchRandomAlgorithmInfo(): Promise<{ name: string; description: 
         complexity: data.complexity
     };
 }
+
+async function fetchRandomArtSculpture(): Promise<{ title: string; artist: string; year: number; description: string; imageUrl: string }> {
+  const response = await fetch('https://api.example.com/random-art-sculpture');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random art sculpture');
+  }
+  const data = await response.json();
+  return {
+    title: data.title,
+    artist: data.artist,
+    year: data.year,
+    description: data.description,
+    imageUrl: data.imageUrl
+  };
+}
