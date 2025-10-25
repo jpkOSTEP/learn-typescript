@@ -2297,3 +2297,21 @@ async function fetchRandomArtSculpture(): Promise<{ title: string; artist: strin
     imageUrl: data.imageUrl
   };
 }
+
+async function fetchRandomAnecdote(): Promise<string> {
+    const response = await fetch("https://api.api-ninjas.com/v1/anecdotes", {
+        headers: {
+            "X-Api-Key": "YOUR_API_KEY_HERE"
+        }
+    });
+    if (!response.ok) {
+        throw new Error("Failed to fetch random anecdote");
+    }
+    const data: { anecdote: string }[] = await response.json();
+    return data[0].anecdote;
+}
+
+// Example usage:
+fetchRandomAnecdote()
+    .then(anecdote => console.log(anecdote))
+    .catch(error => console.error(error));
