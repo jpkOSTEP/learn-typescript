@@ -2315,3 +2315,17 @@ async function fetchRandomAnecdote(): Promise<string> {
 fetchRandomAnecdote()
     .then(anecdote => console.log(anecdote))
     .catch(error => console.error(error));
+
+async function fetchRandomAstronomicalPhenomenon(): Promise<string> {
+  const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch astronomical data');
+  }
+  const data = await response.json();
+  const planets = data.bodies.filter((body: any) => body.isPlanet);
+  const randomIndex = Math.floor(Math.random() * planets.length);
+  return planets[randomIndex].name;
+}
+
+// Example usage
+fetchRandomAstronomicalPhenomenon().then(console.log).catch(console.error);
