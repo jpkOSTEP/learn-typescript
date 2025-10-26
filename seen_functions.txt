@@ -52,6 +52,7 @@ fetchRandomArtisanalCheese
 fetchRandomArtisticMedium
 fetchRandomAstroFact
 fetchRandomAstronautFact
+fetchRandomAstronomicalPhenomenon
 fetchRandomBeer
 fetchRandomBirdFact
 fetchRandomBirdInfo
