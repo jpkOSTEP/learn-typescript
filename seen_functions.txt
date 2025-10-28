@@ -74,6 +74,7 @@ fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
 fetchRandomCuisineRecipe
 fetchRandomCulinaryDelight
+fetchRandomCulinaryHeritage
 fetchRandomCulinaryTechnique
 fetchRandomCulturalEvent
 fetchRandomDadJoke
