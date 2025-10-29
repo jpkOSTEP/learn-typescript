@@ -2336,3 +2336,25 @@ async function fetchRandomCulinaryHeritage(): Promise<string> {
     const meal = data.meals[0];
     return `Dish: ${meal.strMeal}, Origin: ${meal.strArea}, Category: ${meal.strCategory}`;
 }
+
+function fetchRandomTechInnovation(): Promise<string> {
+    const url = 'https://api.example.com/random-tech-innovation'; // Hypothetical API endpoint
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.innovation) {
+                return data.innovation as string;
+            } else {
+                throw new Error('No innovation data found');
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            return 'Unable to fetch an innovation at this time.';
+        });
+}
