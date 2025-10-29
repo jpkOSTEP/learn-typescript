@@ -124,6 +124,7 @@ fetchRandomSpaceImage
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
+fetchRandomTechInnovation
 fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
 fetchRandomUser
