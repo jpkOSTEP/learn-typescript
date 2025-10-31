@@ -82,6 +82,7 @@ fetchRandomDinosaurFact
 fetchRandomDogFact
 fetchRandomElementFromPeriodicTable
 fetchRandomElementSymbol
+fetchRandomFestivalDetail
 fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
 fetchRandomFilmTrivia
