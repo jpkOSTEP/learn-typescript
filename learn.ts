@@ -2358,3 +2358,17 @@ function fetchRandomTechInnovation(): Promise<string> {
             return 'Unable to fetch an innovation at this time.';
         });
 }
+
+async function fetchRandomFestivalDetail(): Promise<{ name: string; location: string; date: string; description: string }> {
+    const response = await fetch('https://some-random-api.com/festival');
+    if (!response.ok) {
+        throw new Error('Failed to fetch festival details');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        date: data.date,
+        description: data.description,
+    };
+}
