@@ -2372,3 +2372,16 @@ async function fetchRandomFestivalDetail(): Promise<{ name: string; location: st
         description: data.description,
     };
 }
+
+async function fetchRandomBoardGameMechanism(): Promise<string> {
+  const response = await fetch('https://api.boardgamegeek.com/boardgame-mechanisms');
+  if (!response.ok) {
+    throw new Error('Failed to fetch board game mechanism');
+  }
+  const mechanisms: { name: string }[] = await response.json();
+  if (mechanisms.length === 0) {
+    throw new Error('No mechanisms found');
+  }
+  const randomIndex = Math.floor(Math.random() * mechanisms.length);
+  return mechanisms[randomIndex].name;
+}
