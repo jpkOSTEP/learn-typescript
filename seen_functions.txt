@@ -60,6 +60,7 @@ fetchRandomBirdSpecies
 fetchRandomBirdSpeciesInfo
 fetchRandomBoardGame
 fetchRandomBoardGameInfo
+fetchRandomBoardGameMechanism
 fetchRandomBoardGameReview
 fetchRandomBotanicGardenInfo
 fetchRandomBotanicalGarden
