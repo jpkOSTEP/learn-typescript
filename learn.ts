@@ -2385,3 +2385,21 @@ async function fetchRandomBoardGameMechanism(): Promise<string> {
   const randomIndex = Math.floor(Math.random() * mechanisms.length);
   return mechanisms[randomIndex].name;
 }
+
+async function fetchRandomConstellationInfo(): Promise<{ name: string; description: string; stars: number }> {
+  const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch constellation data');
+  }
+  const data = await response.json();
+  const constellations = data.bodies.filter((body: any) => body.isPlanet === false && body.englishName.includes('Constellation'));
+  if (constellations.length === 0) {
+    throw new Error('No constellations found');
+  }
+  const randomConstellation = constellations[Math.floor(Math.random() * constellations.length)];
+  return {
+    name: randomConstellation.englishName,
+    description: randomConstellation.name,
+    stars: randomConstellation.moons ? randomConstellation.moons.length : 0
+  };
+}
