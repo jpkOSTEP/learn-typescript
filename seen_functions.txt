@@ -71,6 +71,7 @@ fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
 fetchRandomCodingChallenge
+fetchRandomConstellationInfo
 fetchRandomCountryFact
 fetchRandomCryptocurrencyInfo
 fetchRandomCuisineRecipe
