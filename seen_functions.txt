@@ -149,6 +149,7 @@ getRandomArtMovementInfo
 getRandomAstronomyPicture
 getRandomBotanicalFact
 getRandomComic
+getRandomCryptocurrencyInfo
 getRandomDadJoke
 getRandomElement
 getRandomFamousQuote
