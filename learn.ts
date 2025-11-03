@@ -2403,3 +2403,32 @@ async function fetchRandomConstellationInfo(): Promise<{ name: string; descripti
     stars: randomConstellation.moons ? randomConstellation.moons.length : 0
   };
 }
+
+async function getRandomCryptocurrencyInfo(): Promise<{ name: string; symbol: string; price: number; marketCap: number }> {
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+        qs: {
+            vs_currency: 'usd',
+            order: 'market_cap_desc',
+            per_page: 1,
+            page: Math.floor(Math.random() * 100) + 1,
+            sparkline: false,
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch cryptocurrency data');
+    }
+
+    const data = await response.json();
+    if (!data || data.length === 0) {
+        throw new Error('No cryptocurrency data found');
+    }
+
+    const crypto = data[0];
+    return {
+        name: crypto.name,
+        symbol: crypto.symbol
