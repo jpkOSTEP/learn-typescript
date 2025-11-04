@@ -2432,3 +2432,12 @@ async function getRandomCryptocurrencyInfo(): Promise<{ name: string; symbol: st
     return {
         name: crypto.name,
         symbol: crypto.symbol
+
+async function fetchRandomAstrophotographyTip(): Promise<string> {
+    const response = await fetch('https://api.example.com/randomAstrophotographyTip');
+    if (!response.ok) {
+        throw new Error('Failed to fetch astrophotography tip');
+    }
+    const data = await response.json();
+    return data.tip;
+}
