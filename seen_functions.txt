@@ -53,6 +53,7 @@ fetchRandomArtisticMedium
 fetchRandomAstroFact
 fetchRandomAstronautFact
 fetchRandomAstronomicalPhenomenon
+fetchRandomAstrophotographyTip
 fetchRandomBeer
 fetchRandomBirdFact
 fetchRandomBirdInfo
