@@ -141,6 +141,7 @@ filterEvenNumbers
 findMax
 findMaxInArray
 gatherRandomArtisticMovement
+gatherRandomCarnivorousPlantFact
 generateRandomAstronomyFact
 getAverage
 getCountryInfo
