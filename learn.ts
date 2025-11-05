@@ -2441,3 +2441,17 @@ async function fetchRandomAstrophotographyTip(): Promise<string> {
     const data = await response.json();
     return data.tip;
 }
+
+async function gatherRandomCarnivorousPlantFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/carnivorous-plants/facts/random');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Failed to fetch random carnivorous plant fact:', error);
+    throw error;
+  }
+}
