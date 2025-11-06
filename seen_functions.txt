@@ -6,6 +6,7 @@ Queue
 Rectangle
 Stack
 TemperatureConverter
+acquireRandomArtPiece
 acquireRandomSpaceTrivia
 analyzeWeatherData
 calculateAverage
