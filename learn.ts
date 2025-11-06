@@ -2455,3 +2455,19 @@ async function gatherRandomCarnivorousPlantFact(): Promise<string> {
     throw error;
   }
 }
+
+async function acquireRandomArtPiece(): Promise<{ title: string, artist: string, year: number, imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=1&fields=id,title,artist_title,date_display,image_id');
+  const data = await response.json();
+  if (data.data && data.data.length > 0) {
+    const artwork = data.data[0];
+    return {
+      title: artwork.title,
+      artist: artwork.artist_title,
+      year: parseInt(artwork.date_display),
+      imageUrl: `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`
+    };
+  } else {
+    throw new Error('No artwork found.');
+  }
+}
