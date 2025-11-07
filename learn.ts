@@ -2471,3 +2471,17 @@ async function acquireRandomArtPiece(): Promise<{ title: string, artist: string,
     throw new Error('No artwork found.');
   }
 }
+
+async function obtainRandomArtGalleryInfo(): Promise<{ name: string; location: string; established: number; featuredArtists: string[] }> {
+    const response = await fetch('https://api.example.com/randomArtGallery');
+    if (!response.ok) {
+        throw new Error('Failed to fetch art gallery info');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        established: data.established,
+        featuredArtists: data.featuredArtists
+    };
+}
