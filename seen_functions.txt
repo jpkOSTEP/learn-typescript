@@ -169,6 +169,7 @@ noop
 obtainAstronomyPictureOfTheDay
 obtainEpicGamesFreeGames
 obtainRandomArchitecturalWonder
+obtainRandomArtGalleryInfo
 obtainRandomBoardGameDetails
 obtainRandomChessOpening
 obtainRandomCityInfo
