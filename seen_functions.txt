@@ -93,6 +93,7 @@ fetchRandomFilmTrivia
 fetchRandomFolkTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
+fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
 fetchRandomInsectFact
 fetchRandomJokeAndFact
