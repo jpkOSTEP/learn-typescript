@@ -2485,3 +2485,12 @@ async function obtainRandomArtGalleryInfo(): Promise<{ name: string; location: s
         featuredArtists: data.featuredArtists
     };
 }
+
+async function fetchRandomHistoricalArtifact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-historical-artifact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical artifact');
+    }
+    const data = await response.json();
+    return data.artifactDescription;
+}
