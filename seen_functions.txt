@@ -95,6 +95,7 @@ fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
+fetchRandomHistoricalFigureInfo
 fetchRandomInsectFact
 fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
