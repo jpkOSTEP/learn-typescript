@@ -2494,3 +2494,22 @@ async function fetchRandomHistoricalArtifact(): Promise<string> {
     const data = await response.json();
     return data.artifactDescription;
 }
+
+async function fetchRandomHistoricalFigureInfo(): Promise<{ name: string; biography: string; birthYear: number; }> {
+    try {
+        const response = await fetch('https://randomuser.me/api/');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const figure = {
+            name: `${data.results[0].name.first} ${data.results[0].name.last}`,
+            biography: 'A randomly generated historical figure with a mysterious past.',
+            birthYear: Math.floor(Math.random() * (1900 - 1800 + 1)) + 1800
+        };
+        return figure;
+    } catch (error) {
+        console.error('Error fetching historical figure info:', error);
+        throw error;
+    }
+}
