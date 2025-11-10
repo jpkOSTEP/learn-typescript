@@ -2513,3 +2513,12 @@ async function fetchRandomHistoricalFigureInfo(): Promise<{ name: string; biogra
         throw error;
     }
 }
+
+async function obtainRandomHistoricalFigureFact(): Promise<string> {
+    const response = await fetch("https://api.example.com/historical-figure-facts/random");
+    if (!response.ok) {
+        throw new Error("Failed to fetch historical figure fact");
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
