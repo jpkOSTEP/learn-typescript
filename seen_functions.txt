@@ -178,6 +178,7 @@ obtainRandomCityInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
 obtainRandomHaiku
+obtainRandomHistoricalFigureFact
 obtainRandomMarineSpeciesFact
 obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
