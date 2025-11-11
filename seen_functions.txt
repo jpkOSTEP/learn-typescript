@@ -12,6 +12,7 @@ analyzeWeatherData
 calculateAverage
 dedupeArray
 deduplicateArray
+discoverRandomArchaeologicalSite
 fetchCatFacts
 fetchCryptoPrice
 fetchData
