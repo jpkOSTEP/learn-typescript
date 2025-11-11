@@ -2522,3 +2522,12 @@ async function obtainRandomHistoricalFigureFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function discoverRandomArchaeologicalSite(): Promise<string> {
+  const response = await fetch('https://random-archaeology-api.example.com/api/site');
+  if (!response.ok) {
+    throw new Error('Failed to fetch archaeological site info');
+  }
+  const data = await response.json();
+  return data.siteName;
+}
