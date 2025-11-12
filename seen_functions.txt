@@ -175,6 +175,7 @@ obtainRandomArchitecturalWonder
 obtainRandomArtGalleryInfo
 obtainRandomBoardGameDetails
 obtainRandomChessOpening
+obtainRandomChessPuzzle
 obtainRandomCityInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
