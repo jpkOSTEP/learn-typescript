@@ -2531,3 +2531,14 @@ async function discoverRandomArchaeologicalSite(): Promise<string> {
   const data = await response.json();
   return data.siteName;
 }
+
+async function obtainRandomChessPuzzle(): Promise<string> {
+    try {
+        const response = await fetch('https://api.chess.com/pub/puzzle/random');
+        const data = await response.json();
+        return data.title ? `${data.title}: ${data.url}` : 'No puzzle found';
+    } catch (error) {
+        console.error('Error fetching chess puzzle:', error);
+        return 'Failed to fetch chess puzzle';
+    }
+}
