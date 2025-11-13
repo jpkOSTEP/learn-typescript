@@ -2542,3 +2542,17 @@ async function obtainRandomChessPuzzle(): Promise<string> {
         return 'Failed to fetch chess puzzle';
     }
 }
+
+async function fetchRandomArtisticTechnique(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/random-artistic-technique');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.technique;
+    } catch (error) {
+        console.error('Error fetching random artistic technique:', error);
+        throw error;
+    }
+}
