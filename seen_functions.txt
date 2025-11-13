@@ -52,6 +52,7 @@ fetchRandomArtTechnique
 fetchRandomArtTool
 fetchRandomArtisanalCheese
 fetchRandomArtisticMedium
+fetchRandomArtisticTechnique
 fetchRandomAstroFact
 fetchRandomAstronautFact
 fetchRandomAstronomicalPhenomenon
