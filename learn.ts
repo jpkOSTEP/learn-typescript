@@ -2556,3 +2556,12 @@ async function fetchRandomArtisticTechnique(): Promise<string> {
         throw error;
     }
 }
+
+async function obtainRandomCulturalFestivalInfo(): Promise<string> {
+    const response = await fetch('https://randomapi.com/api/cultural-festivals');
+    if (!response.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    return data.festivalInfo;
+}
