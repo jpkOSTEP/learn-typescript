@@ -178,6 +178,7 @@ obtainRandomBoardGameDetails
 obtainRandomChessOpening
 obtainRandomChessPuzzle
 obtainRandomCityInfo
+obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
 obtainRandomHaiku
