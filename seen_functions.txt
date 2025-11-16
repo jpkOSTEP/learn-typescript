@@ -188,6 +188,7 @@ obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
 obtainRandomSpaceMissionDetail
 obtainRandomStarFact
+obtainRandomUrbanLegend
 obtainRandomVideoGameTrivia
 removeDuplicates
 retrieveJokeAndFact
