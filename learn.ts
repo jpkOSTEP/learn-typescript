@@ -2565,3 +2565,17 @@ async function obtainRandomCulturalFestivalInfo(): Promise<string> {
     const data = await response.json();
     return data.festivalInfo;
 }
+
+async function obtainRandomUrbanLegend(): Promise<string> {
+    const response = await fetch('https://urbanlegendapi.com/api/v1/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch urban legend');
+    }
+    const data: { legend: string } = await response.json();
+    return data.legend;
+}
+
+// Usage
+obtainRandomUrbanLegend()
+    .then((legend) => console.log(legend))
+    .catch((error) => console.error(error));
