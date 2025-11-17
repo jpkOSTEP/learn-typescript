@@ -182,6 +182,7 @@ obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
 obtainRandomHaiku
+obtainRandomHistoricalArtifact
 obtainRandomHistoricalFigureFact
 obtainRandomMarineSpeciesFact
 obtainRandomMythicalWeaponFact
