@@ -2579,3 +2579,17 @@ async function obtainRandomUrbanLegend(): Promise<string> {
 obtainRandomUrbanLegend()
     .then((legend) => console.log(legend))
     .catch((error) => console.error(error));
+
+async function obtainRandomHistoricalArtifact(): Promise<string | null> {
+  try {
+    const response = await fetch('https://api.example.com/randomHistoricalArtifact');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.artifactName || null;
+  } catch (error) {
+    console.error('Failed to fetch random historical artifact:', error);
+    return null;
+  }
+}
