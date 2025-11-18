@@ -2593,3 +2593,12 @@ async function obtainRandomHistoricalArtifact(): Promise<string | null> {
     return null;
   }
 }
+
+async function fetchRandomPirateLegend(): Promise<string> {
+    const response = await fetch('https://exampleapi.com/pirate-legends/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch pirate legend');
+    }
+    const data: { legend: string } = await response.json();
+    return data.legend;
+}
