@@ -2602,3 +2602,16 @@ async function fetchRandomPirateLegend(): Promise<string> {
     const data: { legend: string } = await response.json();
     return data.legend;
 }
+
+async function obtainRandomHistoricalSiteInfo(): Promise<{ name: string; location: string; description: string; }> {
+  const response = await fetch('https://api.example.com/random-historical-site');
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical site info');
+  }
+  const data = await response.json();
+  return {
+    name: data.name,
+    location: data.location,
+    description: data.description
+  };
+}
