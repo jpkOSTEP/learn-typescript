@@ -185,6 +185,7 @@ obtainRandomFungiFact
 obtainRandomHaiku
 obtainRandomHistoricalArtifact
 obtainRandomHistoricalFigureFact
+obtainRandomHistoricalSiteInfo
 obtainRandomMarineSpeciesFact
 obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
