@@ -2615,3 +2615,19 @@ async function obtainRandomHistoricalSiteInfo(): Promise<{ name: string; locatio
     description: data.description
   };
 }
+
+function retrieveRandomHistoricalEventFact(): Promise<string> {
+  return fetch('https://history.muffinlabs.com/date')
+    .then(response => response.json())
+    .then(data => {
+      const events = data.data.Events;
+      if (events && events.length > 0) {
+        const randomIndex = Math.floor(Math.random() * events.length);
+        const randomEvent = events[randomIndex];
+        return `${randomEvent.year}: ${randomEvent.text}`;
+      } else {
+        throw new Error('No historical events found.');
+      }
+    })
+    .catch(error => `Error fetching historical event: ${error.message}`);
+}
