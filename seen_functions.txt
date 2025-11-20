@@ -200,6 +200,7 @@ retrieveRandomBookQuote
 retrieveRandomCocktail
 retrieveRandomDogImage
 retrieveRandomHistoricalEvent
+retrieveRandomHistoricalEventFact
 retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
 retrieveRandomQuoteFromTVShow
