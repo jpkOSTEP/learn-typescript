@@ -2631,3 +2631,17 @@ function retrieveRandomHistoricalEventFact(): Promise<string> {
     })
     .catch(error => `Error fetching historical event: ${error.message}`);
 }
+
+async function fetchRandomGeologicalFormation(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/geological-formations/random');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { name: string } = await response.json();
+    return data.name;
+  } catch (error) {
+    console.error('Error fetching geological formation:', error);
+    return 'Unknown Geological Formation';
+  }
+}
