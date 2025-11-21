@@ -95,6 +95,7 @@ fetchRandomFilmTrivia
 fetchRandomFolkTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
+fetchRandomGeologicalFormation
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
