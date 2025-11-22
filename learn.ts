@@ -2645,3 +2645,12 @@ async function fetchRandomGeologicalFormation(): Promise<string> {
     return 'Unknown Geological Formation';
   }
 }
+
+async function acquireRandomLiteraryGenre(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-literary-genre');
+    if (!response.ok) {
+        throw new Error('Failed to fetch literary genre');
+    }
+    const data = await response.json();
+    return data.genre;
+}
