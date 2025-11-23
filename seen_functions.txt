@@ -105,6 +105,7 @@ fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
 fetchRandomLiteraryQuote
 fetchRandomMathFact
+fetchRandomMathematicalTheorem
 fetchRandomMineralFact
 fetchRandomMountainInfo
 fetchRandomMovieTitle
