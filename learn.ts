@@ -2654,3 +2654,12 @@ async function acquireRandomLiteraryGenre(): Promise<string> {
     const data = await response.json();
     return data.genre;
 }
+
+async function fetchRandomMathematicalTheorem(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-mathematical-theorem');
+  if (!response.ok) {
+    throw new Error('Failed to fetch the theorem');
+  }
+  const data = await response.json();
+  return data.theorem;
+}
