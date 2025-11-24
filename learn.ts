@@ -2663,3 +2663,17 @@ async function fetchRandomMathematicalTheorem(): Promise<string> {
   const data = await response.json();
   return data.theorem;
 }
+
+async function fetchRandomFestivalFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.festivaldata.com/v1/random/fact');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching random festival fact:', error);
+    throw error;
+  }
+}
