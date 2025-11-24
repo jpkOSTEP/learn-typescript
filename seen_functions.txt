@@ -90,6 +90,7 @@ fetchRandomDogFact
 fetchRandomElementFromPeriodicTable
 fetchRandomElementSymbol
 fetchRandomFestivalDetail
+fetchRandomFestivalFact
 fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
 fetchRandomFilmTrivia
