@@ -93,6 +93,7 @@ fetchRandomFestivalDetail
 fetchRandomFestivalFact
 fetchRandomFestivalInfo
 fetchRandomFictionalCharacter
+fetchRandomFictionalUniverseInfo
 fetchRandomFilmTrivia
 fetchRandomFolkTale
 fetchRandomFungiSpecies
