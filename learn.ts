@@ -2677,3 +2677,16 @@ async function fetchRandomFestivalFact(): Promise<string> {
     throw error;
   }
 }
+
+async function fetchRandomFictionalUniverseInfo(): Promise<{ name: string; description: string; origin: string }> {
+    const response = await fetch('https://fictional-universe-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        origin: data.origin
+    };
+}
