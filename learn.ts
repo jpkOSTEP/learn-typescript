@@ -2704,3 +2704,12 @@ async function fetchRandomFilmFestivalInfo(): Promise<{ name: string; location: 
         description: data.description,
     };
 }
+
+async function fetchRandomChessPlayerFact(): Promise<string> {
+    const response = await fetch('https://api.chess.com/pub/player/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random chess player');
+    }
+    const playerData = await response.json();
+    return `Did you know? The chess player ${playerData.username} has a rating of ${playerData.chess_blitz.rating} in blitz games.`;
+}
