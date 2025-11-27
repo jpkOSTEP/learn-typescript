@@ -72,6 +72,7 @@ fetchRandomBotanicalGarden
 fetchRandomBotanicalGardenInfo
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
+fetchRandomChessPlayerFact
 fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
 fetchRandomCocktailDetails
