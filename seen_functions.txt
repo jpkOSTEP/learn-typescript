@@ -110,6 +110,7 @@ fetchRandomLandmarkInfo
 fetchRandomLiteraryQuote
 fetchRandomMathFact
 fetchRandomMathematicalTheorem
+fetchRandomMedievalArtifact
 fetchRandomMineralFact
 fetchRandomMountainInfo
 fetchRandomMovieTitle
