@@ -2713,3 +2713,12 @@ async function fetchRandomChessPlayerFact(): Promise<string> {
     const playerData = await response.json();
     return `Did you know? The chess player ${playerData.username} has a rating of ${playerData.chess_blitz.rating} in blitz games.`;
 }
+
+async function fetchRandomMedievalArtifact(): Promise<string> {
+  const response = await fetch('https://api.example.com/medieval-artifacts/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random medieval artifact');
+  }
+  const data: { artifact: string } = await response.json();
+  return data.artifact;
+}
