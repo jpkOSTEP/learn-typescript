@@ -2722,3 +2722,15 @@ async function fetchRandomMedievalArtifact(): Promise<string> {
   const data: { artifact: string } = await response.json();
   return data.artifact;
 }
+
+async function obtainRandomWorldHeritageSite(): Promise<string> {
+  const response = await fetch('https://whc.unesco.org/en/list/json');
+  if (!response.ok) {
+    throw new Error('Failed to fetch World Heritage Sites');
+  }
+  
+  const data = await response.json();
+  const sites = data.features.map((feature: any) => feature.properties.name);
+  const randomIndex = Math.floor(Math.random() * sites.length);
+  return sites[randomIndex];
+}
