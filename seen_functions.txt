@@ -201,6 +201,7 @@ obtainRandomSpaceMissionDetail
 obtainRandomStarFact
 obtainRandomUrbanLegend
 obtainRandomVideoGameTrivia
+obtainRandomWorldHeritageSite
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomAnimalFact
