@@ -2734,3 +2734,15 @@ async function obtainRandomWorldHeritageSite(): Promise<string> {
   const randomIndex = Math.floor(Math.random() * sites.length);
   return sites[randomIndex];
 }
+
+async function fetchRandomBiologicalTerm(): Promise<string> {
+  const response = await fetch('https://api.datamuse.com/words?rel_trg=biology&max=1');
+  if (!response.ok) {
+    throw new Error('Failed to fetch biological term');
+  }
+  const data = await response.json();
+  if (data.length === 0) {
+    throw new Error('No biological term found');
+  }
+  return data[0].word;
+}
