@@ -59,6 +59,7 @@ fetchRandomAstronautFact
 fetchRandomAstronomicalPhenomenon
 fetchRandomAstrophotographyTip
 fetchRandomBeer
+fetchRandomBiologicalTerm
 fetchRandomBirdFact
 fetchRandomBirdInfo
 fetchRandomBirdSpecies
