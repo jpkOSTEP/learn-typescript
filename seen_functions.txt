@@ -76,6 +76,7 @@ fetchRandomCatBreedInfo
 fetchRandomChessPlayerFact
 fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
+fetchRandomClassicMovie
 fetchRandomCocktailDetails
 fetchRandomCodingChallenge
 fetchRandomConstellationInfo
