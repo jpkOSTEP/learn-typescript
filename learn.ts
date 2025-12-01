@@ -2746,3 +2746,17 @@ async function fetchRandomBiologicalTerm(): Promise<string> {
   }
   return data[0].word;
 }
+
+async function fetchRandomClassicMovie(): Promise<{ title: string; year: number; director: string; genre: string; }> {
+    const response = await fetch('https://api.example.com/random-classic-movie');
+    if (!response.ok) {
+        throw new Error('Failed to fetch classic movie');
+    }
+    const data = await response.json();
+    return {
+        title: data.title,
+        year: data.year,
+        director: data.director,
+        genre: data.genre,
+    };
+}
