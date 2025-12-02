@@ -2760,3 +2760,12 @@ async function fetchRandomClassicMovie(): Promise<{ title: string; year: number;
         genre: data.genre,
     };
 }
+
+async function fetchRandomDanceMove(): Promise<string> {
+    const response = await fetch('https://random-dance-api.example.com/api/dance');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random dance move');
+    }
+    const data: { move: string } = await response.json();
+    return data.move;
+}
