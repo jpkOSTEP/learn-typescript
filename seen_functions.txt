@@ -71,6 +71,7 @@ fetchRandomBoardGameReview
 fetchRandomBotanicGardenInfo
 fetchRandomBotanicalGarden
 fetchRandomBotanicalGardenInfo
+fetchRandomBotanyConcept
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
 fetchRandomChessPlayerFact
