@@ -2769,3 +2769,18 @@ async function fetchRandomDanceMove(): Promise<string> {
     const data: { move: string } = await response.json();
     return data.move;
 }
+
+async function fetchRandomBotanyConcept(): Promise<string> {
+  const apiUrl = 'https://api.example.com/random-botany-concept';
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { concept: string } = await response.json();
+    return data.concept;
+  } catch (error) {
+    console.error('Error fetching random botany concept:', error);
+    throw error;
+  }
+}
