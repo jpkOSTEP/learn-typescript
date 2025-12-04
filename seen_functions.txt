@@ -108,6 +108,7 @@ fetchRandomGeologicalFormation
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
+fetchRandomHistoricalMonument
 fetchRandomInsectFact
 fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
