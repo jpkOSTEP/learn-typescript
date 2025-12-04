@@ -2784,3 +2784,12 @@ async function fetchRandomBotanyConcept(): Promise<string> {
     throw error;
   }
 }
+
+async function fetchRandomHistoricalMonument(): Promise<string> {
+    const response = await fetch('https://api.example.com/random/historical-monument');
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical monument');
+    }
+    const data: { name: string } = await response.json();
+    return data.name;
+}
