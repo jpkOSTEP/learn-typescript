@@ -2793,3 +2793,19 @@ async function fetchRandomHistoricalMonument(): Promise<string> {
     const data: { name: string } = await response.json();
     return data.name;
 }
+
+async function fetchRandomHikingTrail(): Promise<{ name: string; location: string; length: string; difficulty: string }> {
+  const response = await fetch('https://www.hikingproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=YOUR_API_KEY');
+  const data = await response.json();
+  if (data.trails && data.trails.length > 0) {
+    const trail = data.trails[Math.floor(Math.random() * data.trails.length)];
+    return {
+      name: trail.name,
+      location: `${trail.location} (${trail.latitude}, ${trail.longitude})`,
+      length: `${trail.length} miles`,
+      difficulty: trail.difficulty
+    };
+  } else {
+    throw new Error('No hiking trails found');
+  }
+}
