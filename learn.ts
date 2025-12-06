@@ -2809,3 +2809,12 @@ async function fetchRandomHikingTrail(): Promise<{ name: string; location: strin
     throw new Error('No hiking trails found');
   }
 }
+
+async function obtainRandomTravelDestination(): Promise<string> {
+    const response = await fetch('https://api.mockaroo.com/api/1bbcc830?count=1&key=your_api_key');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random travel destination.');
+    }
+    const data = await response.json();
+    return data[0].destination;
+}
