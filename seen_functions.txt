@@ -117,6 +117,7 @@ fetchRandomLiteraryQuote
 fetchRandomMathFact
 fetchRandomMathematicalTheorem
 fetchRandomMedievalArtifact
+fetchRandomMedievalWeaponFact
 fetchRandomMineralFact
 fetchRandomMountainInfo
 fetchRandomMovieTitle
