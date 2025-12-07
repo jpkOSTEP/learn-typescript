@@ -2818,3 +2818,12 @@ async function obtainRandomTravelDestination(): Promise<string> {
     const data = await response.json();
     return data[0].destination;
 }
+
+async function fetchRandomMedievalWeaponFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/medieval-weapons/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch the medieval weapon fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
