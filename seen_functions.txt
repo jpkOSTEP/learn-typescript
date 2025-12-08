@@ -111,6 +111,7 @@ fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
 fetchRandomHistoricalMonument
 fetchRandomInsectFact
+fetchRandomInstrumentalMusic
 fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
 fetchRandomLiteraryQuote
