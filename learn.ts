@@ -2827,3 +2827,12 @@ async function fetchRandomMedievalWeaponFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomInstrumentalMusic(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-instrumental');
+    if (!response.ok) {
+        throw new Error('Failed to fetch instrumental music');
+    }
+    const data: { title: string, artist: string, url: string } = await response.json();
+    return `${data.title} by ${data.artist} - Listen here: ${data.url}`;
+}
