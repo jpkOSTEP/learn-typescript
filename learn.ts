@@ -2836,3 +2836,12 @@ async function fetchRandomInstrumentalMusic(): Promise<string> {
     const data: { title: string, artist: string, url: string } = await response.json();
     return `${data.title} by ${data.artist} - Listen here: ${data.url}`;
 }
+
+async function fetchRandomFolkSong(): Promise<string> {
+  const response = await fetch('https://api.folksong.io/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random folk song');
+  }
+  const data: { title: string; artist: string } = await response.json();
+  return `Title: ${data.title}, Artist: ${data.artist}`;
+}
