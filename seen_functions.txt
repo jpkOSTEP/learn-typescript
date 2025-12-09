@@ -101,6 +101,7 @@ fetchRandomFictionalCharacter
 fetchRandomFictionalUniverseInfo
 fetchRandomFilmFestivalInfo
 fetchRandomFilmTrivia
+fetchRandomFolkSong
 fetchRandomFolkTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
