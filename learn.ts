@@ -2845,3 +2845,12 @@ async function fetchRandomFolkSong(): Promise<string> {
   const data: { title: string; artist: string } = await response.json();
   return `Title: ${data.title}, Artist: ${data.artist}`;
 }
+
+async function fetchRandomLiteraryCharacter(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-literary-character');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random literary character');
+    }
+    const data = await response.json();
+    return data.characterName;
+}
