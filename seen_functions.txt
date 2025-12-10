@@ -115,6 +115,7 @@ fetchRandomInsectFact
 fetchRandomInstrumentalMusic
 fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
+fetchRandomLiteraryCharacter
 fetchRandomLiteraryQuote
 fetchRandomMathFact
 fetchRandomMathematicalTheorem
