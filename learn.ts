@@ -2854,3 +2854,17 @@ async function fetchRandomLiteraryCharacter(): Promise<string> {
     const data = await response.json();
     return data.characterName;
 }
+
+async function fetchRandomFolkloreTale(): Promise<string> {
+  try {
+    const response = await fetch('https://api.folklore.com/tales/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch folklore tale');
+    }
+    const data: { tale: string } = await response.json();
+    return data.tale;
+  } catch (error) {
+    console.error('Error fetching folklore tale:', error);
+    return 'An error occurred while fetching the folklore tale.';
+  }
+}
