@@ -103,6 +103,7 @@ fetchRandomFilmFestivalInfo
 fetchRandomFilmTrivia
 fetchRandomFolkSong
 fetchRandomFolkTale
+fetchRandomFolkloreTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
 fetchRandomGeologicalFormation
