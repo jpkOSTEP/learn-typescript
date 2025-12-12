@@ -2868,3 +2868,12 @@ async function fetchRandomFolkloreTale(): Promise<string> {
     return 'An error occurred while fetching the folklore tale.';
   }
 }
+
+async function fetchRandomInstrumentInfo(): Promise<{ name: string; description: string; origin: string }> {
+    const response = await fetch('https://api.example.com/randomInstrument');
+    if (!response.ok) {
+        throw new Error('Failed to fetch instrument info');
+    }
+    const instrumentData: { name: string; description: string; origin: string } = await response.json();
+    return instrumentData;
+}
