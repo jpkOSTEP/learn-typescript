@@ -129,6 +129,7 @@ fetchRandomMountainInfo
 fetchRandomMovieTitle
 fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
+fetchRandomMusicalInstrumentInfo
 fetchRandomMysteryNovel
 fetchRandomMythicalCreature
 fetchRandomMythologyStory
