@@ -2886,3 +2886,16 @@ async function fetchRandomMedievalWeapon(): Promise<string> {
   const data: { name: string } = await response.json();
   return data.name;
 }
+
+async function fetchRandomMusicalInstrumentInfo(): Promise<{ name: string; description: string; origin: string; }> {
+    const response = await fetch('https://api.example.com/randomMusicalInstrument');
+    if (!response.ok) {
+        throw new Error('Failed to fetch musical instrument info');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        origin: data.origin
+    };
+}
