@@ -2899,3 +2899,12 @@ async function fetchRandomMusicalInstrumentInfo(): Promise<{ name: string; descr
         origin: data.origin
     };
 }
+
+async function obtainRandomInstrumentalTrack(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-instrumental-track');
+  if (!response.ok) {
+    throw new Error('Failed to fetch instrumental track');
+  }
+  const data: { title: string; artist: string } = await response.json();
+  return `${data.title} by ${data.artist}`;
+}
