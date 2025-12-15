@@ -208,6 +208,7 @@ obtainRandomHaiku
 obtainRandomHistoricalArtifact
 obtainRandomHistoricalFigureFact
 obtainRandomHistoricalSiteInfo
+obtainRandomInstrumentalTrack
 obtainRandomMarineSpeciesFact
 obtainRandomMythicalWeaponFact
 obtainRandomPhilosophicalConcept
