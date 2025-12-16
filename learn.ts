@@ -2908,3 +2908,16 @@ async function obtainRandomInstrumentalTrack(): Promise<string> {
   const data: { title: string; artist: string } = await response.json();
   return `${data.title} by ${data.artist}`;
 }
+
+async function fetchRandomCryptidInfo(): Promise<{ name: string; description: string; region: string }> {
+  const response = await fetch('https://cryptid-api.example.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random cryptid info');
+  }
+  const data = await response.json();
+  return {
+    name: data.name,
+    description: data.description,
+    region: data.region
+  };
+}
