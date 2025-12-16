@@ -82,6 +82,7 @@ fetchRandomCocktailDetails
 fetchRandomCodingChallenge
 fetchRandomConstellationInfo
 fetchRandomCountryFact
+fetchRandomCryptidInfo
 fetchRandomCryptocurrencyInfo
 fetchRandomCuisineRecipe
 fetchRandomCulinaryDelight
