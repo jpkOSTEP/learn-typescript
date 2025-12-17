@@ -2921,3 +2921,16 @@ async function fetchRandomCryptidInfo(): Promise<{ name: string; description: st
     region: data.region
   };
 }
+
+async function fetchRandomCoffeeRecipe(): Promise<{ title: string, ingredients: string[], instructions: string }> {
+  const response = await fetch('https://api.example.com/coffee-recipes/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch coffee recipe');
+  }
+  const data = await response.json();
+  return {
+    title: data.title,
+    ingredients: data.ingredients,
+    instructions: data.instructions
+  };
+}
