@@ -80,6 +80,7 @@ fetchRandomChuckNorrisJoke
 fetchRandomClassicMovie
 fetchRandomCocktailDetails
 fetchRandomCodingChallenge
+fetchRandomCoffeeRecipe
 fetchRandomConstellationInfo
 fetchRandomCountryFact
 fetchRandomCryptidInfo
