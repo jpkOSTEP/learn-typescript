@@ -2934,3 +2934,12 @@ async function fetchRandomCoffeeRecipe(): Promise<{ title: string, ingredients: 
     instructions: data.instructions
   };
 }
+
+async function obtainRandomMysteryNovelSummary(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-mystery-novel');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mystery novel summary');
+    }
+    const data: { summary: string } = await response.json();
+    return data.summary;
+}
