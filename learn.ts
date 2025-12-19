@@ -2943,3 +2943,12 @@ async function obtainRandomMysteryNovelSummary(): Promise<string> {
     const data: { summary: string } = await response.json();
     return data.summary;
 }
+
+async function fetchRandomMathematicalConcept(): Promise<string> {
+    const response = await fetch("https://api.example.com/random-math-concept");
+    if (!response.ok) {
+        throw new Error("Failed to fetch mathematical concept");
+    }
+    const data = await response.json();
+    return data.concept;
+}
