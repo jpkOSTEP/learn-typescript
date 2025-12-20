@@ -2952,3 +2952,16 @@ async function fetchRandomMathematicalConcept(): Promise<string> {
     const data = await response.json();
     return data.concept;
 }
+
+async function fetchRandomArchitecturalStyleInfo(): Promise<{ name: string; description: string; origin: string }> {
+    const response = await fetch('https://api.architecture.com/random-style');
+    if (!response.ok) {
+        throw new Error('Failed to fetch architectural style information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        origin: data.origin
+    };
+}
