@@ -85,6 +85,7 @@ fetchRandomCoffeeRecipe
 fetchRandomConstellationInfo
 fetchRandomCountryFact
 fetchRandomCryptidInfo
+fetchRandomCryptidLegend
 fetchRandomCryptocurrencyInfo
 fetchRandomCuisineRecipe
 fetchRandomCulinaryDelight
