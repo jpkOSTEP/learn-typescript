@@ -2965,3 +2965,12 @@ async function fetchRandomArchitecturalStyleInfo(): Promise<{ name: string; desc
         origin: data.origin
     };
 }
+
+async function fetchRandomCryptidLegend(): Promise<string> {
+  const response = await fetch('https://cryptid-api.example.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch cryptid legend');
+  }
+  const data: { legend: string } = await response.json();
+  return data.legend;
+}
