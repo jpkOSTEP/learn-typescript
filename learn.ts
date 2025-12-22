@@ -2974,3 +2974,17 @@ async function fetchRandomCryptidLegend(): Promise<string> {
   const data: { legend: string } = await response.json();
   return data.legend;
 }
+
+async function fetchRandomBotanicalIllustration(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/random-botanical-illustration');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data: { imageUrl: string } = await response.json();
+        return data.imageUrl;
+    } catch (error) {
+        console.error('Error fetching botanical illustration:', error);
+        throw error;
+    }
+}
