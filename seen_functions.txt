@@ -154,6 +154,7 @@ fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomQuoteOfTheDay
 fetchRandomRecipe
+fetchRandomRenaissanceArtPiece
 fetchRandomScienceArticle
 fetchRandomScientificBreakthrough
 fetchRandomScientificExperiment
