@@ -2988,3 +2988,20 @@ async function fetchRandomBotanicalIllustration(): Promise<string> {
         throw error;
     }
 }
+
+async function fetchRandomRenaissanceArtPiece(): Promise<{ title: string; artist: string; year: number; description: string }> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks/search?q=renaissance&limit=1&fields=id,title,artist_title,date_display,thumbnail');
+    const data = await response.json();
+    
+    if (data.data.length === 0) {
+        throw new Error('No Renaissance art pieces found.');
+    }
+
+    const artwork = data.data[0];
+    return {
+        title: artwork.title,
+        artist: artwork.artist_title,
+        year: parseInt(artwork.date_display.split(' ')[0]) || 0,
+        description: `Title: ${artwork.title}, Artist: ${artwork.artist_title}, Year: ${artwork.date_display}`
+    };
+}
