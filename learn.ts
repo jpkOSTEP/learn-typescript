@@ -3005,3 +3005,12 @@ async function fetchRandomRenaissanceArtPiece(): Promise<{ title: string; artist
         description: `Title: ${artwork.title}, Artist: ${artwork.artist_title}, Year: ${artwork.date_display}`
     };
 }
+
+async function fetchRandomMedievalKnightFact(): Promise<string> {
+  const response = await fetch('https://api.medievalfacts.org/random-knight-fact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch medieval knight fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
