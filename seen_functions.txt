@@ -139,6 +139,7 @@ fetchRandomMusicAlbum
 fetchRandomMusicalInstrumentInfo
 fetchRandomMysteryNovel
 fetchRandomMythicalCreature
+fetchRandomMythicalCreatureInfo
 fetchRandomMythologyStory
 fetchRandomNatureImage
 fetchRandomNoblePrizeLaureate
