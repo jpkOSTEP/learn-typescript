@@ -3014,3 +3014,16 @@ async function fetchRandomMedievalKnightFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomMythicalCreatureInfo(): Promise<{ name: string; description: string; origin: string }> {
+    const response = await fetch('https://mythical-creatures-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mythical creature info');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        origin: data.origin
+    };
+}
