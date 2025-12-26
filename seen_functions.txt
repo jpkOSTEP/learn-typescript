@@ -138,6 +138,7 @@ fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
 fetchRandomMusicalInstrumentInfo
 fetchRandomMysteryNovel
+fetchRandomMysticalCreatureFact
 fetchRandomMythicalCreature
 fetchRandomMythicalCreatureInfo
 fetchRandomMythologyStory
