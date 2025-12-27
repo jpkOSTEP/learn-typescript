@@ -3038,3 +3038,12 @@ async function fetchRandomMysticalCreatureFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function retrieveRandomFolkTale(): Promise<string> {
+  const response = await fetch('https://api.example.com/folktales/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a random folktale');
+  }
+  const data: { title: string; story: string } = await response.json();
+  return `${data.title}: ${data.story}`;
+}
