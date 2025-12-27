@@ -235,6 +235,7 @@ retrieveRandomAnimalFact
 retrieveRandomBookQuote
 retrieveRandomCocktail
 retrieveRandomDogImage
+retrieveRandomFolkTale
 retrieveRandomHistoricalEvent
 retrieveRandomHistoricalEventFact
 retrieveRandomMealSuggestion
