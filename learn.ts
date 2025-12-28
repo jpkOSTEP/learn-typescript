@@ -3047,3 +3047,16 @@ async function retrieveRandomFolkTale(): Promise<string> {
   const data: { title: string; story: string } = await response.json();
   return `${data.title}: ${data.story}`;
 }
+
+async function fetchRandomMedievalCastleInfo(): Promise<{ name: string; location: string; history: string }> {
+    const response = await fetch('https://api.example.com/medieval-castles/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch medieval castle information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        history: data.history
+    };
+}
