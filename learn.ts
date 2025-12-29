@@ -3060,3 +3060,16 @@ async function fetchRandomMedievalCastleInfo(): Promise<{ name: string; location
         history: data.history
     };
 }
+
+async function discoverRandomLandmarkInfo(): Promise<{ name: string; location: string; description: string }> {
+    const response = await fetch('https://api.example.com/random-landmark');
+    if (!response.ok) {
+        throw new Error('Failed to fetch landmark information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        description: data.description
+    };
+}
