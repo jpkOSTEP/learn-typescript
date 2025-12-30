@@ -3073,3 +3073,17 @@ async function discoverRandomLandmarkInfo(): Promise<{ name: string; location: s
         description: data.description
     };
 }
+
+async function fetchRandomChessPlayerProfile(): Promise<{ name: string; title: string; rating: number; country: string; }> {
+    const response = await fetch('https://api.chess.com/pub/player/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random chess player profile');
+    }
+    const data = await response.json();
+    return {
+        name: data.username,
+        title: data.title || 'No title',
+        rating: data.chess_blitz?.last.rating || 0,
+        country: data.country
+    };
+}
