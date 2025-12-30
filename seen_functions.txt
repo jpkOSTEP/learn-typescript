@@ -78,6 +78,7 @@ fetchRandomBotanyConcept
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
 fetchRandomChessPlayerFact
+fetchRandomChessPlayerProfile
 fetchRandomChessPuzzle
 fetchRandomChuckNorrisJoke
 fetchRandomClassicMovie
