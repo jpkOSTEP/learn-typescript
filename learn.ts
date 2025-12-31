@@ -3087,3 +3087,17 @@ async function fetchRandomChessPlayerProfile(): Promise<{ name: string; title: s
         country: data.country
     };
 }
+
+async function fetchRandomMythologicalCreatureFact(): Promise<string> {
+    try {
+        const response = await fetch('https://mythological-creatures-api.com/api/random');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data: { fact: string } = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error('Error:', error);
+        return 'An error occurred while fetching mythological creature fact.';
+    }
+}
