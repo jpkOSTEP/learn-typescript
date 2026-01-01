@@ -6,6 +6,7 @@ Queue
 Rectangle
 Stack
 TemperatureConverter
+acquireRandomArtExhibitionInfo
 acquireRandomArtPiece
 acquireRandomLiteraryGenre
 acquireRandomSpaceTrivia
