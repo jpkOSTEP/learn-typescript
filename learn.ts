@@ -3101,3 +3101,21 @@ async function fetchRandomMythologicalCreatureFact(): Promise<string> {
         return 'An error occurred while fetching mythological creature fact.';
     }
 }
+
+async function acquireRandomArtExhibitionInfo(): Promise<string> {
+    try {
+        const response = await fetch('https://api.artic.edu/api/v1/exhibitions?limit=1&fields=title,description');
+        if (!response.ok) {
+            throw new Error('Failed to fetch art exhibition information');
+        }
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+            const exhibition = data.data[0];
+            return `Title: ${exhibition.title}\nDescription: ${exhibition.description}`;
+        } else {
+            return 'No exhibition information available';
+        }
+    } catch (error) {
+        return `Error: ${(error as Error).message}`;
+    }
+}
