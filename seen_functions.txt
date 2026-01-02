@@ -227,6 +227,7 @@ obtainRandomInstrumentalTrack
 obtainRandomMarineSpeciesFact
 obtainRandomMysteryNovelSummary
 obtainRandomMythicalWeaponFact
+obtainRandomMythologicalCreature
 obtainRandomPhilosophicalConcept
 obtainRandomSpaceMissionDetail
 obtainRandomStarFact
