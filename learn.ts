@@ -3119,3 +3119,12 @@ async function acquireRandomArtExhibitionInfo(): Promise<string> {
         return `Error: ${(error as Error).message}`;
     }
 }
+
+async function obtainRandomMythologicalCreature(): Promise<string> {
+    const response = await fetch('https://mythological-creatures-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mythological creature');
+    }
+    const data: { name: string, description: string } = await response.json();
+    return `Creature: ${data.name}\nDescription: ${data.description}`;
+}
