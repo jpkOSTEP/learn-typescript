@@ -3128,3 +3128,16 @@ async function obtainRandomMythologicalCreature(): Promise<string> {
     const data: { name: string, description: string } = await response.json();
     return `Creature: ${data.name}\nDescription: ${data.description}`;
 }
+
+async function obtainRandomCryptidInfo(): Promise<{ name: string; description: string; region: string }> {
+    const response = await fetch('https://cryptid-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random cryptid information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        region: data.region
+    };
+}
