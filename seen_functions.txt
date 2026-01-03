@@ -216,6 +216,7 @@ obtainRandomBoardGameDetails
 obtainRandomChessOpening
 obtainRandomChessPuzzle
 obtainRandomCityInfo
+obtainRandomCryptidInfo
 obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
