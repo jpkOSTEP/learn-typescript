@@ -120,6 +120,7 @@ fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
 fetchRandomHistoricalMonument
+fetchRandomHistoricalSpeech
 fetchRandomInsectFact
 fetchRandomInstrumentInfo
 fetchRandomInstrumentalMusic
