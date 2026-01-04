@@ -3141,3 +3141,12 @@ async function obtainRandomCryptidInfo(): Promise<{ name: string; description: s
         region: data.region
     };
 }
+
+async function fetchRandomHistoricalSpeech(): Promise<string> {
+  const response = await fetch('https://api.example.com/random_historical_speech');
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical speech');
+  }
+  const data = await response.json();
+  return data.speech;
+}
