@@ -186,6 +186,7 @@ findMax
 findMaxInArray
 gatherRandomArtisticMovement
 gatherRandomCarnivorousPlantFact
+gatherRandomLiteraryQuote
 generateRandomAstronomyFact
 getAverage
 getCountryInfo
