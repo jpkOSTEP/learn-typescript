@@ -3150,3 +3150,12 @@ async function fetchRandomHistoricalSpeech(): Promise<string> {
   const data = await response.json();
   return data.speech;
 }
+
+async function gatherRandomLiteraryQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random?tags=literature');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a literary quote');
+  }
+  const data = await response.json();
+  return `${data.content} — ${data.author}`;
+}
