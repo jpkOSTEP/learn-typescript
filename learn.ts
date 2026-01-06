@@ -3159,3 +3159,12 @@ async function gatherRandomLiteraryQuote(): Promise<string> {
   const data = await response.json();
   return `${data.content} — ${data.author}`;
 }
+
+async function fetchRandomVikingSaga(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-viking-saga');
+    if (!response.ok) {
+        throw new Error('Failed to fetch Viking saga');
+    }
+    const sagaData: { saga: string } = await response.json();
+    return sagaData.saga;
+}
