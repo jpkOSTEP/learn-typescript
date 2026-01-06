@@ -176,6 +176,7 @@ fetchRandomTechInnovation
 fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
 fetchRandomUser
+fetchRandomVikingSaga
 fetchRandomWord
 fetchRandomZoologicalCuriosity
 fetchSpaceXLaunches
