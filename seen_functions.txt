@@ -241,6 +241,7 @@ obtainRandomVideoGameTrivia
 obtainRandomWorldHeritageSite
 removeDuplicates
 retrieveJokeAndFact
+retrieveRandomAncientArtifact
 retrieveRandomAnimalFact
 retrieveRandomBookQuote
 retrieveRandomCocktail
