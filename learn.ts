@@ -3168,3 +3168,18 @@ async function fetchRandomVikingSaga(): Promise<string> {
     const sagaData: { saga: string } = await response.json();
     return sagaData.saga;
 }
+
+async function retrieveRandomAncientArtifact(): Promise<{ name: string; description: string; era: string; imageUrl: string }> {
+    const response = await fetch('https://api.example.com/randomAncientArtifact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch ancient artifact data');
+    }
+
+    const data = await response.json();
+    return {
+        name: data.name,
+        description: data.description,
+        era: data.era,
+        imageUrl: data.imageUrl,
+    };
+}
