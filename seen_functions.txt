@@ -115,6 +115,7 @@ fetchRandomFolkloreTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
 fetchRandomGeologicalFormation
+fetchRandomGreekMythologyStory
 fetchRandomHikingTrail
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
