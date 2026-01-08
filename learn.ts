@@ -3183,3 +3183,12 @@ async function retrieveRandomAncientArtifact(): Promise<{ name: string; descript
         imageUrl: data.imageUrl,
     };
 }
+
+async function fetchRandomGreekMythologyStory(): Promise<string> {
+    const response = await fetch('https://api.example.com/randomGreekMythologyStory');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a Greek mythology story');
+    }
+    const data = await response.json();
+    return data.story;
+}
