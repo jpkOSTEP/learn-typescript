@@ -179,6 +179,7 @@ fetchRandomUnderwaterCreatureFact
 fetchRandomUser
 fetchRandomVikingSaga
 fetchRandomWord
+fetchRandomWorldCuisine
 fetchRandomZoologicalCuriosity
 fetchSpaceXLaunches
 filterArrayByType
