@@ -21,6 +21,7 @@ fetchCryptoPrice
 fetchData
 fetchInspirationalQuote
 fetchMarsRoverPhotos
+fetchRandomAIConcept
 fetchRandomActivity
 fetchRandomAdvice
 fetchRandomAdviceSlip
