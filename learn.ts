@@ -3202,3 +3202,17 @@ async function fetchRandomWorldCuisine(): Promise<string> {
   const meal = data.meals[0];
   return meal.strArea; // Returns the area (cuisine) of the random meal
 }
+
+async function fetchRandomAIConcept(): Promise<string> {
+    const response = await fetch('https://api.publicapis.org/entries');
+    if (!response.ok) {
+        throw new Error('Failed to fetch AI concepts');
+    }
+    const data = await response.json();
+    const aiEntries = data.entries.filter((entry: any) => entry.Category.includes('Artificial Intelligence'));
+    if (aiEntries.length === 0) {
+        return 'No AI concepts found';
+    }
+    const randomIndex = Math.floor(Math.random() * aiEntries.length);
+    return aiEntries[randomIndex].Description;
+}
