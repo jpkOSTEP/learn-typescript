@@ -3216,3 +3216,18 @@ async function fetchRandomAIConcept(): Promise<string> {
     const randomIndex = Math.floor(Math.random() * aiEntries.length);
     return aiEntries[randomIndex].Description;
 }
+
+async function acquireRandomNeuroscienceFact(): Promise<string> {
+    const apiUrl = 'https://example-neuroscience-api.com/random-fact';
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error('Failed to fetch the neuroscience fact:', error);
+        throw error;
+    }
+}
