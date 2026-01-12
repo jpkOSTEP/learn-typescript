@@ -3231,3 +3231,17 @@ async function acquireRandomNeuroscienceFact(): Promise<string> {
         throw error;
     }
 }
+
+async function fetchRandomMythicalCreatureFact(): Promise<string> {
+  const response = await fetch('https://api.mythicalcreaturesapi.com/facts/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a mythical creature fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
+
+// Example usage:
+fetchRandomMythicalCreatureFact()
+  .then(fact => console.log(fact))
+  .catch(error => console.error(error));
