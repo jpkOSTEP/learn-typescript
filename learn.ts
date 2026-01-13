@@ -3245,3 +3245,12 @@ async function fetchRandomMythicalCreatureFact(): Promise<string> {
 fetchRandomMythicalCreatureFact()
   .then(fact => console.log(fact))
   .catch(error => console.error(error));
+
+async function retrieveRandomJazzAlbum(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-jazz-album');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random jazz album');
+  }
+  const data = await response.json();
+  return data.title;
+}
