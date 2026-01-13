@@ -254,6 +254,7 @@ retrieveRandomDogImage
 retrieveRandomFolkTale
 retrieveRandomHistoricalEvent
 retrieveRandomHistoricalEventFact
+retrieveRandomJazzAlbum
 retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
 retrieveRandomQuoteFromTVShow
