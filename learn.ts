@@ -3254,3 +3254,17 @@ async function retrieveRandomJazzAlbum(): Promise<string> {
   const data = await response.json();
   return data.title;
 }
+
+async function acquireRandomMythologicalStory(): Promise<string> {
+  try {
+    const response = await fetch('https://api.mythologicalstories.net/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch mythological story');
+    }
+    const data = await response.json();
+    return data.story;
+  } catch (error) {
+    console.error(error);
+    return 'An error occurred while retrieving the mythological story.';
+  }
+}
