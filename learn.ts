@@ -3268,3 +3268,16 @@ async function acquireRandomMythologicalStory(): Promise<string> {
     return 'An error occurred while retrieving the mythological story.';
   }
 }
+
+async function fetchRandomMythologicalDeity(): Promise<{ name: string, domain: string, mythology: string }> {
+    const response = await fetch('https://mythologyapi.com/api/v1/random-deity');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random mythological deity');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        domain: data.domain,
+        mythology: data.mythology
+    };
+}
