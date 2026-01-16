@@ -3281,3 +3281,12 @@ async function fetchRandomMythologicalDeity(): Promise<{ name: string, domain: s
         mythology: data.mythology
     };
 }
+
+async function obtainRandomPhilosophicalQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random?tags=philosophy');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a philosophical quote');
+  }
+  const data: { content: string; author: string } = await response.json();
+  return `${data.content} — ${data.author}`;
+}
