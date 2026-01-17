@@ -30,6 +30,7 @@ fetchRandomAdviceSlip
 fetchRandomAdviceSnippets
 fetchRandomAdviceTip
 fetchRandomAlgorithmInfo
+fetchRandomAncientCivilizationFact
 fetchRandomAnecdote
 fetchRandomAnimalFact
 fetchRandomAnimalImage
