@@ -3290,3 +3290,12 @@ async function obtainRandomPhilosophicalQuote(): Promise<string> {
   const data: { content: string; author: string } = await response.json();
   return `${data.content} — ${data.author}`;
 }
+
+async function fetchRandomAncientCivilizationFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-ancient-civilization-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch ancient civilization fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
