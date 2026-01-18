@@ -3299,3 +3299,12 @@ async function fetchRandomAncientCivilizationFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function acquireRandomMythicalCreatureFact(): Promise<string> {
+    const response = await fetch('https://mythical-creatures-api.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random mythical creature fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
