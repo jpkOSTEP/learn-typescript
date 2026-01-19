@@ -157,6 +157,7 @@ fetchRandomMythologicalCreatureFact
 fetchRandomMythologicalDeity
 fetchRandomMythologyStory
 fetchRandomNatureImage
+fetchRandomNobelLaureate
 fetchRandomNoblePrizeLaureate
 fetchRandomOceanFact
 fetchRandomOperaSynopsis
