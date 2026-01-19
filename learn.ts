@@ -3308,3 +3308,18 @@ async function acquireRandomMythicalCreatureFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+import axios from 'axios';
+
+async function fetchRandomNobelLaureate(): Promise<{ name: string, category: string, year: number, motivation: string }> {
+  const response = await axios.get('https://api.nobelprize.org/2.0/nobelPrizes');
+  const prizes = response.data.nobelPrizes;
+  const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
+  const laureate = randomPrize.laureates[0];
+  return {
+    name: laureate.knownName?.en || laureate.fullName?.en || 'Unknown',
+    category: randomPrize.category.en,
+    year: randomPrize.awardYear,
+    motivation: laureate.motivation?.en || 'No motivation provided'
+  };
+}
