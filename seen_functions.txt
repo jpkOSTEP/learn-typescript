@@ -155,6 +155,7 @@ fetchRandomMythicalCreatureFact
 fetchRandomMythicalCreatureInfo
 fetchRandomMythologicalCreatureFact
 fetchRandomMythologicalDeity
+fetchRandomMythologicalGodDetail
 fetchRandomMythologyStory
 fetchRandomNatureImage
 fetchRandomNobelLaureate
