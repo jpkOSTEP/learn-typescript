@@ -3323,3 +3323,16 @@ async function fetchRandomNobelLaureate(): Promise<{ name: string, category: str
     motivation: laureate.motivation?.en || 'No motivation provided'
   };
 }
+
+async function fetchRandomMythologicalGodDetail(): Promise<{ name: string; mythology: string; description: string }> {
+    const response = await fetch('https://api.example.com/mythological-gods/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mythological god details');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        mythology: data.mythology,
+        description: data.description,
+    };
+}
