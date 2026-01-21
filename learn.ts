@@ -3336,3 +3336,18 @@ async function fetchRandomMythologicalGodDetail(): Promise<{ name: string; mytho
         description: data.description,
     };
 }
+
+async function obtainRandomGeographicalFact(): Promise<string> {
+    const response = await fetch('https://api.geodb.com/v1/geo/cities?limit=1&offset=' + Math.floor(Math.random() * 1000), {
+        headers: {
+            'X-RapidAPI-Key': 'YOUR_API_KEY',
+            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        }
+    });
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+        const city = data.data[0];
+        return `Did you know? The city ${city.city} is located in the country of ${city.country} and has a population of approximately ${city.population} people.`;
+    }
+    return 'Could not retrieve a geographical fact at this time.';
+}
