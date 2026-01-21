@@ -234,6 +234,7 @@ obtainRandomCryptidInfo
 obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
 obtainRandomFungiFact
+obtainRandomGeographicalFact
 obtainRandomHaiku
 obtainRandomHistoricalArtifact
 obtainRandomHistoricalFigureFact
