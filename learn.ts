@@ -3351,3 +3351,12 @@ async function obtainRandomGeographicalFact(): Promise<string> {
     }
     return 'Could not retrieve a geographical fact at this time.';
 }
+
+async function seekRandomMythicalCreatureFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/mythical-creatures/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a mythical creature fact.');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
