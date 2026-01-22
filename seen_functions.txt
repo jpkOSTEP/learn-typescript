@@ -267,4 +267,5 @@ retrieveRandomMealSuggestion
 retrieveRandomProgrammingJoke
 retrieveRandomQuoteFromTVShow
 retrieveRandomScienceFact
+seekRandomMythicalCreatureFact
 sumArray
