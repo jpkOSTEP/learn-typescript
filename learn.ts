@@ -3360,3 +3360,12 @@ async function seekRandomMythicalCreatureFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomNobleGasFact(): Promise<string> {
+    const response = await fetch('https://api.noblegasfacts.com/v1/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch noble gas fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
