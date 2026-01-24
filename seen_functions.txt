@@ -167,6 +167,7 @@ fetchRandomPaintingInfo
 fetchRandomParkInfo
 fetchRandomPhilosopherQuote
 fetchRandomPhotographyTip
+fetchRandomPirateFact
 fetchRandomPirateLegend
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
