@@ -3369,3 +3369,16 @@ async function fetchRandomNobleGasFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+function fetchRandomPirateFact(): Promise<string> {
+    return fetch('https://random-pirate-facts-api.com/api/v1/facts/random')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch pirate fact');
+            }
+            return response.json();
+        })
+        .then(data => {
+            return data.fact;
+        });
+}
