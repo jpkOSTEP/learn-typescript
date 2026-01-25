@@ -3382,3 +3382,17 @@ function fetchRandomPirateFact(): Promise<string> {
             return data.fact;
         });
 }
+
+async function acquireRandomMuseumExhibit(): Promise<string> {
+  const response = await fetch('https://api.harvardartmuseums.org/object?apikey=YOUR_API_KEY&size=1&sort=random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch museum exhibit');
+  }
+  const data = await response.json();
+  if (data.records && data.records.length > 0) {
+    const exhibit = data.records[0];
+    return `Exhibit: ${exhibit.title}, Artist: ${exhibit.people && exhibit.people[0] ? exhibit.people[0].name : 'Unknown'}`;
+  } else {
+    throw new Error('No exhibit found');
+  }
+}
