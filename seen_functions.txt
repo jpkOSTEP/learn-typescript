@@ -9,6 +9,7 @@ TemperatureConverter
 acquireRandomArtExhibitionInfo
 acquireRandomArtPiece
 acquireRandomLiteraryGenre
+acquireRandomMangaSynopsis
 acquireRandomMuseumExhibit
 acquireRandomMythicalCreatureFact
 acquireRandomMythologicalStory
