@@ -3396,3 +3396,13 @@ async function acquireRandomMuseumExhibit(): Promise<string> {
     throw new Error('No exhibit found');
   }
 }
+
+async function acquireRandomMangaSynopsis(): Promise<string> {
+    const response = await fetch('https://api.jikan.moe/v4/random/manga');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random manga synopsis');
+    }
+    const data = await response.json();
+    const synopsis: string = data.data.synopsis || 'Synopsis not available';
+    return synopsis;
+}
