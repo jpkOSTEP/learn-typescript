@@ -3406,3 +3406,23 @@ async function acquireRandomMangaSynopsis(): Promise<string> {
     const synopsis: string = data.data.synopsis || 'Synopsis not available';
     return synopsis;
 }
+
+async function acquireRandomMovieRecommendation(): Promise<string | null> {
+  const apiKey = 'your_tmdb_api_key_here';
+  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.results.length);
+    const movie = data.results[randomIndex];
+    return movie ? movie.title : null;
+  } catch (error) {
+    console.error('Failed to fetch movie recommendation:', error);
+    return null;
+  }
+}
