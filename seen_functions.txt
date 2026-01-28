@@ -245,6 +245,7 @@ obtainRandomHistoricalArtifact
 obtainRandomHistoricalFigureFact
 obtainRandomHistoricalSiteInfo
 obtainRandomInstrumentalTrack
+obtainRandomIslandFact
 obtainRandomMarineSpeciesFact
 obtainRandomMysteryNovelSummary
 obtainRandomMythicalWeaponFact
