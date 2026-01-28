@@ -3426,3 +3426,17 @@ async function acquireRandomMovieRecommendation(): Promise<string | null> {
     return null;
   }
 }
+
+async function obtainRandomIslandFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.islandfacts.example.com/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch island fact');
+    }
+    const data = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error obtaining random island fact:', error);
+    throw error;
+  }
+}
