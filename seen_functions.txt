@@ -122,6 +122,7 @@ fetchRandomFolkTale
 fetchRandomFolkloreTale
 fetchRandomFungiSpecies
 fetchRandomFuturisticGadget
+fetchRandomFuturisticGadgetInfo
 fetchRandomGeologicalFormation
 fetchRandomGreekMythologyStory
 fetchRandomHikingTrail
