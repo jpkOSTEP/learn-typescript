@@ -3449,3 +3449,17 @@ async function fetchRandomFuturisticGadgetInfo(): Promise<string> {
   const data = await response.json();
   return data.description;
 }
+
+async function acquireRandomMathematicalTheorem(): Promise<string> {
+  try {
+    const response = await fetch('https://example-math-api.com/api/random-theorem');
+    if (!response.ok) {
+      throw new Error('Failed to fetch the theorem');
+    }
+    const data: { theorem: string } = await response.json();
+    return data.theorem;
+  } catch (error) {
+    console.error('Error fetching the mathematical theorem:', error);
+    return 'An error occurred while fetching the mathematical theorem.';
+  }
+}
