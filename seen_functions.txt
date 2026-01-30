@@ -10,6 +10,7 @@ acquireRandomArtExhibitionInfo
 acquireRandomArtPiece
 acquireRandomLiteraryGenre
 acquireRandomMangaSynopsis
+acquireRandomMathematicalTheorem
 acquireRandomMovieRecommendation
 acquireRandomMuseumExhibit
 acquireRandomMythicalCreatureFact
