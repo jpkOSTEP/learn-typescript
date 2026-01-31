@@ -3463,3 +3463,12 @@ async function acquireRandomMathematicalTheorem(): Promise<string> {
     return 'An error occurred while fetching the mathematical theorem.';
   }
 }
+
+async function discoverRandomOceanFact(): Promise<string> {
+  const response = await fetch('https://api.oceanfacts.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch ocean fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
