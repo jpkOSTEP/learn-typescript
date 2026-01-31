@@ -23,6 +23,7 @@ dedupeArray
 deduplicateArray
 discoverRandomArchaeologicalSite
 discoverRandomLandmarkInfo
+discoverRandomOceanFact
 fetchCatFacts
 fetchCryptoPrice
 fetchData
