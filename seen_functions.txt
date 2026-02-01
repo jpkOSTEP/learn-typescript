@@ -24,6 +24,7 @@ deduplicateArray
 discoverRandomArchaeologicalSite
 discoverRandomLandmarkInfo
 discoverRandomOceanFact
+extractRandomNobelPrizeLaureate
 fetchCatFacts
 fetchCryptoPrice
 fetchData
