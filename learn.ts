@@ -3472,3 +3472,18 @@ async function discoverRandomOceanFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function extractRandomNobelPrizeLaureate(): Promise<{ name: string; category: string; year: number }> {
+  const response = await fetch('https://api.nobelprize.org/v1/laureate.json?random=true');
+  const data = await response.json();
+  if (data.laureates && data.laureates.length > 0) {
+    const laureate = data.laureates[0];
+    return {
+      name: `${laureate.firstname} ${laureate.surname || ''}`.trim(),
+      category: laureate.prizes[0].category,
+      year: parseInt(laureate.prizes[0].year, 10)
+    };
+  } else {
+    throw new Error('No laureate data found');
+  }
+}
