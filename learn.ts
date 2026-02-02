@@ -3487,3 +3487,16 @@ async function extractRandomNobelPrizeLaureate(): Promise<{ name: string; catego
     throw new Error('No laureate data found');
   }
 }
+
+async function fetchRandomFungiSpeciesDetail(): Promise<{ name: string; description: string; image: string }> {
+  const response = await fetch('https://fungi-api.example.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch fungi species details');
+  }
+  const data = await response.json();
+  return {
+    name: data.name,
+    description: data.description,
+    image: data.image_url,
+  };
+}
