@@ -124,6 +124,7 @@ fetchRandomFolkSong
 fetchRandomFolkTale
 fetchRandomFolkloreTale
 fetchRandomFungiSpecies
+fetchRandomFungiSpeciesDetail
 fetchRandomFuturisticGadget
 fetchRandomFuturisticGadgetInfo
 fetchRandomGeologicalFormation
