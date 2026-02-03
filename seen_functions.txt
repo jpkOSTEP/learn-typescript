@@ -12,6 +12,7 @@ acquireRandomLiteraryGenre
 acquireRandomMangaSynopsis
 acquireRandomMathematicalTheorem
 acquireRandomMovieRecommendation
+acquireRandomMovieSynopsis
 acquireRandomMuseumExhibit
 acquireRandomMythicalCreatureFact
 acquireRandomMythologicalStory
