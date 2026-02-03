@@ -3500,3 +3500,16 @@ async function fetchRandomFungiSpeciesDetail(): Promise<{ name: string; descript
     image: data.image_url,
   };
 }
+
+async function acquireRandomMovieSynopsis(): Promise<string> {
+  const apiKey = 'your_api_key';
+  const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
+  const data = await response.json();
+
+  if (data.results && data.results.length > 0) {
+    const randomIndex = Math.floor(Math.random() * data.results.length);
+    return data.results[randomIndex].overview;
+  } else {
+    throw new Error('No movies found');
+  }
+}
