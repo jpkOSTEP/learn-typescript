@@ -231,6 +231,7 @@ getRandomSpaceFact
 getRandomTriviaFact
 getUniqueElements
 getUniqueValues
+grabRandomFolkloreTale
 isPalindrome
 noop
 obtainAstronomyPictureOfTheDay
