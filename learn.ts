@@ -3513,3 +3513,12 @@ async function acquireRandomMovieSynopsis(): Promise<string> {
     throw new Error('No movies found');
   }
 }
+
+async function grabRandomFolkloreTale(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-folklore');
+  if (!response.ok) {
+    throw new Error('Failed to fetch a folklore tale');
+  }
+  const data = await response.json();
+  return data.tale;
+}
