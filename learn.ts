@@ -3522,3 +3522,18 @@ async function grabRandomFolkloreTale(): Promise<string> {
   const data = await response.json();
   return data.tale;
 }
+
+async function obtainRandomBirdSpeciesFact(): Promise<string> {
+    const response = await fetch('https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json', {
+        headers: {
+            'X-eBirdApiToken': 'YOUR_API_KEY'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Failed to fetch bird species data');
+    }
+    const birdData = await response.json();
+    const randomIndex = Math.floor(Math.random() * birdData.length);
+    const randomBird = birdData[randomIndex];
+    return `Did you know? The ${randomBird.comName} (${randomBird.sciName}) is a fascinating bird species!`;
+}
