@@ -3537,3 +3537,12 @@ async function obtainRandomBirdSpeciesFact(): Promise<string> {
     const randomBird = birdData[randomIndex];
     return `Did you know? The ${randomBird.comName} (${randomBird.sciName}) is a fascinating bird species!`;
 }
+
+async function fetchRandomOlympicEvent(): Promise<string> {
+  const response = await fetch('https://www.olympicsapi.com/api/v1/events/random');
+  if (!response.ok) {
+    throw new Error("Failed to fetch random Olympic event");
+  }
+  const data = await response.json();
+  return data.eventName;
+}
