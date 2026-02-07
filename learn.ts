@@ -3546,3 +3546,12 @@ async function fetchRandomOlympicEvent(): Promise<string> {
   const data = await response.json();
   return data.eventName;
 }
+
+async function acquireRandomMarineMammalFact(): Promise<string> {
+  const response = await fetch('https://api.marinemammalapp.com/randomfact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch marine mammal fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
