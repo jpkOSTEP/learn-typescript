@@ -262,6 +262,7 @@ obtainRandomMythicalWeaponFact
 obtainRandomMythologicalCreature
 obtainRandomPhilosophicalConcept
 obtainRandomPhilosophicalQuote
+obtainRandomPirateLegend
 obtainRandomSpaceMissionDetail
 obtainRandomStarFact
 obtainRandomTravelDestination
