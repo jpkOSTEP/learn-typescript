@@ -3555,3 +3555,12 @@ async function acquireRandomMarineMammalFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function obtainRandomPirateLegend(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-pirate-legend');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random pirate legend');
+    }
+    const data: { legend: string } = await response.json();
+    return data.legend;
+}
