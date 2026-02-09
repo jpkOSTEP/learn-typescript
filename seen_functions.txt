@@ -269,6 +269,7 @@ obtainRandomTravelDestination
 obtainRandomUrbanLegend
 obtainRandomVideoGameTrivia
 obtainRandomWorldHeritageSite
+obtainRandomWorldWonderFact
 removeDuplicates
 retrieveJokeAndFact
 retrieveRandomAncientArtifact
