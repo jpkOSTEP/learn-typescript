@@ -3564,3 +3564,17 @@ async function obtainRandomPirateLegend(): Promise<string> {
     const data: { legend: string } = await response.json();
     return data.legend;
 }
+
+async function obtainRandomWorldWonderFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/worldwonders/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch world wonder fact');
+    }
+    const data = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching world wonder fact:', error);
+    throw error;
+  }
+}
