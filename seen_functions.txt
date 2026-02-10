@@ -200,6 +200,7 @@ fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
 fetchRandomUser
 fetchRandomVikingSaga
+fetchRandomWildlifeConservationFact
 fetchRandomWord
 fetchRandomWorldCuisine
 fetchRandomZoologicalCuriosity
