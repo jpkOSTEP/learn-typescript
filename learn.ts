@@ -3578,3 +3578,16 @@ async function obtainRandomWorldWonderFact(): Promise<string> {
     throw error;
   }
 }
+
+async function fetchRandomWildlifeConservationFact(): Promise<string> {
+    const response = await fetch('https://some-random-api.ml/facts/conservation');
+    if (!response.ok) {
+        throw new Error('Failed to fetch wildlife conservation fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
+
+fetchRandomWildlifeConservationFact()
+    .then(fact => console.log('Wildlife Conservation Fact:', fact))
+    .catch(error => console.error('Error:', error));
