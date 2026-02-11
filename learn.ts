@@ -3591,3 +3591,23 @@ async function fetchRandomWildlifeConservationFact(): Promise<string> {
 fetchRandomWildlifeConservationFact()
     .then(fact => console.log('Wildlife Conservation Fact:', fact))
     .catch(error => console.error('Error:', error));
+
+async function obtainRandomComicBookCharacter(): Promise<{ name: string; description: string; thumbnail: string }> {
+  const apiKey = 'your-marvel-api-key';
+  const ts = new Date().getTime();
+  const hash = 'your-md5-hash-of-ts-privateKey-publicKey'; // Generate this hash using ts, private key, and public key
+  const response = await fetch(`https://gateway.marvel.com/v1/public/characters?limit=1&offset=${Math.floor(Math.random() * 1485)}&ts=${ts}&apikey=${apiKey}&hash=${hash}`);
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch comic book character');
+  }
+
+  const data = await response.json();
+  const character = data.data.results[0];
+
+  return {
+    name: character.name,
+    description: character.description,
+    thumbnail: `${character.thumbnail.path}.${character.thumbnail.extension}`,
+  };
+}
