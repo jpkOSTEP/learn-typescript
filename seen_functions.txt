@@ -144,6 +144,7 @@ fetchRandomJokeAndFact
 fetchRandomLandmarkInfo
 fetchRandomLiteraryCharacter
 fetchRandomLiteraryQuote
+fetchRandomMangaInfo
 fetchRandomMathFact
 fetchRandomMathematicalConcept
 fetchRandomMathematicalTheorem
