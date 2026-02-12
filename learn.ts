@@ -3611,3 +3611,25 @@ async function obtainRandomComicBookCharacter(): Promise<{ name: string; descrip
     thumbnail: `${character.thumbnail.path}.${character.thumbnail.extension}`,
   };
 }
+
+async function fetchRandomMangaInfo(): Promise<{ title: string; synopsis: string; url: string }> {
+  const response = await fetch('https://api.jikan.moe/v3/manga/1');
+  if (!response.ok) {
+    throw new Error('Failed to fetch manga info');
+  }
+  const data = await response.json();
+  return {
+    title: data.title,
+    synopsis: data.synopsis,
+    url: data.url
+  };
+}
+
+(async () => {
+  try {
+    const mangaInfo = await fetchRandomMangaInfo();
+    console.log(mangaInfo);
+  } catch (error) {
+    console.error(error);
+  }
+})();
