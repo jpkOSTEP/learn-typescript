@@ -279,6 +279,7 @@ retrieveRandomAncientArtifact
 retrieveRandomAnimalFact
 retrieveRandomBookQuote
 retrieveRandomCocktail
+retrieveRandomCulinaryHerbInfo
 retrieveRandomDogImage
 retrieveRandomFolkTale
 retrieveRandomHistoricalEvent
