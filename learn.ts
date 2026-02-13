@@ -3633,3 +3633,16 @@ async function fetchRandomMangaInfo(): Promise<{ title: string; synopsis: string
     console.error(error);
   }
 })();
+
+async function retrieveRandomCulinaryHerbInfo(): Promise<{ name: string; description: string }> {
+  const response = await fetch('https://api.spoonacular.com/food/ingredients/random?apiKey=YOUR_API_KEY');
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  const data = await response.json();
+  const herb = data.ingredients[0];
+  return {
+    name: herb.name,
+    description: herb.possibleUnits.join(', ')
+  };
+}
