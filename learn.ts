@@ -3646,3 +3646,12 @@ async function retrieveRandomCulinaryHerbInfo(): Promise<{ name: string; descrip
     description: herb.possibleUnits.join(', ')
   };
 }
+
+async function acquireRandomMathematicalConcept(): Promise<string> {
+  const response = await fetch('https://api.math.tools/numbers/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch mathematical concept');
+  }
+  const data = await response.json();
+  return data.data.text;
+}
