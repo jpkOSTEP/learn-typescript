@@ -11,6 +11,7 @@ acquireRandomArtPiece
 acquireRandomLiteraryGenre
 acquireRandomMangaSynopsis
 acquireRandomMarineMammalFact
+acquireRandomMathematicalConcept
 acquireRandomMathematicalTheorem
 acquireRandomMovieRecommendation
 acquireRandomMovieSynopsis
