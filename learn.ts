@@ -3655,3 +3655,17 @@ async function acquireRandomMathematicalConcept(): Promise<string> {
   const data = await response.json();
   return data.data.text;
 }
+
+async function acquireRandomNobelPrizeInfo(): Promise<{ category: string; year: number; laureates: string[] }> {
+    const response = await fetch('https://api.nobelprize.org/v1/prize.json');
+    const data = await response.json();
+    
+    const randomIndex = Math.floor(Math.random() * data.prizes.length);
+    const prize = data.prizes[randomIndex];
+    
+    return {
+        category: prize.category,
+        year: prize.year,
+        laureates: prize.laureates.map((laureate: { firstname: string; surname: string }) => `${laureate.firstname} ${laureate.surname}`),
+    };
+}
