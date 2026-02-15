@@ -19,6 +19,7 @@ acquireRandomMuseumExhibit
 acquireRandomMythicalCreatureFact
 acquireRandomMythologicalStory
 acquireRandomNeuroscienceFact
+acquireRandomNobelPrizeInfo
 acquireRandomSpaceTrivia
 analyzeWeatherData
 calculateAverage
