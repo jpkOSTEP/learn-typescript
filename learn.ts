@@ -3669,3 +3669,16 @@ async function acquireRandomNobelPrizeInfo(): Promise<{ category: string; year: 
         laureates: prize.laureates.map((laureate: { firstname: string; surname: string }) => `${laureate.firstname} ${laureate.surname}`),
     };
 }
+
+async function exploreRandomArchaeologicalSite(): Promise<{ name: string; location: string; description: string }> {
+    const response = await fetch('https://random-archaeological-site-api.example.com/api/v1/sites/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch archaeological site information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        description: data.description,
+    };
+}
