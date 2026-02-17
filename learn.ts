@@ -3682,3 +3682,12 @@ async function exploreRandomArchaeologicalSite(): Promise<{ name: string; locati
         description: data.description,
     };
 }
+
+async function acquireRandomOlympicSportFact(): Promise<string> {
+    const response = await fetch('https://random-olympic-fact-api.com/api/v1/facts/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random Olympic sport fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
