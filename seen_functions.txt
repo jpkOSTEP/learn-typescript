@@ -273,6 +273,7 @@ obtainRandomPirateLegend
 obtainRandomSpaceMissionDetail
 obtainRandomStarFact
 obtainRandomTravelDestination
+obtainRandomTravelTip
 obtainRandomUrbanLegend
 obtainRandomVideoGameTrivia
 obtainRandomWorldHeritageSite
