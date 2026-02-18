@@ -3691,3 +3691,17 @@ async function acquireRandomOlympicSportFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function obtainRandomTravelTip(): Promise<string> {
+    try {
+        const response = await fetch('https://api.traveladviceapi.com/v1/random');
+        if (!response.ok) {
+            throw new Error(`Error fetching travel tip: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.tip;
+    } catch (error) {
+        console.error(error);
+        return 'Unable to fetch travel tip at this time.';
+    }
+}
