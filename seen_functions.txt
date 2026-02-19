@@ -26,6 +26,7 @@ analyzeWeatherData
 calculateAverage
 dedupeArray
 deduplicateArray
+discoverRandomAncientCivilizationFact
 discoverRandomArchaeologicalSite
 discoverRandomLandmarkInfo
 discoverRandomOceanFact
