@@ -3705,3 +3705,20 @@ async function obtainRandomTravelTip(): Promise<string> {
         return 'Unable to fetch travel tip at this time.';
     }
 }
+
+import fetch from 'node-fetch';
+
+async function discoverRandomAncientCivilizationFact(): Promise<string> {
+  const apiUrl = 'https://api.example.com/ancient-civilizations/random';
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.statusText}`);
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching ancient civilization fact:', error);
+    throw error;
+  }
+}
