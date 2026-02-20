@@ -24,6 +24,7 @@ acquireRandomOlympicSportFact
 acquireRandomSpaceTrivia
 analyzeWeatherData
 calculateAverage
+collectRandomNobelPrizeLaureate
 dedupeArray
 deduplicateArray
 discoverRandomAncientCivilizationFact
