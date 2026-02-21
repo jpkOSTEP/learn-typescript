@@ -3738,3 +3738,17 @@ async function collectRandomNobelPrizeLaureate(): Promise<{ name: string; catego
         throw new Error('No laureate data found');
     }
 }
+
+async function obtainRandomSculptureDetail(): Promise<{ title: string; artist: string; year: string; description: string; imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?limit=1&fields=title,artist_title,date_display,thumbnail');
+  const data = await response.json();
+  const artwork = data.data[0];
+  
+  return {
+    title: artwork.title,
+    artist: artwork.artist_title,
+    year: artwork.date_display,
+    description: `A sculpture by ${artwork.artist_title}, created in ${artwork.date_display}.`,
+    imageUrl: artwork.thumbnail?.lqip || ''
+  };
+}
