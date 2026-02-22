@@ -3752,3 +3752,12 @@ async function obtainRandomSculptureDetail(): Promise<{ title: string; artist: s
     imageUrl: artwork.thumbnail?.lqip || ''
   };
 }
+
+async function fetchRandomWorldMythologyFact(): Promise<string> {
+  const response = await fetch('https://mythology-api.com/api/v1/fact/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random mythology fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
