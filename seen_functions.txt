@@ -49,6 +49,7 @@ fetchRandomAncientCivilizationFact
 fetchRandomAnecdote
 fetchRandomAnimalFact
 fetchRandomAnimalImage
+fetchRandomAnimeCharacter
 fetchRandomArchaeologicalDiscovery
 fetchRandomArchaeologicalSite
 fetchRandomArchitecturalStyle
