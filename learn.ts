@@ -3761,3 +3761,12 @@ async function fetchRandomWorldMythologyFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomAnimeCharacter(): Promise<string> {
+    const response = await fetch('https://api.jikan.moe/v4/random/characters');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random anime character');
+    }
+    const data = await response.json();
+    return data.data.name;
+}
