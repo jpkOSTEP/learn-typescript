@@ -3770,3 +3770,17 @@ async function fetchRandomAnimeCharacter(): Promise<string> {
     const data = await response.json();
     return data.data.name;
 }
+
+async function obtainRandomFossilInfo(): Promise<{ name: string; age: string; location: string; description: string }> {
+  const response = await fetch('https://api.example.com/random-fossil-info');
+  if (!response.ok) {
+    throw new Error('Failed to fetch fossil information');
+  }
+  const data = await response.json();
+  return {
+    name: data.name,
+    age: data.age,
+    location: data.location,
+    description: data.description,
+  };
+}
