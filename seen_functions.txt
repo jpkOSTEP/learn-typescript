@@ -259,6 +259,7 @@ obtainRandomComicBookCharacter
 obtainRandomCryptidInfo
 obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
+obtainRandomFossilInfo
 obtainRandomFungiFact
 obtainRandomGeographicalFact
 obtainRandomHaiku
