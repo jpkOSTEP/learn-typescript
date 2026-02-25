@@ -297,6 +297,7 @@ retrieveRandomHistoricalEvent
 retrieveRandomHistoricalEventFact
 retrieveRandomJazzAlbum
 retrieveRandomMealSuggestion
+retrieveRandomMovieRecommendation
 retrieveRandomProgrammingJoke
 retrieveRandomQuoteFromTVShow
 retrieveRandomScienceFact
