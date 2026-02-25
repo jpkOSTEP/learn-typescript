@@ -3784,3 +3784,19 @@ async function obtainRandomFossilInfo(): Promise<{ name: string; age: string; lo
     description: data.description,
   };
 }
+
+async function retrieveRandomMovieRecommendation(): Promise<{ title: string, year: number, genre: string, plot: string }> {
+    const response = await fetch('https://api.sampleapis.com/movies/action-adventure');
+    if (!response.ok) {
+        throw new Error('Failed to fetch movie data');
+    }
+    const movies = await response.json();
+    const randomIndex = Math.floor(Math.random() * movies.length);
+    const selectedMovie = movies[randomIndex];
+    return {
+        title: selectedMovie.title,
+        year: selectedMovie.year,
+        genre: selectedMovie.genre,
+        plot: selectedMovie.plot
+    };
+}
