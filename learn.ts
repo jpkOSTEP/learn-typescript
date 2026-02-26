@@ -3800,3 +3800,22 @@ async function retrieveRandomMovieRecommendation(): Promise<{ title: string, yea
         plot: selectedMovie.plot
     };
 }
+
+async function obtainRandomHistoricalBattleDetail(): Promise<{ name: string, year: number, description: string }> {
+  const response = await fetch('https://api.api-ninjas.com/v1/historicalbattles', {
+    headers: { 'X-Api-Key': 'YOUR_API_KEY' }
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical battle details');
+  }
+
+  const battles = await response.json();
+  const randomBattle = battles[Math.floor(Math.random() * battles.length)];
+  
+  return {
+    name: randomBattle.name,
+    year: randomBattle.year,
+    description: randomBattle.description
+  };
+}
