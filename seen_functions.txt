@@ -264,6 +264,7 @@ obtainRandomFungiFact
 obtainRandomGeographicalFact
 obtainRandomHaiku
 obtainRandomHistoricalArtifact
+obtainRandomHistoricalBattleDetail
 obtainRandomHistoricalFigureFact
 obtainRandomHistoricalSiteInfo
 obtainRandomInstrumentalTrack
