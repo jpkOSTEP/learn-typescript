@@ -3819,3 +3819,12 @@ async function obtainRandomHistoricalBattleDetail(): Promise<{ name: string, yea
     description: randomBattle.description
   };
 }
+
+async function acquireRandomMeditationTip(): Promise<string> {
+    const response = await fetch('https://api.meditationtips.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch meditation tip');
+    }
+    const data: { tip: string } = await response.json();
+    return data.tip;
+}
