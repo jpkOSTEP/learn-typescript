@@ -13,6 +13,7 @@ acquireRandomMangaSynopsis
 acquireRandomMarineMammalFact
 acquireRandomMathematicalConcept
 acquireRandomMathematicalTheorem
+acquireRandomMeditationTip
 acquireRandomMovieRecommendation
 acquireRandomMovieSynopsis
 acquireRandomMuseumExhibit
