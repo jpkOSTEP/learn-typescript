@@ -3828,3 +3828,12 @@ async function acquireRandomMeditationTip(): Promise<string> {
     const data: { tip: string } = await response.json();
     return data.tip;
 }
+
+async function acquireRandomOceanFact(): Promise<string> {
+    const response = await fetch('https://api.oceanfacts.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch ocean fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
