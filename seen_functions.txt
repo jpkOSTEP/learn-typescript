@@ -21,6 +21,7 @@ acquireRandomMythicalCreatureFact
 acquireRandomMythologicalStory
 acquireRandomNeuroscienceFact
 acquireRandomNobelPrizeInfo
+acquireRandomOceanFact
 acquireRandomOlympicSportFact
 acquireRandomSpaceTrivia
 analyzeWeatherData
