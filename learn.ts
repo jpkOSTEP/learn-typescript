@@ -3837,3 +3837,12 @@ async function acquireRandomOceanFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function acquireRandomSpaceStationInfo(): Promise<string> {
+    const response = await fetch('http://api.open-notify.org/iss-now.json');
+    if (!response.ok) {
+        throw new Error('Failed to fetch space station info');
+    }
+    const data = await response.json();
+    return `The International Space Station is currently at latitude ${data.iss_position.latitude} and longitude ${data.iss_position.longitude}.`;
+}
