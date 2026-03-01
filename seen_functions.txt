@@ -23,6 +23,7 @@ acquireRandomNeuroscienceFact
 acquireRandomNobelPrizeInfo
 acquireRandomOceanFact
 acquireRandomOlympicSportFact
+acquireRandomSpaceStationInfo
 acquireRandomSpaceTrivia
 analyzeWeatherData
 calculateAverage
