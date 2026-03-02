@@ -3846,3 +3846,12 @@ async function acquireRandomSpaceStationInfo(): Promise<string> {
     const data = await response.json();
     return `The International Space Station is currently at latitude ${data.iss_position.latitude} and longitude ${data.iss_position.longitude}.`;
 }
+
+async function retrieveRandomInventionFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-invention-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch invention fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
