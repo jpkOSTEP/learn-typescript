@@ -299,6 +299,7 @@ retrieveRandomDogImage
 retrieveRandomFolkTale
 retrieveRandomHistoricalEvent
 retrieveRandomHistoricalEventFact
+retrieveRandomInventionFact
 retrieveRandomJazzAlbum
 retrieveRandomMealSuggestion
 retrieveRandomMovieRecommendation
