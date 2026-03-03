@@ -3855,3 +3855,15 @@ async function retrieveRandomInventionFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function discoverRandomOceanDepthFact(): Promise<string> {
+    const response = await fetch('https://api.oceanicdepthfacts.org/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch ocean depth fact');
+    }
+    const data = await response.json();
+    return data.fact as string;
+}
+
+// Example usage
+discoverRandomOceanDepthFact().then(fact => console.log(fact)).catch(error => console.error(error));
