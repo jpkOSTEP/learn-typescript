@@ -302,6 +302,7 @@ retrieveRandomHistoricalEvent
 retrieveRandomHistoricalEventFact
 retrieveRandomInventionFact
 retrieveRandomJazzAlbum
+retrieveRandomMangaTitle
 retrieveRandomMealSuggestion
 retrieveRandomMovieRecommendation
 retrieveRandomProgrammingJoke
