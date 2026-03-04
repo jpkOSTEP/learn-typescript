@@ -3867,3 +3867,12 @@ async function discoverRandomOceanDepthFact(): Promise<string> {
 
 // Example usage
 discoverRandomOceanDepthFact().then(fact => console.log(fact)).catch(error => console.error(error));
+
+async function retrieveRandomMangaTitle(): Promise<string> {
+  const response = await fetch('https://api.jikan.moe/v4/random/manga');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random manga title');
+  }
+  const data = await response.json();
+  return data.data.title;
+}
