@@ -3876,3 +3876,15 @@ async function retrieveRandomMangaTitle(): Promise<string> {
   const data = await response.json();
   return data.data.title;
 }
+
+async function retrieveRandomRenaissancePainting(): Promise<string> {
+    const response = await fetch('https://api.artic.edu/api/v1/artworks/search?q=renaissance&limit=1');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    if (data.data.length === 0) {
+        throw new Error('No renaissance paintings found');
+    }
+    return data.data[0].title;
+}
