@@ -280,6 +280,7 @@ obtainRandomMythologicalCreature
 obtainRandomPhilosophicalConcept
 obtainRandomPhilosophicalQuote
 obtainRandomPirateLegend
+obtainRandomPlanetaryFact
 obtainRandomSculptureDetail
 obtainRandomSpaceMissionDetail
 obtainRandomStarFact
