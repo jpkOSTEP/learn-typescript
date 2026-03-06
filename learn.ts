@@ -3888,3 +3888,16 @@ async function retrieveRandomRenaissancePainting(): Promise<string> {
     }
     return data.data[0].title;
 }
+
+async function obtainRandomPlanetaryFact(): Promise<string> {
+  const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch planetary data');
+  }
+  
+  const data = await response.json();
+  const planets = data.bodies.filter((body: any) => body.isPlanet);
+  const randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+  
+  return `Did you know? ${randomPlanet.englishName} has an average radius of ${randomPlanet.meanRadius} km and orbits the Sun at an average distance of ${randomPlanet.semimajorAxis} km.`;
+}
