@@ -147,6 +147,7 @@ fetchRandomHistoricalArtifact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
 fetchRandomHistoricalMonument
+fetchRandomHistoricalPainting
 fetchRandomHistoricalSpeech
 fetchRandomInsectFact
 fetchRandomInstrumentInfo
