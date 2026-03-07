@@ -3901,3 +3901,20 @@ async function obtainRandomPlanetaryFact(): Promise<string> {
   
   return `Did you know? ${randomPlanet.englishName} has an average radius of ${randomPlanet.meanRadius} km and orbits the Sun at an average distance of ${randomPlanet.semimajorAxis} km.`;
 }
+
+async function fetchRandomHistoricalPainting(): Promise<{ title: string; artist: string; year: number; imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title,artist_display,date_display,image_id');
+  const data = await response.json();
+
+  if (data.data.length === 0) {
+    throw new Error('No data found');
+  }
+
+  const painting = data.data[0];
+  return {
+    title: painting.title,
+    artist: painting.artist_display,
+    year: parseInt(painting.date_display.match(/\d{4}/)?.[0] || '0', 10),
+    imageUrl: `https://www.artic.edu/iiif/2/${painting.image_id}/full/843,/0/default.jpg`
+  };
+}
