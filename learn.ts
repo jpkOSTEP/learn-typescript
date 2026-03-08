@@ -3918,3 +3918,17 @@ async function fetchRandomHistoricalPainting(): Promise<{ title: string; artist:
     imageUrl: `https://www.artic.edu/iiif/2/${painting.image_id}/full/843,/0/default.jpg`
   };
 }
+
+async function fetchRandomSpaceTechnology(): Promise<string> {
+    const response = await fetch('https://api.spacexdata.com/v4/rockets');
+    if (!response.ok) {
+        throw new Error('Failed to fetch space technology data');
+    }
+    const rockets = await response.json();
+    if (!Array.isArray(rockets) || rockets.length === 0) {
+        throw new Error('No space technology data available');
+    }
+    const randomIndex = Math.floor(Math.random() * rockets.length);
+    const randomRocket = rockets[randomIndex];
+    return `Rocket Name: ${randomRocket.name}, Description: ${randomRocket.description}`;
+}
