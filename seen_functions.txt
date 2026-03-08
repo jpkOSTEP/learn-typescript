@@ -205,6 +205,7 @@ fetchRandomScientificBreakthrough
 fetchRandomScientificExperiment
 fetchRandomScientificInstrument
 fetchRandomSpaceImage
+fetchRandomSpaceTechnology
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
