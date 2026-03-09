@@ -3932,3 +3932,12 @@ async function fetchRandomSpaceTechnology(): Promise<string> {
     const randomRocket = rockets[randomIndex];
     return `Rocket Name: ${randomRocket.name}, Description: ${randomRocket.description}`;
 }
+
+async function fetchRandomOceanicMysteryFact(): Promise<string> {
+    const response = await fetch("https://api.oceanicmysteries.com/randomFact");
+    if (!response.ok) {
+        throw new Error("Failed to fetch oceanic mystery fact");
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
