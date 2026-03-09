@@ -185,6 +185,7 @@ fetchRandomNobelLaureate
 fetchRandomNobleGasFact
 fetchRandomNoblePrizeLaureate
 fetchRandomOceanFact
+fetchRandomOceanicMysteryFact
 fetchRandomOlympicEvent
 fetchRandomOperaSynopsis
 fetchRandomPaintingInfo
