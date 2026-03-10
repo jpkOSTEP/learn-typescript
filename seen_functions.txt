@@ -102,6 +102,7 @@ fetchRandomBotanicalIllustration
 fetchRandomBotanyConcept
 fetchRandomCarBrandInfo
 fetchRandomCatBreedInfo
+fetchRandomCatFact
 fetchRandomChessPlayerFact
 fetchRandomChessPlayerProfile
 fetchRandomChessPuzzle
