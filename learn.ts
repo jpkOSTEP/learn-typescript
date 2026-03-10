@@ -3941,3 +3941,15 @@ async function fetchRandomOceanicMysteryFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomCatFact(): Promise<string> {
+    const response = await fetch('https://meowfacts.herokuapp.com/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch cat fact');
+    }
+    const data: { data: string[] } = await response.json();
+    return data.data[0];
+}
+
+// Example usage:
+fetchRandomCatFact().then(fact => console.log(fact)).catch(error => console.error(error));
