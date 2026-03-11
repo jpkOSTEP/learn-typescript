@@ -3953,3 +3953,17 @@ async function fetchRandomCatFact(): Promise<string> {
 
 // Example usage:
 fetchRandomCatFact().then(fact => console.log(fact)).catch(error => console.error(error));
+
+async function fetchRandomMarineConservationTip(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/random-marine-conservation-tip');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.tip;
+    } catch (error) {
+        console.error('Error fetching marine conservation tip:', error);
+        return 'Keep our oceans clean by reducing plastic use!';
+    }
+}
