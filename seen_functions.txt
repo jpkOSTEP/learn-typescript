@@ -158,6 +158,7 @@ fetchRandomLandmarkInfo
 fetchRandomLiteraryCharacter
 fetchRandomLiteraryQuote
 fetchRandomMangaInfo
+fetchRandomMarineConservationTip
 fetchRandomMathFact
 fetchRandomMathematicalConcept
 fetchRandomMathematicalTheorem
