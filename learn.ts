@@ -3967,3 +3967,12 @@ async function fetchRandomMarineConservationTip(): Promise<string> {
         return 'Keep our oceans clean by reducing plastic use!';
     }
 }
+
+async function obtainRandomMarineMammalFact(): Promise<string> {
+    const response = await fetch("https://api.example.com/random-marine-mammal-fact");
+    if (!response.ok) {
+        throw new Error("Failed to fetch random marine mammal fact.");
+    }
+    const data = await response.json();
+    return data.fact;
+}
