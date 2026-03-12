@@ -278,6 +278,7 @@ obtainRandomHistoricalFigureFact
 obtainRandomHistoricalSiteInfo
 obtainRandomInstrumentalTrack
 obtainRandomIslandFact
+obtainRandomMarineMammalFact
 obtainRandomMarineSpeciesFact
 obtainRandomMysteryNovelSummary
 obtainRandomMythicalWeaponFact
