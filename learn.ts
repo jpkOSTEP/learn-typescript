@@ -3976,3 +3976,25 @@ async function obtainRandomMarineMammalFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function obtainRandomInterestingMathFact(): Promise<string> {
+  const response = await fetch('https://numbersapi.p.rapidapi.com/random/trivia?json=true', {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com',
+      'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY'
+    }
+  });
+  
+  if (!response.ok) {
+    throw new Error('Failed to fetch math fact');
+  }
+
+  const data = await response.json();
+  return data.text;
+}
+
+// Example usage
+obtainRandomInterestingMathFact()
+  .then(fact => console.log(fact))
+  .catch(error => console.error(error));
