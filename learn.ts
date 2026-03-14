@@ -3998,3 +3998,16 @@ async function obtainRandomInterestingMathFact(): Promise<string> {
 obtainRandomInterestingMathFact()
   .then(fact => console.log(fact))
   .catch(error => console.error(error));
+
+async function acquireRandomWorldFestivalDetail(): Promise<{ name: string, location: string, description: string }> {
+  const response = await fetch('https://api.example.com/random-festival');
+  if (!response.ok) {
+    throw new Error('Failed to fetch festival details');
+  }
+  const festivalData = await response.json();
+  return {
+    name: festivalData.name,
+    location: festivalData.location,
+    description: festivalData.description
+  };
+}
