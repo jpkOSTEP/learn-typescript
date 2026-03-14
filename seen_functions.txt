@@ -25,6 +25,7 @@ acquireRandomOceanFact
 acquireRandomOlympicSportFact
 acquireRandomSpaceStationInfo
 acquireRandomSpaceTrivia
+acquireRandomWorldFestivalDetail
 analyzeWeatherData
 calculateAverage
 collectRandomNobelPrizeLaureate
