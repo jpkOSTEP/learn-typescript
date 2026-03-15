@@ -276,6 +276,7 @@ obtainRandomHaiku
 obtainRandomHistoricalArtifact
 obtainRandomHistoricalBattleDetail
 obtainRandomHistoricalFigureFact
+obtainRandomHistoricalShipFact
 obtainRandomHistoricalSiteInfo
 obtainRandomInstrumentalTrack
 obtainRandomInterestingMathFact
