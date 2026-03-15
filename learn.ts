@@ -4011,3 +4011,17 @@ async function acquireRandomWorldFestivalDetail(): Promise<{ name: string, locat
     description: festivalData.description
   };
 }
+
+async function obtainRandomHistoricalShipFact(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/random-historical-ship-fact');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data from API');
+        }
+        const data: { fact: string } = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error('Error fetching historical ship fact:', error);
+        return 'Could not fetch a historical ship fact at this time. Please try again later.';
+    }
+}
