@@ -33,6 +33,7 @@ dedupeArray
 deduplicateArray
 discoverRandomAncientCivilizationFact
 discoverRandomArchaeologicalSite
+discoverRandomHistoricalMonument
 discoverRandomLandmarkInfo
 discoverRandomOceanDepthFact
 discoverRandomOceanFact
