@@ -4025,3 +4025,17 @@ async function obtainRandomHistoricalShipFact(): Promise<string> {
         return 'Could not fetch a historical ship fact at this time. Please try again later.';
     }
 }
+
+async function discoverRandomHistoricalMonument(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/random-historical-monument');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { name: string; location: string; description: string } = await response.json();
+    return `Monument: ${data.name}, Location: ${data.location}, Description: ${data.description}`;
+  } catch (error) {
+    console.error('Failed to fetch the historical monument:', error);
+    return 'Could not retrieve a historical monument at this time.';
+  }
+}
