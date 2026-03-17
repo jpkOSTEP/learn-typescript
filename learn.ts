@@ -4039,3 +4039,12 @@ async function discoverRandomHistoricalMonument(): Promise<string> {
     return 'Could not retrieve a historical monument at this time.';
   }
 }
+
+async function acquireRandomMarineCreatureFact(): Promise<string> {
+  const response = await fetch('https://api.oceanspecies.com/v1/random-fact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch marine creature fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
