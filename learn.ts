@@ -4048,3 +4048,12 @@ async function acquireRandomMarineCreatureFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function obtainRandomInsectFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-insect-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random insect fact');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+}
