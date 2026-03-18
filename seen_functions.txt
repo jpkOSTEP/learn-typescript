@@ -280,6 +280,7 @@ obtainRandomHistoricalBattleDetail
 obtainRandomHistoricalFigureFact
 obtainRandomHistoricalShipFact
 obtainRandomHistoricalSiteInfo
+obtainRandomInsectFact
 obtainRandomInstrumentalTrack
 obtainRandomInterestingMathFact
 obtainRandomIslandFact
