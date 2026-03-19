@@ -175,6 +175,7 @@ fetchRandomMountainInfo
 fetchRandomMovieTitle
 fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
+fetchRandomMusicalInstrumentFact
 fetchRandomMusicalInstrumentInfo
 fetchRandomMysteryNovel
 fetchRandomMysticalCreatureFact
