@@ -4057,3 +4057,12 @@ async function obtainRandomInsectFact(): Promise<string> {
     const data: { fact: string } = await response.json();
     return data.fact;
 }
+
+async function fetchRandomMusicalInstrumentFact(): Promise<string> {
+    const response = await fetch('https://example-music-api.com/api/instruments/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch musical instrument fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
