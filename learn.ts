@@ -4066,3 +4066,17 @@ async function fetchRandomMusicalInstrumentFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function retrieveRandomMuseumExhibit(): Promise<string> {
+    const response = await fetch('https://api.harvardartmuseums.org/object?apikey=YOUR_API_KEY&size=1&sort=random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch museum exhibit');
+    }
+    const data = await response.json();
+    if (data.records && data.records.length > 0) {
+        return data.records[0].title || 'Unknown Exhibit';
+    }
+    return 'No exhibit found';
+}
+
+// Replace 'YOUR_API_KEY' with a valid API key from Harvard Art Museums API.
