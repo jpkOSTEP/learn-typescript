@@ -319,6 +319,7 @@ retrieveRandomJazzAlbum
 retrieveRandomMangaTitle
 retrieveRandomMealSuggestion
 retrieveRandomMovieRecommendation
+retrieveRandomMuseumExhibit
 retrieveRandomProgrammingJoke
 retrieveRandomQuoteFromTVShow
 retrieveRandomRenaissancePainting
