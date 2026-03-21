@@ -4080,3 +4080,16 @@ async function retrieveRandomMuseumExhibit(): Promise<string> {
 }
 
 // Replace 'YOUR_API_KEY' with a valid API key from Harvard Art Museums API.
+
+async function obtainRandomMicrocontrollerInfo(): Promise<{ name: string; manufacturer: string; description: string }> {
+    const response = await fetch('https://random-microcontroller-api.example.com/api/microcontroller');
+    if (!response.ok) {
+        throw new Error('Failed to fetch microcontroller information');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        manufacturer: data.manufacturer,
+        description: data.description
+    };
+}
