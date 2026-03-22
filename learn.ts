@@ -4093,3 +4093,15 @@ async function obtainRandomMicrocontrollerInfo(): Promise<{ name: string; manufa
         description: data.description
     };
 }
+
+async function fetchRandomMythicalCreatureImage(): Promise<string> {
+    const response = await fetch('https://api.mythicalcreatures.com/v1/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch mythical creature image.');
+    }
+    const data = await response.json();
+    if (!data || !data.image) {
+        throw new Error('Invalid data received from mythical creatures API.');
+    }
+    return data.image;
+}
