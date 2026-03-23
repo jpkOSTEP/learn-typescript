@@ -4105,3 +4105,18 @@ async function fetchRandomMythicalCreatureImage(): Promise<string> {
     }
     return data.image;
 }
+
+async function fetchRandomNobelPrizeLaureate(): Promise<string> {
+  const response = await fetch('https://api.nobelprize.org/v1/laureate.json');
+  if (!response.ok) {
+    throw new Error('Failed to fetch Nobel Prize laureate data');
+  }
+  const data = await response.json();
+  const laureates = data.laureates;
+  if (laureates.length === 0) {
+    throw new Error('No laureates found');
+  }
+  const randomIndex = Math.floor(Math.random() * laureates.length);
+  const laureate = laureates[randomIndex];
+  return `Name: ${laureate.firstname} ${laureate.surname}, Category: ${laureate.prizes[0].category}, Year: ${laureate.prizes[0].year}`;
+}
