@@ -4120,3 +4120,19 @@ async function fetchRandomNobelPrizeLaureate(): Promise<string> {
   const laureate = laureates[randomIndex];
   return `Name: ${laureate.firstname} ${laureate.surname}, Category: ${laureate.prizes[0].category}, Year: ${laureate.prizes[0].year}`;
 }
+
+async function fetchRandomHistoricalEventSummary(): Promise<string> {
+  const response = await fetch('https://randomhistoricaleventsapi.com/api/v1/events/random', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical event');
+  }
+
+  const data = await response.json();
+  return data.summary;
+}
