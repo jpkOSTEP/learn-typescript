@@ -4136,3 +4136,17 @@ async function fetchRandomHistoricalEventSummary(): Promise<string> {
   const data = await response.json();
   return data.summary;
 }
+
+async function fetchRandomPaintingDetails(): Promise<{ title: string; artist: string; year: number; description: string }> {
+  const response = await fetch('https://example-api.com/random-painting');
+  if (!response.ok) {
+    throw new Error('Failed to fetch painting details');
+  }
+  const data = await response.json();
+  return {
+    title: data.title,
+    artist: data.artist,
+    year: data.year,
+    description: data.description
+  };
+}
