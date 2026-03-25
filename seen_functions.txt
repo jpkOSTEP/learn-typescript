@@ -197,6 +197,7 @@ fetchRandomOceanFact
 fetchRandomOceanicMysteryFact
 fetchRandomOlympicEvent
 fetchRandomOperaSynopsis
+fetchRandomPaintingDetails
 fetchRandomPaintingInfo
 fetchRandomParkInfo
 fetchRandomPhilosopherQuote
