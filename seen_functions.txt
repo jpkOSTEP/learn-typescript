@@ -210,6 +210,7 @@ fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomQuoteOfTheDay
 fetchRandomRecipe
+fetchRandomRecipeDetails
 fetchRandomRenaissanceArtPiece
 fetchRandomScienceArticle
 fetchRandomScientificBreakthrough
