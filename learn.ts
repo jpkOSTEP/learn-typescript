@@ -4150,3 +4150,30 @@ async function fetchRandomPaintingDetails(): Promise<{ title: string; artist: st
     description: data.description
   };
 }
+
+async function fetchRandomRecipeDetails(): Promise<{ title: string; ingredients: string[]; instructions: string; }> {
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
+    const data = await response.json();
+
+    if (!data.meals || data.meals.length === 0) {
+        throw new Error('No recipe found');
+    }
+
+    const meal = data.meals[0];
+    const ingredients: string[] = [];
+
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`];
+
+        if (ingredient && ingredient.trim() !== '') {
+            ingredients.push(`${measure.trim()} ${ingredient.trim()}`);
+        }
+    }
+
+    return {
+        title: meal.strMeal,
+        ingredients,
+        instructions: meal.strInstructions
+    };
+}
