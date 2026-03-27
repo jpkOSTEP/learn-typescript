@@ -292,6 +292,7 @@ obtainRandomInterestingMathFact
 obtainRandomIslandFact
 obtainRandomMarineMammalFact
 obtainRandomMarineSpeciesFact
+obtainRandomMedievalKnightFact
 obtainRandomMicrocontrollerInfo
 obtainRandomMysteryNovelSummary
 obtainRandomMythicalWeaponFact
