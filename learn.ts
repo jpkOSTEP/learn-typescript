@@ -4177,3 +4177,20 @@ async function fetchRandomRecipeDetails(): Promise<{ title: string; ingredients:
         instructions: meal.strInstructions
     };
 }
+
+async function obtainRandomMedievalKnightFact(): Promise<string> {
+  const apiUrl = 'https://api.example.com/medieval-knights/facts/random';
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data: { fact: string } = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching knight fact:', error);
+    throw new Error('Failed to obtain a random medieval knight fact');
+  }
+}
