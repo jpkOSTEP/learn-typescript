@@ -4194,3 +4194,18 @@ async function obtainRandomMedievalKnightFact(): Promise<string> {
     throw new Error('Failed to obtain a random medieval knight fact');
   }
 }
+
+async function fetchRandomMythologicalFigure(): Promise<string> {
+    const apiUrl = 'https://api.example.com/mythological-figure/random'; // Replace with actual API endpoint
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.name; // Assuming the API returns an object with a 'name' property
+    } catch (error) {
+        console.error('Failed to fetch mythological figure:', error);
+        throw error;
+    }
+}
