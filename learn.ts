@@ -4209,3 +4209,12 @@ async function fetchRandomMythologicalFigure(): Promise<string> {
         throw error;
     }
 }
+
+async function fetchRandomSeaCreatureFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-sea-creature-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch sea creature fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
