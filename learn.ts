@@ -4218,3 +4218,17 @@ async function fetchRandomSeaCreatureFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomNobelPrizeInfo(): Promise<string> {
+    const response = await fetch('https://api.nobelprize.org/v1/prize.json');
+    if (!response.ok) {
+        throw new Error('Failed to fetch Nobel Prize information');
+    }
+    const data = await response.json();
+    const randomPrizeIndex = Math.floor(Math.random() * data.prizes.length);
+    const prize = data.prizes[randomPrizeIndex];
+    const year = prize.year;
+    const category = prize.category;
+    const laureates = prize.laureates.map((l: any) => l.firstname + ' ' + l.surname).join(', ');
+    return `In ${year}, the Nobel Prize in ${category} was awarded to ${laureates}.`;
+}
