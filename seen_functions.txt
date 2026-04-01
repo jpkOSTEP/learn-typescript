@@ -219,6 +219,7 @@ fetchRandomScientificBreakthrough
 fetchRandomScientificExperiment
 fetchRandomScientificInstrument
 fetchRandomSeaCreatureFact
+fetchRandomSeaCreatureInfo
 fetchRandomSpaceImage
 fetchRandomSpaceTechnology
 fetchRandomSpacecraftInfo
