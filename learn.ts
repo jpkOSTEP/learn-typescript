@@ -4232,3 +4232,13 @@ async function fetchRandomNobelPrizeInfo(): Promise<string> {
     const laureates = prize.laureates.map((l: any) => l.firstname + ' ' + l.surname).join(', ');
     return `In ${year}, the Nobel Prize in ${category} was awarded to ${laureates}.`;
 }
+
+async function fetchRandomSeaCreatureInfo(): Promise<string> {
+    const response = await fetch('https://www.fishwatch.gov/api/species');
+    if (!response.ok) {
+        throw new Error('Failed to fetch sea creature information');
+    }
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.length);
+    return data[randomIndex].SpeciesName ?? 'Unknown Sea Creature';
+}
