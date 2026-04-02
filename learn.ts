@@ -4242,3 +4242,21 @@ async function fetchRandomSeaCreatureInfo(): Promise<string> {
     const randomIndex = Math.floor(Math.random() * data.length);
     return data[randomIndex].SpeciesName ?? 'Unknown Sea Creature';
 }
+
+async function fetchRandomWorldCuisineRecipe(): Promise<string> {
+  const apiKey = 'your_api_key'; // Replace with your actual API key
+  const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1&tags=world-cuisine`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    const recipe = data.recipes[0];
+    return `Try this recipe: ${recipe.title} - ${recipe.sourceUrl}`;
+  } catch (error) {
+    console.error(error);
+    return 'Unable to fetch a random world cuisine recipe at this time.';
+  }
+}
