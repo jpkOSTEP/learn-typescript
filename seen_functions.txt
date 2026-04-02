@@ -233,6 +233,7 @@ fetchRandomVikingSaga
 fetchRandomWildlifeConservationFact
 fetchRandomWord
 fetchRandomWorldCuisine
+fetchRandomWorldCuisineRecipe
 fetchRandomWorldMythologyFact
 fetchRandomZoologicalCuriosity
 fetchSpaceXLaunches
