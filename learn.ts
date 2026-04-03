@@ -4260,3 +4260,12 @@ async function fetchRandomWorldCuisineRecipe(): Promise<string> {
     return 'Unable to fetch a random world cuisine recipe at this time.';
   }
 }
+
+async function fetchRandomHistoricalFact(): Promise<string> {
+  const response = await fetch('https://api.example.com/randomHistoricalFact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
