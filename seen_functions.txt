@@ -149,6 +149,7 @@ fetchRandomGreekMythologyStory
 fetchRandomHikingTrail
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalEventSummary
+fetchRandomHistoricalFact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
 fetchRandomHistoricalMonument
