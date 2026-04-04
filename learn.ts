@@ -4269,3 +4269,15 @@ async function fetchRandomHistoricalFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomPaleontologicalDiscovery(): Promise<string> {
+  const response = await fetch('https://api.paleobiodb.org/data1.2/occs/list.json?limit=1&show=coords,loc,phylo');
+  const data = await response.json();
+
+  if (data.records && data.records.length > 0) {
+    const discovery = data.records[0];
+    return `Discovery: ${discovery.nam} - Location: ${discovery.cc}, ${discovery.state}`;
+  } else {
+    throw new Error('No paleontological discoveries found.');
+  }
+}
