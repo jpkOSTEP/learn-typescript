@@ -202,6 +202,7 @@ fetchRandomOlympicEvent
 fetchRandomOperaSynopsis
 fetchRandomPaintingDetails
 fetchRandomPaintingInfo
+fetchRandomPaleontologicalDiscovery
 fetchRandomParkInfo
 fetchRandomPhilosopherQuote
 fetchRandomPhotographyTip
