@@ -4281,3 +4281,12 @@ async function fetchRandomPaleontologicalDiscovery(): Promise<string> {
     throw new Error('No paleontological discoveries found.');
   }
 }
+
+async function fetchRandomHistoricalInnovation(): Promise<string> {
+    const response = await fetch('https://randomhistoricalinnovationapi.com/api/v1/innovation');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random historical innovation');
+    }
+    const data: { innovation: string } = await response.json();
+    return data.innovation;
+}
