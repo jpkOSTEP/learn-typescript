@@ -152,6 +152,7 @@ fetchRandomHistoricalEventSummary
 fetchRandomHistoricalFact
 fetchRandomHistoricalFigure
 fetchRandomHistoricalFigureInfo
+fetchRandomHistoricalInnovation
 fetchRandomHistoricalMonument
 fetchRandomHistoricalPainting
 fetchRandomHistoricalSpeech
