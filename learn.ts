@@ -4290,3 +4290,12 @@ async function fetchRandomHistoricalInnovation(): Promise<string> {
     const data: { innovation: string } = await response.json();
     return data.innovation;
 }
+
+async function fetchRandomArchaeologicalSiteDetail(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-archaeological-site');
+  if (!response.ok) {
+    throw new Error('Failed to fetch archaeological site details');
+  }
+  const data = await response.json();
+  return data.detail;
+}
