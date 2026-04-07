@@ -4299,3 +4299,12 @@ async function fetchRandomArchaeologicalSiteDetail(): Promise<string> {
   const data = await response.json();
   return data.detail;
 }
+
+async function fetchRandomHistoricalInvention(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-invention');
+    if (!response.ok) {
+        throw new Error('Failed to fetch invention');
+    }
+    const data = await response.json();
+    return data.inventionName;
+}
