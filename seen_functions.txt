@@ -68,6 +68,7 @@ fetchRandomArtExhibition
 fetchRandomArtGallery
 fetchRandomArtGalleryCollection
 fetchRandomArtGalleryExhibit
+fetchRandomArtGalleryExhibition
 fetchRandomArtGalleryInfo
 fetchRandomArtGalleryPiece
 fetchRandomArtInstallation
