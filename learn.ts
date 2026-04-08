@@ -4308,3 +4308,17 @@ async function fetchRandomHistoricalInvention(): Promise<string> {
     const data = await response.json();
     return data.inventionName;
 }
+
+async function fetchRandomArtGalleryExhibition(): Promise<string> {
+    try {
+        const response = await fetch('https://api.artic.edu/api/v1/artworks?limit=1&fields=title,artist_display,exhibition_history');
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+            const artwork = data.data[0];
+            return `Title: ${artwork.title}\nArtist: ${artwork.artist_display}\nExhibition History: ${artwork.exhibition_history || 'No exhibition history available'}`;
+        }
+        return 'No artwork found.';
+    } catch (error) {
+        return 'Error fetching data from the art gallery API.';
+    }
+}
