@@ -285,6 +285,7 @@ obtainRandomChessOpening
 obtainRandomChessPuzzle
 obtainRandomCityInfo
 obtainRandomComicBookCharacter
+obtainRandomConstellationFact
 obtainRandomCryptidInfo
 obtainRandomCulturalFestivalInfo
 obtainRandomDinosaurFact
