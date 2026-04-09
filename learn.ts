@@ -4322,3 +4322,12 @@ async function fetchRandomArtGalleryExhibition(): Promise<string> {
         return 'Error fetching data from the art gallery API.';
     }
 }
+
+async function obtainRandomConstellationFact(): Promise<string> {
+    const response = await fetch('https://some-constellation-api.com/random-fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch constellation fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
