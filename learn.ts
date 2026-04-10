@@ -4331,3 +4331,16 @@ async function obtainRandomConstellationFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomHistoricalLandmarkInfo(): Promise<string> {
+    try {
+        const response = await fetch('https://api.example.com/randomHistoricalLandmark');
+        if (!response.ok) {
+            throw new Error('Failed to fetch historical landmark info');
+        }
+        const data: { name: string, location: string, description: string } = await response.json();
+        return `Landmark: ${data.name}\nLocation: ${data.location}\nDescription: ${data.description}`;
+    } catch (error) {
+        return `Error: ${(error as Error).message}`;
+    }
+}
