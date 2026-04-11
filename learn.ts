@@ -4344,3 +4344,24 @@ async function fetchRandomHistoricalLandmarkInfo(): Promise<string> {
         return `Error: ${(error as Error).message}`;
     }
 }
+
+async function fetchRandomNationalParkInfo(): Promise<string> {
+  const apiUrl = "https://developer.nps.gov/api/v1/parks?limit=1&api_key=YOUR_API_KEY";
+  
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Error fetching national park data: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+      const park = data.data[0];
+      return `Park Name: ${park.fullName}\nDescription: ${park.description}\nLocation: ${park.states}`;
+    } else {
+      return "No national park data found.";
+    }
+  } catch (error) {
+    return `Failed to fetch national park info: ${(error as Error).message}`;
+  }
+}
