@@ -195,6 +195,7 @@ fetchRandomMythologicalDeity
 fetchRandomMythologicalFigure
 fetchRandomMythologicalGodDetail
 fetchRandomMythologyStory
+fetchRandomNationalParkInfo
 fetchRandomNatureImage
 fetchRandomNobelLaureate
 fetchRandomNobelPrizeInfo
