@@ -4365,3 +4365,18 @@ async function fetchRandomNationalParkInfo(): Promise<string> {
     return `Failed to fetch national park info: ${(error as Error).message}`;
   }
 }
+
+async function fetchRandomHistoricalFigureBio(): Promise<string> {
+    const url = 'https://api.example.com/randomHistoricalFigure';
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch historical figure bio');
+        }
+        const data = await response.json();
+        return data.bio;
+    } catch (error) {
+        console.error('Error fetching historical figure bio:', error);
+        return 'An error occurred while retrieving data.';
+    }
+}
