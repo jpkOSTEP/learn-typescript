@@ -4380,3 +4380,12 @@ async function fetchRandomHistoricalFigureBio(): Promise<string> {
         return 'An error occurred while retrieving data.';
     }
 }
+
+async function fetchRandomHistoricalEvent(): Promise<string> {
+    const response = await fetch('https://randomapi.com/api/random-historical-event');
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical event');
+    }
+    const data = await response.json();
+    return data.event || 'No historical event found';
+}
