@@ -4389,3 +4389,19 @@ async function fetchRandomHistoricalEvent(): Promise<string> {
     const data = await response.json();
     return data.event || 'No historical event found';
 }
+
+async function fetchRandomAsteroidInfo(): Promise<string> {
+    const apiKey = 'DEMO_KEY'; // Replace with your NASA API key
+    const apiUrl = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${apiKey}`;
+    
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+        
+        const data = await response.json();
+        const randomIndex = Math.floor(Math.random() * data.near_earth_objects.length);
+        const asteroid = data.near_earth_objects[randomIndex];
+        
+        return `Asteroid Name: ${asteroid.name}, Diameter (km): ${asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(2)}, Hazardous: ${asteroid.is_potentially_hazardous_asteroid}`;
+    } catch (error) {
+        return `Failed to fetch asteroid
