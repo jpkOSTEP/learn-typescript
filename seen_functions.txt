@@ -86,6 +86,7 @@ fetchRandomArtTool
 fetchRandomArtisanalCheese
 fetchRandomArtisticMedium
 fetchRandomArtisticTechnique
+fetchRandomAsteroidInfo
 fetchRandomAstroFact
 fetchRandomAstronautFact
 fetchRandomAstronomicalPhenomenon
