@@ -4405,3 +4405,12 @@ async function fetchRandomAsteroidInfo(): Promise<string> {
         return `Asteroid Name: ${asteroid.name}, Diameter (km): ${asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(2)}, Hazardous: ${asteroid.is_potentially_hazardous_asteroid}`;
     } catch (error) {
         return `Failed to fetch asteroid
+
+async function fetchRandomHistoricalMonarchFact(): Promise<string> {
+    const response = await fetch('https://randomapi.com/api/historical-monarch-facts');
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical monarch fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
