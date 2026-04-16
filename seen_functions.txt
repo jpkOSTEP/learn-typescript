@@ -29,6 +29,7 @@ acquireRandomSpaceTrivia
 acquireRandomWorldFestivalDetail
 analyzeWeatherData
 calculateAverage
+collectRandomFolkSongInfo
 collectRandomNobelPrizeLaureate
 dedupeArray
 deduplicateArray
