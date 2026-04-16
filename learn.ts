@@ -4414,3 +4414,17 @@ async function fetchRandomHistoricalMonarchFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function collectRandomFolkSongInfo(): Promise<{ title: string; artist: string; region: string; description: string }> {
+    const response = await fetch('https://api.example.com/random-folk-song');
+    if (!response.ok) {
+        throw new Error('Failed to fetch random folk song info');
+    }
+    const data = await response.json();
+    return {
+        title: data.title,
+        artist: data.artist,
+        region: data.region,
+        description: data.description,
+    };
+}
