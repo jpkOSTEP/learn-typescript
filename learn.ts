@@ -4428,3 +4428,16 @@ async function collectRandomFolkSongInfo(): Promise<{ title: string; artist: str
         description: data.description,
     };
 }
+
+export async function fetchRandomHistoricalArtifactDetail(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/random-historical-artifact');
+    if (!response.ok) {
+      throw new Error('Failed to fetch artifact detail');
+    }
+    const data: { artifactName: string, description: string } = await response.json();
+    return `Artifact: ${data.artifactName} - Description: ${data.description}`;
+  } catch (error) {
+    return `Error: ${error.message}`;
+  }
+}
