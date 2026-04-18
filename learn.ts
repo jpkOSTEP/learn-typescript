@@ -4441,3 +4441,12 @@ export async function fetchRandomHistoricalArtifactDetail(): Promise<string> {
     return `Error: ${error.message}`;
   }
 }
+
+async function fetchRandomArchaeologicalSiteInfo(): Promise<string> {
+  const response = await fetch('https://example-archaeology-api.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch archaeological site information');
+  }
+  const data = await response.json();
+  return data.description;
+}
