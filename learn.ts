@@ -4450,3 +4450,12 @@ async function fetchRandomArchaeologicalSiteInfo(): Promise<string> {
   const data = await response.json();
   return data.description;
 }
+
+async function fetchRandomAnimalTrivia(): Promise<string> {
+  const response = await fetch('https://some-random-api.ml/animal/trivia');
+  if (!response.ok) {
+    throw new Error('Failed to fetch animal trivia');
+  }
+  const data: { trivia: string } = await response.json();
+  return data.trivia;
+}
