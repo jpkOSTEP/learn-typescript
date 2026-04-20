@@ -4459,3 +4459,23 @@ async function fetchRandomAnimalTrivia(): Promise<string> {
   const data: { trivia: string } = await response.json();
   return data.trivia;
 }
+
+function collectRandomSpaceCraftDetail(): Promise<string> {
+    const apiUrl = 'https://api.le-systeme-solaire.net/rest/bodies/';
+    return fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const spacecrafts = data.bodies.filter((body: any) => body.isPlanet === false);
+            const randomSpacecraft = spacecrafts[Math.floor(Math.random() * spacecrafts.length)];
+            return `Spacecraft Name: ${randomSpacecraft.englishName}, Discovered By: ${randomSpacecraft.discoveredBy}`;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            return 'Failed to fetch spacecraft details.';
+        });
+}
