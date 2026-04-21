@@ -4479,3 +4479,17 @@ function collectRandomSpaceCraftDetail(): Promise<string> {
             return 'Failed to fetch spacecraft details.';
         });
 }
+
+async function fetchRandomHistoricalQuote(): Promise<string> {
+  try {
+    const response = await fetch('https://api.quotable.io/random?tags=history');
+    if (!response.ok) {
+      throw new Error('Failed to fetch a quote');
+    }
+    const data: { content: string } = await response.json();
+    return data.content;
+  } catch (error) {
+    console.error(error);
+    return 'An error occurred while fetching a historical quote.';
+  }
+}
