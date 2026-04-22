@@ -4493,3 +4493,17 @@ async function fetchRandomHistoricalQuote(): Promise<string> {
     return 'An error occurred while fetching a historical quote.';
   }
 }
+
+async function fetchRandomMythologicalStory(): Promise<string> {
+  try {
+    const response = await fetch('https://api.example.com/mythology/random-story');
+    if (!response.ok) {
+      throw new Error(`Error fetching story: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data.story;
+  } catch (error) {
+    console.error(error);
+    return 'An error occurred while fetching the story.';
+  }
+}
