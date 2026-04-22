@@ -204,6 +204,7 @@ fetchRandomMythologicalCreatureFact
 fetchRandomMythologicalDeity
 fetchRandomMythologicalFigure
 fetchRandomMythologicalGodDetail
+fetchRandomMythologicalStory
 fetchRandomMythologyStory
 fetchRandomNationalParkInfo
 fetchRandomNatureImage
