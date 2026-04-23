@@ -4507,3 +4507,12 @@ async function fetchRandomMythologicalStory(): Promise<string> {
     return 'An error occurred while fetching the story.';
   }
 }
+
+async function fetchRandomMarineBiologyFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/marine-biology/fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a marine biology fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
