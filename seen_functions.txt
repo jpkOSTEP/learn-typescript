@@ -15,6 +15,7 @@ acquireRandomMarineMammalFact
 acquireRandomMathematicalConcept
 acquireRandomMathematicalTheorem
 acquireRandomMeditationTip
+acquireRandomMineralFact
 acquireRandomMovieRecommendation
 acquireRandomMovieSynopsis
 acquireRandomMuseumExhibit
