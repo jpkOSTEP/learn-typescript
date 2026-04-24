@@ -4516,3 +4516,12 @@ async function fetchRandomMarineBiologyFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function acquireRandomMineralFact(): Promise<string> {
+  const response = await fetch('https://mineral-api.example.com/random-fact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch mineral fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
