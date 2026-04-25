@@ -4525,3 +4525,17 @@ async function acquireRandomMineralFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomMusicGenreFact(): Promise<string> {
+    try {
+        const response = await fetch('https://example-music-genre-api.com/api/random-fact');
+        if (!response.ok) {
+            throw new Error('Failed to fetch music genre fact');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error(error);
+        return 'An error occurred while fetching music genre fact';
+    }
+}
