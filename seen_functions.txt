@@ -194,6 +194,7 @@ fetchRandomMountainInfo
 fetchRandomMovieTitle
 fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
+fetchRandomMusicGenreFact
 fetchRandomMusicalInstrumentFact
 fetchRandomMusicalInstrumentInfo
 fetchRandomMysteryNovel
