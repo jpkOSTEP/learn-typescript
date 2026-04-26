@@ -4539,3 +4539,21 @@ async function fetchRandomMusicGenreFact(): Promise<string> {
         return 'An error occurred while fetching music genre fact';
     }
 }
+
+async function fetchRandomNationalParkFact(): Promise<string> {
+    try {
+        const response = await fetch('https://developer.nps.gov/api/v1/parks?limit=1&api_key=YOUR_API_KEY');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+            const park = data.data[0];
+            return `Did you know? ${park.fullName} is located in ${park.states}. It was established on ${park.established}.`;
+        }
+        return 'No park information available.';
+    } catch (error) {
+        console.error('Error fetching national park fact:', error);
+        return 'Error fetching national park fact.';
+    }
+}
