@@ -209,6 +209,7 @@ fetchRandomMythologicalFigure
 fetchRandomMythologicalGodDetail
 fetchRandomMythologicalStory
 fetchRandomMythologyStory
+fetchRandomNationalParkFact
 fetchRandomNationalParkInfo
 fetchRandomNatureImage
 fetchRandomNobelLaureate
