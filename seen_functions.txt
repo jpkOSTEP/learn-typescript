@@ -248,6 +248,7 @@ fetchRandomSpaceTechnology
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
 fetchRandomSuperhero
+fetchRandomTechGadgetFact
 fetchRandomTechInnovation
 fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
