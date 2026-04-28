@@ -4557,3 +4557,12 @@ async function fetchRandomNationalParkFact(): Promise<string> {
         return 'Error fetching national park fact.';
     }
 }
+
+async function fetchRandomTechGadgetFact(): Promise<string> {
+    const response = await fetch('https://random-tech-gadget-fact-api.example.com/fact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch tech gadget fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
