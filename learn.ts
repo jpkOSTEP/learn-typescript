@@ -4566,3 +4566,12 @@ async function fetchRandomTechGadgetFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomMarineReptileFact(): Promise<string> {
+  const response = await fetch('https://some-random-api.com/marine-reptile/fact');
+  if (!response.ok) {
+    throw new Error('Failed to fetch marine reptile fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
