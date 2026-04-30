@@ -181,6 +181,7 @@ fetchRandomLiteraryQuote
 fetchRandomMangaInfo
 fetchRandomMarineBiologyFact
 fetchRandomMarineConservationTip
+fetchRandomMarineReptileFact
 fetchRandomMathFact
 fetchRandomMathematicalConcept
 fetchRandomMathematicalTheorem
