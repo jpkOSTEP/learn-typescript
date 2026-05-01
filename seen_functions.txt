@@ -232,6 +232,7 @@ fetchRandomPirateFact
 fetchRandomPirateLegend
 fetchRandomPlanetInfo
 fetchRandomPokemonDetails
+fetchRandomProgrammingLanguageFact
 fetchRandomPuzzle
 fetchRandomQuoteFromAPI
 fetchRandomQuoteOfTheDay
