@@ -4575,3 +4575,17 @@ async function fetchRandomMarineReptileFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomProgrammingLanguageFact(): Promise<string> {
+  try {
+    const response = await fetch('https://programming-language-facts-api.com/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Error fetching programming language fact:', error);
+    return 'An error occurred while fetching the programming language fact.';
+  }
+}
