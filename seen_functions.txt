@@ -137,6 +137,7 @@ fetchRandomDanceMove
 fetchRandomDinosaurFact
 fetchRandomDogFact
 fetchRandomElementFromPeriodicTable
+fetchRandomElementOfPeriodicTable
 fetchRandomElementSymbol
 fetchRandomFestivalDetail
 fetchRandomFestivalFact
