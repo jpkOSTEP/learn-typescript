@@ -4589,3 +4589,14 @@ async function fetchRandomProgrammingLanguageFact(): Promise<string> {
     return 'An error occurred while fetching the programming language fact.';
   }
 }
+
+async function fetchRandomElementOfPeriodicTable(): Promise<string> {
+    const response = await fetch('https://neelpatel05.pythonanywhere.com/');
+    if (!response.ok) {
+        throw new Error('Failed to fetch data from the periodic table API');
+    }
+    const elements: { name: string, symbol: string }[] = await response.json();
+    const randomIndex = Math.floor(Math.random() * elements.length);
+    const randomElement = elements[randomIndex];
+    return `Element: ${randomElement.name}, Symbol: ${randomElement.symbol}`;
+}
