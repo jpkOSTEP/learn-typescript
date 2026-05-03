@@ -247,6 +247,7 @@ fetchRandomScientificInstrument
 fetchRandomSeaCreatureFact
 fetchRandomSeaCreatureInfo
 fetchRandomSpaceImage
+fetchRandomSpacePhoto
 fetchRandomSpaceTechnology
 fetchRandomSpacecraftInfo
 fetchRandomStarWarsCharacter
