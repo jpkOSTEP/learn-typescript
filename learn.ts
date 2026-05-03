@@ -4600,3 +4600,16 @@ async function fetchRandomElementOfPeriodicTable(): Promise<string> {
     const randomElement = elements[randomIndex];
     return `Element: ${randomElement.name}, Symbol: ${randomElement.symbol}`;
 }
+
+async function fetchRandomSpacePhoto(): Promise<string> {
+  try {
+    const response = await fetch('https://api.spacexdata.com/v4/photos/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch random space photo.');
+    }
+    const data = await response.json();
+    return data.url; // Assuming the API returns a JSON object with a 'url' property for the photo.
+  } catch (error) {
+    throw new Error(`Error fetching space photo: ${error.message}`);
+  }
+}
