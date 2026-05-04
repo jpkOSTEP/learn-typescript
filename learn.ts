@@ -4613,3 +4613,12 @@ async function fetchRandomSpacePhoto(): Promise<string> {
     throw new Error(`Error fetching space photo: ${error.message}`);
   }
 }
+
+async function fetchRandomHistoricalDocumentary(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-historical-documentary');
+    if (!response.ok) {
+        throw new Error('Failed to fetch documentary');
+    }
+    const data: { title: string } = await response.json();
+    return data.title;
+}
