@@ -158,6 +158,7 @@ fetchRandomGreekMythologyStory
 fetchRandomHikingTrail
 fetchRandomHistoricalArtifact
 fetchRandomHistoricalArtifactDetail
+fetchRandomHistoricalDocumentary
 fetchRandomHistoricalEvent
 fetchRandomHistoricalEventSummary
 fetchRandomHistoricalFact
