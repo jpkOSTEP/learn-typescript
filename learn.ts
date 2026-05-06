@@ -4622,3 +4622,12 @@ async function fetchRandomHistoricalDocumentary(): Promise<string> {
     const data: { title: string } = await response.json();
     return data.title;
 }
+
+async function fetchRandomFungiSpeciesFact(): Promise<string> {
+    const response = await fetch('https://fungi-api.example.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch fungi species fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
