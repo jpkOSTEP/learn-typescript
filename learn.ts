@@ -4631,3 +4631,16 @@ async function fetchRandomFungiSpeciesFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+
+async function fetchRandomHistoricalMonumentInfo(): Promise<{ name: string; location: string; description: string }> {
+    const response = await fetch('https://api.example.com/randomHistoricalMonument');
+    if (!response.ok) {
+        throw new Error('Failed to fetch historical monument info');
+    }
+    const data = await response.json();
+    return {
+        name: data.name,
+        location: data.location,
+        description: data.description,
+    };
+}
