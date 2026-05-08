@@ -183,6 +183,7 @@ fetchRandomLandmarkInfo
 fetchRandomLiteraryCharacter
 fetchRandomLiteraryQuote
 fetchRandomMangaInfo
+fetchRandomMarineAnimalFact
 fetchRandomMarineBiologyFact
 fetchRandomMarineConservationTip
 fetchRandomMarineReptileFact
