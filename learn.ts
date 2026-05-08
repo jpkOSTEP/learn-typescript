@@ -4644,3 +4644,12 @@ async function fetchRandomHistoricalMonumentInfo(): Promise<{ name: string; loca
         description: data.description,
     };
 }
+
+async function fetchRandomMarineAnimalFact(): Promise<string> {
+  const response = await fetch('https://some-marine-animal-fact-api.com/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch marine animal fact');
+  }
+  const data: { fact: string } = await response.json();
+  return data.fact;
+}
