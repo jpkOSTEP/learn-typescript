@@ -4653,3 +4653,12 @@ async function fetchRandomMarineAnimalFact(): Promise<string> {
   const data: { fact: string } = await response.json();
   return data.fact;
 }
+
+async function fetchRandomScienceExperiment(): Promise<string> {
+    const response = await fetch('https://api.example.com/random-science-experiment');
+    if (!response.ok) {
+        throw new Error('Failed to fetch a random science experiment');
+    }
+    const data: { experiment: string } = await response.json();
+    return data.experiment;
+}
