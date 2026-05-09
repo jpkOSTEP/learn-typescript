@@ -245,6 +245,7 @@ fetchRandomRecipe
 fetchRandomRecipeDetails
 fetchRandomRenaissanceArtPiece
 fetchRandomScienceArticle
+fetchRandomScienceExperiment
 fetchRandomScientificBreakthrough
 fetchRandomScientificExperiment
 fetchRandomScientificInstrument
