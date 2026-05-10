@@ -4662,3 +4662,18 @@ async function fetchRandomScienceExperiment(): Promise<string> {
     const data: { experiment: string } = await response.json();
     return data.experiment;
 }
+
+async function fetchRandomUrbanFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.urbandictionary.com/v0/random');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    const entry = data.list[0];
+    return entry ? entry.definition : 'No definition found';
+  } catch (error) {
+    console.error(error);
+    return 'An error occurred while fetching the urban fact';
+  }
+}
