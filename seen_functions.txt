@@ -261,6 +261,7 @@ fetchRandomTechGadgetFact
 fetchRandomTechInnovation
 fetchRandomTrivia
 fetchRandomUnderwaterCreatureFact
+fetchRandomUrbanFact
 fetchRandomUser
 fetchRandomVikingSaga
 fetchRandomWildlifeConservationFact
