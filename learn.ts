@@ -4677,3 +4677,26 @@ async function fetchRandomUrbanFact(): Promise<string> {
     return 'An error occurred while fetching the urban fact';
   }
 }
+
+async function fetchRandomNoblePrizeWinner(): Promise<string | null> {
+    try {
+        const response = await fetch('https://api.nobelprize.org/v1/prize.json');
+        const data = await response.json();
+
+        if (!data.prizes || data.prizes.length === 0) {
+            return null;
+        }
+
+        const randomPrizeIndex = Math.floor(Math.random() * data.prizes.length);
+        const prize = data.prizes[randomPrizeIndex];
+
+        if (!prize.laureates || prize.laureates.length === 0) {
+            return null;
+        }
+
+        const randomLaureateIndex = Math.floor(Math.random() * prize.laureates.length);
+        const laureate = prize.laureates[randomLaureateIndex];
+
+        return `Nobel Prize in ${prize.category} (${prize.year}): ${laureate.firstname} ${laureate.surname}`;
+    } catch (error) {
+        console
