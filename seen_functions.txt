@@ -223,6 +223,7 @@ fetchRandomNobelPrizeInfo
 fetchRandomNobelPrizeLaureate
 fetchRandomNobleGasFact
 fetchRandomNoblePrizeLaureate
+fetchRandomNoblePrizeWinner
 fetchRandomOceanFact
 fetchRandomOceanicMysteryFact
 fetchRandomOlympicEvent
