@@ -237,6 +237,7 @@ fetchRandomPhotographyTip
 fetchRandomPirateFact
 fetchRandomPirateLegend
 fetchRandomPlanetInfo
+fetchRandomPoetryLine
 fetchRandomPokemonDetails
 fetchRandomProgrammingLanguageFact
 fetchRandomPuzzle
