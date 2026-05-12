@@ -4700,3 +4700,22 @@ async function fetchRandomNoblePrizeWinner(): Promise<string | null> {
         return `Nobel Prize in ${prize.category} (${prize.year}): ${laureate.firstname} ${laureate.surname}`;
     } catch (error) {
         console
+
+async function fetchRandomPoetryLine(): Promise<string> {
+  const response = await fetch('https://poetrydb.org/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch poetry line');
+  }
+  const data = await response.json();
+  const poem = data[0];
+  if (poem.lines.length === 0) {
+    throw new Error('No lines found in the poem');
+  }
+  const randomIndex = Math.floor(Math.random() * poem.lines.length);
+  return poem.lines[randomIndex];
+}
+
+// Usage example
+fetchRandomPoetryLine()
+  .then(line => console.log('Random Poetry Line:', line))
+  .catch(error => console.error('Error:', error));
