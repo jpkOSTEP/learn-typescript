@@ -232,6 +232,7 @@ fetchRandomPaintingDetails
 fetchRandomPaintingInfo
 fetchRandomPaleontologicalDiscovery
 fetchRandomParkInfo
+fetchRandomPhilosopherFact
 fetchRandomPhilosopherQuote
 fetchRandomPhotographyTip
 fetchRandomPirateFact
