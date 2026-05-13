@@ -4719,3 +4719,12 @@ async function fetchRandomPoetryLine(): Promise<string> {
 fetchRandomPoetryLine()
   .then(line => console.log('Random Poetry Line:', line))
   .catch(error => console.error('Error:', error));
+
+async function fetchRandomPhilosopherFact(): Promise<string> {
+    const response = await fetch('https://api.example.com/randomPhilosopherFact');
+    if (!response.ok) {
+        throw new Error('Failed to fetch philosopher fact');
+    }
+    const data = await response.json();
+    return data.fact as string;
+}
