@@ -4728,3 +4728,16 @@ async function fetchRandomPhilosopherFact(): Promise<string> {
     const data = await response.json();
     return data.fact as string;
 }
+
+async function fetchRandomHikingTrailInfo(): Promise<{ name: string; location: string; difficulty: string; length: number; summary: string }> {
+    const response = await fetch('https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=YOUR_API_KEY');
+    const data = await response.json();
+    const trail = data.trails[Math.floor(Math.random() * data.trails.length)];
+    return {
+        name: trail.name,
+        location: `${trail.location}, ${trail.state}`,
+        difficulty: trail.difficulty,
+        length: trail.length,
+        summary: trail.summary
+    };
+}
