@@ -248,6 +248,7 @@ fetchRandomQuoteOfTheDay
 fetchRandomRecipe
 fetchRandomRecipeDetails
 fetchRandomRenaissanceArtPiece
+fetchRandomRenaissanceArtist
 fetchRandomScienceArticle
 fetchRandomScienceExperiment
 fetchRandomScientificBreakthrough
