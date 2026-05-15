@@ -4741,3 +4741,12 @@ async function fetchRandomHikingTrailInfo(): Promise<{ name: string; location: s
         summary: trail.summary
     };
 }
+
+async function fetchRandomRenaissanceArtist(): Promise<string> {
+  const response = await fetch('https://api.example.com/random-renaissance-artist');
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  const data: { artistName: string } = await response.json();
+  return data.artistName;
+}
