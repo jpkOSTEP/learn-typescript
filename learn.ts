@@ -4750,3 +4750,13 @@ async function fetchRandomRenaissanceArtist(): Promise<string> {
   const data: { artistName: string } = await response.json();
   return data.artistName;
 }
+
+async function fetchRandomMangaCharacter(): Promise<string> {
+    const response = await fetch('https://api.jikan.moe/v4/characters');
+    if (!response.ok) {
+        throw new Error('Failed to fetch manga character');
+    }
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.data.length);
+    return data.data[randomIndex].name;
+}
