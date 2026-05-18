@@ -4760,3 +4760,12 @@ async function fetchRandomMangaCharacter(): Promise<string> {
     const randomIndex = Math.floor(Math.random() * data.data.length);
     return data.data[randomIndex].name;
 }
+
+async function fetchRandomWorldCuisineFact(): Promise<string> {
+    const response = await fetch('https://api.spoonacular.com/food/menuItems/random?apiKey=YOUR_API_KEY');
+    if (!response.ok) {
+        throw new Error('Failed to fetch the world cuisine fact');
+    }
+    const data = await response.json();
+    return data.menuItems[0]?.title || 'No cuisine fact available';
+}
