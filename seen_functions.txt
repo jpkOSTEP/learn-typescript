@@ -273,6 +273,7 @@ fetchRandomVikingSaga
 fetchRandomWildlifeConservationFact
 fetchRandomWord
 fetchRandomWorldCuisine
+fetchRandomWorldCuisineFact
 fetchRandomWorldCuisineRecipe
 fetchRandomWorldMythologyFact
 fetchRandomZoologicalCuriosity
