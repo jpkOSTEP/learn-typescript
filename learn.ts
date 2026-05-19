@@ -4769,3 +4769,12 @@ async function fetchRandomWorldCuisineFact(): Promise<string> {
     const data = await response.json();
     return data.menuItems[0]?.title || 'No cuisine fact available';
 }
+
+async function fetchRandomAncientPhilosopherQuote(): Promise<string> {
+  const response = await fetch('https://api.quotable.io/random?tags=philosophy');
+  if (!response.ok) {
+    throw new Error('Failed to fetch quote');
+  }
+  const data = await response.json();
+  return data.content;
+}
