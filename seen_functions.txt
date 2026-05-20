@@ -62,6 +62,7 @@ fetchRandomAnimalFact
 fetchRandomAnimalImage
 fetchRandomAnimalTrivia
 fetchRandomAnimeCharacter
+fetchRandomAquaticMammalFact
 fetchRandomArchaeologicalDiscovery
 fetchRandomArchaeologicalSite
 fetchRandomArchaeologicalSiteDetail
