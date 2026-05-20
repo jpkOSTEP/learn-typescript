@@ -4778,3 +4778,17 @@ async function fetchRandomAncientPhilosopherQuote(): Promise<string> {
   const data = await response.json();
   return data.content;
 }
+
+async function fetchRandomAquaticMammalFact(): Promise<string> {
+  try {
+    const response = await fetch('https://some-aquatic-mammal-api.example.com/random-fact');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data: { fact: string } = await response.json();
+    return data.fact;
+  } catch (error) {
+    console.error('Failed to fetch random aquatic mammal fact:', error);
+    throw error;
+  }
+}
