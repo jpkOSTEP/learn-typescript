@@ -96,6 +96,7 @@ fetchRandomArtisticTechnique
 fetchRandomAsteroidInfo
 fetchRandomAstroFact
 fetchRandomAstronautFact
+fetchRandomAstronautInfo
 fetchRandomAstronomicalPhenomenon
 fetchRandomAstrophotographyTip
 fetchRandomBeer
