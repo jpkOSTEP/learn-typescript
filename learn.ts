@@ -4792,3 +4792,17 @@ async function fetchRandomAquaticMammalFact(): Promise<string> {
     throw error;
   }
 }
+
+async function fetchRandomAstronautInfo(): Promise<string> {
+  const response = await fetch('http://api.open-notify.org/astros.json');
+  if (!response.ok) {
+    throw new Error('Failed to fetch astronaut information');
+  }
+  const data = await response.json();
+  if (data.people && data.people.length > 0) {
+    const randomIndex = Math.floor(Math.random() * data.people.length);
+    const astronaut = data.people[randomIndex];
+    return `Astronaut: ${astronaut.name}, Craft: ${astronaut.craft}`;
+  }
+  return 'No astronaut information available';
+}
