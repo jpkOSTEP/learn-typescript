@@ -4806,3 +4806,22 @@ async function fetchRandomAstronautInfo(): Promise<string> {
   }
   return 'No astronaut information available';
 }
+
+async function fetchRandomArtGalleryFeature(): Promise<{ title: string; description: string; imageUrl: string }> {
+  const response = await fetch('https://api.artic.edu/api/v1/artworks?page=1&limit=100');
+  const data = await response.json();
+  const artworks = data.data;
+
+  if (!artworks || artworks.length === 0) {
+    throw new Error('No artworks found');
+  }
+
+  const randomIndex = Math.floor(Math.random() * artworks.length);
+  const randomArtwork = artworks[randomIndex];
+
+  return {
+    title: randomArtwork.title,
+    description: randomArtwork.thumbnail.alt_text || 'No description available',
+    imageUrl: randomArtwork.thumbnail.url
+  };
+}
