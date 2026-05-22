@@ -76,6 +76,7 @@ fetchRandomArtGallery
 fetchRandomArtGalleryCollection
 fetchRandomArtGalleryExhibit
 fetchRandomArtGalleryExhibition
+fetchRandomArtGalleryFeature
 fetchRandomArtGalleryInfo
 fetchRandomArtGalleryPiece
 fetchRandomArtInstallation
