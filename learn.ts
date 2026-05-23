@@ -4825,3 +4825,19 @@ async function fetchRandomArtGalleryFeature(): Promise<{ title: string; descript
     imageUrl: randomArtwork.thumbnail.url
   };
 }
+
+async function fetchRandomMysteryBookSuggestion(): Promise<string> {
+  try {
+    const response = await fetch('https://openlibrary.org/subjects/mystery.json?limit=1&random=true');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    if (data.works && data.works.length > 0) {
+      return `Title: ${data.works[0].title}, Author: ${data.works[0].authors?.map((author: any) => author.name).join(', ')}`;
+    }
+    return 'No mystery books found';
+  } catch (error) {
+    return `Error: ${error.message}`;
+  }
+}
