@@ -209,6 +209,7 @@ fetchRandomMusicAlbum
 fetchRandomMusicGenreFact
 fetchRandomMusicalInstrumentFact
 fetchRandomMusicalInstrumentInfo
+fetchRandomMysteryBookSuggestion
 fetchRandomMysteryNovel
 fetchRandomMysticalCreatureFact
 fetchRandomMythicalCreature
