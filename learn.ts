@@ -4841,3 +4841,19 @@ async function fetchRandomMysteryBookSuggestion(): Promise<string> {
     return `Error: ${error.message}`;
   }
 }
+
+async function fetchRandomNatureFact(): Promise<string> {
+  try {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.bodies.length);
+    const randomBody = data.bodies[randomIndex];
+    return `Did you know? The celestial body ${randomBody.englishName} is a ${randomBody.bodyType}.`;
+  } catch (error) {
+    console.error('Error fetching nature fact:', error);
+    return 'Unable to fetch a nature fact at the moment.';
+  }
+}
