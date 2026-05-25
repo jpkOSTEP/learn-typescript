@@ -224,6 +224,7 @@ fetchRandomMythologicalStory
 fetchRandomMythologyStory
 fetchRandomNationalParkFact
 fetchRandomNationalParkInfo
+fetchRandomNatureFact
 fetchRandomNatureImage
 fetchRandomNobelLaureate
 fetchRandomNobelPrizeInfo
