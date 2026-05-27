@@ -4857,3 +4857,12 @@ async function fetchRandomNatureFact(): Promise<string> {
     return 'Unable to fetch a nature fact at the moment.';
   }
 }
+
+async function fetchRandomHistoricalFigureFact(): Promise<string> {
+  const response = await fetch('https://api.example.com/randomHistoricalFigure');
+  if (!response.ok) {
+    throw new Error('Failed to fetch historical figure fact');
+  }
+  const data = await response.json();
+  return data.fact;
+}
