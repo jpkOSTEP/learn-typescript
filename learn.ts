@@ -4866,3 +4866,17 @@ async function fetchRandomHistoricalFigureFact(): Promise<string> {
   const data = await response.json();
   return data.fact;
 }
+
+async function fetchRandomMusicGenre(): Promise<string> {
+  const response = await fetch('https://binaryjazz.us/wp-json/genrenator/v1/genre/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch random music genre');
+  }
+  const genre: string = await response.json();
+  return genre;
+}
+
+// Usage example
+fetchRandomMusicGenre()
+  .then((genre) => console.log(`Random Music Genre: ${genre}`))
+  .catch((error) => console.error(error));
