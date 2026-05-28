@@ -207,6 +207,7 @@ fetchRandomMountainInfo
 fetchRandomMovieTitle
 fetchRandomMuseumExhibit
 fetchRandomMusicAlbum
+fetchRandomMusicGenre
 fetchRandomMusicGenreFact
 fetchRandomMusicalInstrumentFact
 fetchRandomMusicalInstrumentInfo
