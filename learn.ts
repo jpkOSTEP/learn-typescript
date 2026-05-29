@@ -4880,3 +4880,17 @@ async function fetchRandomMusicGenre(): Promise<string> {
 fetchRandomMusicGenre()
   .then((genre) => console.log(`Random Music Genre: ${genre}`))
   .catch((error) => console.error(error));
+
+async function fetchRandomPaleontologyFact(): Promise<string> {
+    try {
+        const response = await fetch('https://some-random-api.com/paleontology/fact');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.fact;
+    } catch (error) {
+        console.error('Failed to fetch paleontology fact:', error);
+        return 'Could not fetch a paleontology fact at this time.';
+    }
+}
