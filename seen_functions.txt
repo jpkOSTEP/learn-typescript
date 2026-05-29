@@ -241,6 +241,7 @@ fetchRandomOperaSynopsis
 fetchRandomPaintingDetails
 fetchRandomPaintingInfo
 fetchRandomPaleontologicalDiscovery
+fetchRandomPaleontologyFact
 fetchRandomParkInfo
 fetchRandomPhilosopherFact
 fetchRandomPhilosopherQuote
