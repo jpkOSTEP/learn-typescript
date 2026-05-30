@@ -193,6 +193,7 @@ fetchRandomMangaInfo
 fetchRandomMarineAnimalFact
 fetchRandomMarineBiologyFact
 fetchRandomMarineConservationTip
+fetchRandomMarineCreatureFact
 fetchRandomMarineReptileFact
 fetchRandomMathFact
 fetchRandomMathematicalConcept
