@@ -4894,3 +4894,12 @@ async function fetchRandomPaleontologyFact(): Promise<string> {
         return 'Could not fetch a paleontology fact at this time.';
     }
 }
+
+async function fetchRandomMarineCreatureFact(): Promise<string> {
+    const response = await fetch('https://some-marine-creature-api.com/random');
+    if (!response.ok) {
+        throw new Error('Failed to fetch marine creature fact');
+    }
+    const data = await response.json();
+    return data.fact;
+}
