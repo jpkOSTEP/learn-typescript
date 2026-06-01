@@ -4903,3 +4903,4 @@ async function fetchRandomMarineCreatureFact(): Promise<string> {
     const data = await response.json();
     return data.fact;
 }
+// Skipped fallback on 2026-06-01
